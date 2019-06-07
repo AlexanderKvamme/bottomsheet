@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CC3EA6A22AAA9BB00D9B561 /* SSDetailedCardTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC3EA6922AAA9BB00D9B561 /* SSDetailedCardTransactionViewController.swift */; };
+		49BF6A9DFD0245F81683C859 /* Pods_BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D8AFF2995A9BA909B61F39 /* Pods_BottomSheet.framework */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
 		F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE158210FBD4100487323 /* MapViewController.swift */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CC3EA6922AAA9BB00D9B561 /* SSDetailedCardTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDetailedCardTransactionViewController.swift; sourceTree = "<group>"; };
+		41D8AFF2995A9BA909B61F39 /* Pods_BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C216A5EC63D2249EA52C026 /* Pods-BottomSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.debug.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA0F066418B12914FF95C00 /* Pods-BottomSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.release.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.release.xcconfig"; sourceTree = "<group>"; };
 		F4EAE143210FBCFE00487323 /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAE146210FBCFE00487323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAE150210FBD0100487323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,18 +38,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BF6A9DFD0245F81683C859 /* Pods_BottomSheet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359ACD70FB30B740335C8251 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41D8AFF2995A9BA909B61F39 /* Pods_BottomSheet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBBF9BA507BA26EDA86624E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C216A5EC63D2249EA52C026 /* Pods-BottomSheet.debug.xcconfig */,
+				AFA0F066418B12914FF95C00 /* Pods-BottomSheet.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F4EAE13A210FBCFE00487323 = {
 			isa = PBXGroup;
 			children = (
 				F4EAE160211508DE00487323 /* README.md */,
 				F4EAE145210FBCFE00487323 /* BottomSheet */,
 				F4EAE144210FBCFE00487323 /* Products */,
+				CBBF9BA507BA26EDA86624E3 /* Pods */,
+				359ACD70FB30B740335C8251 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +92,7 @@
 				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
 				F4EAE158210FBD4100487323 /* MapViewController.swift */,
 				F4EAE15A210FBD4C00487323 /* CountriesTableViewController.swift */,
+				1CC3EA6922AAA9BB00D9B561 /* SSDetailedCardTransactionViewController.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -76,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4EAE155210FBD0100487323 /* Build configuration list for PBXNativeTarget "BottomSheet" */;
 			buildPhases = (
+				81CF9873CBF087166623F3B4 /* [CP] Check Pods Manifest.lock */,
 				F4EAE13F210FBCFE00487323 /* Sources */,
 				F4EAE140210FBCFE00487323 /* Frameworks */,
 				F4EAE141210FBCFE00487323 /* Resources */,
+				1209207BB7ED409562CD8855 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +163,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1209207BB7ED409562CD8855 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BottomSheet/Pods-BottomSheet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BottomSheet/Pods-BottomSheet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BottomSheet/Pods-BottomSheet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81CF9873CBF087166623F3B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BottomSheet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F4EAE13F210FBCFE00487323 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,6 +215,7 @@
 				F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
+				1CC3EA6A22AAA9BB00D9B561 /* SSDetailedCardTransactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,9 +351,11 @@
 		};
 		F4EAE156210FBD0100487323 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C216A5EC63D2249EA52C026 /* Pods-BottomSheet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7CVWF7MFX;
 				INFOPLIST_FILE = BottomSheet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -295,9 +370,11 @@
 		};
 		F4EAE157210FBD0100487323 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFA0F066418B12914FF95C00 /* Pods-BottomSheet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7CVWF7MFX;
 				INFOPLIST_FILE = BottomSheet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

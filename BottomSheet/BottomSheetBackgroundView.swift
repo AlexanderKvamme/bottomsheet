@@ -12,7 +12,7 @@ class BottomSheetBackgroundView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+        backgroundColor = .red
         layer.cornerRadius = cornerRadius
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = borderWidth

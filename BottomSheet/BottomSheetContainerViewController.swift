@@ -3,6 +3,8 @@
 //
 
 import UIKit
+import SnapKit
+
 
 protocol BottomSheetDelegate: AnyObject {
     func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint)
@@ -16,11 +18,23 @@ typealias BottomSheetViewController = UIViewController & BottomSheet
 
 class BottomSheetContainerView: UIView {
  
+    // MARK: - Properties
+   
     private let mainView: UIView
     private let sheetView: UIView
     private let sheetBackground = BottomSheetBackgroundView()
-    private var sheetBackgroundTopConstraint: NSLayoutConstraint? = nil
+    private var sheetBackgroundTopConstraint: Constraint? = nil
+    
+    // MARK: Computed properties
+    
+    var topDistance: CGFloat = 0 {
+        didSet {
+            sheetBackgroundTopConstraint?.layoutConstraints[0].constant = topDistance
+        }
+    }
 
+    // MARK: - Initializers
+    
     init(mainView: UIView, sheetView: UIView) {
         self.mainView = mainView
         self.sheetView = sheetView
@@ -32,63 +46,55 @@ class BottomSheetContainerView: UIView {
     
     required init?(coder aDecoder: NSCoder) { fatalError() }
     
-    var topDistance: CGFloat = 0 {
-        didSet {
-            sheetBackgroundTopConstraint?.constant = topDistance
-        }
-    }
-    
+    // MARK: - Methods
     private func setupViews() {
         // The main view fills the view completely
         addSubview(mainView)
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            mainView.leftAnchor.constraint(equalTo: leftAnchor),
-            mainView.rightAnchor.constraint(equalTo: rightAnchor),
-            mainView.topAnchor.constraint(equalTo: topAnchor),
-            mainView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        mainView.snp.makeConstraints { (make) in
+            make.left.right.bottom.top.equalToSuperview()
+        }
         
         // The sheet background
         addSubview(sheetBackground)
-        sheetBackground.translatesAutoresizingMaskIntoConstraints = false
-        let topConstraint = sheetBackground.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
-        NSLayoutConstraint.activate([
-            topConstraint,
-            sheetBackground.heightAnchor.constraint(equalTo: heightAnchor),
-            sheetBackground.leftAnchor.constraint(equalTo: leftAnchor),
-            sheetBackground.rightAnchor.constraint(equalTo: rightAnchor)
-            ])
-        sheetBackgroundTopConstraint = topConstraint
-
+        sheetBackground.snp.makeConstraints { (make) in
+            self.sheetBackgroundTopConstraint = make.top.equalTo(safeAreaLayoutGuide.snp.top).constraint
+            make.height.left.right.equalToSuperview()
+        }
+        
         // The sheet table view goes all the way up to the status bar
         addSubview(sheetView)
-        sheetView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            sheetView.leftAnchor.constraint(equalTo: leftAnchor),
-            sheetView.rightAnchor.constraint(equalTo: rightAnchor),
-            sheetView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            sheetView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
+        sheetView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+        }
+        bringSubviewToFront(sheetView)
     }
 
     // MARK: - UIView overrides
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        print("sheet bounds: ", sheetBackground.bounds)
+        print("hit point: ", point)
         if sheetBackground.bounds.contains(sheetBackground.convert(point, from: self)) {
+            print("hit sheet")
             return sheetView.hitTest(sheetView.convert(point, from: self), with: event)
         }
+        print("main bounds", mainView.bounds)
+        print("hit main")
         return mainView.hitTest(mainView.convert(point, from: self), with: event)
     }
-
 }
 
 class BottomSheetContainerViewController: UIViewController {
 
+    // MARK: - Properties
+   
     private let mainViewController: UIViewController
     private let sheetViewController: BottomSheetViewController
     private lazy var bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view,
                                                                          sheetView: sheetViewController.view)
+    
+    // MARK: - Initializers
     
     init(mainViewController: UIViewController, sheetViewController: BottomSheetViewController) {
         self.mainViewController = mainViewController
@@ -106,6 +112,8 @@ class BottomSheetContainerViewController: UIViewController {
         fatalError()
     }
     
+    // MARK: - Life Cycle
+    
     override func loadView() {
         view = bottomSheetContainerView
     }
@@ -116,7 +124,6 @@ class BottomSheetContainerViewController: UIViewController {
         mainViewController.didMove(toParent: self)
         sheetViewController.didMove(toParent: self)
     }
-    
 }
 
 extension BottomSheetContainerViewController: BottomSheetDelegate {

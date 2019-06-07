@@ -15,8 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mapViewController = MapViewController()
         let shortcutsViewController = CountriesTableViewController()
-        window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController,
-                                                                       sheetViewController: shortcutsViewController)
+        let SolarsteinController = SSDetailedCardtransactionViewController()
+//        window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController, sheetViewController: shortcutsViewController)
+        window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController, sheetViewController: SolarsteinController)
         window.makeKeyAndVisible()
         self.window = window
         

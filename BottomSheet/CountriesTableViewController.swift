@@ -4,7 +4,7 @@
 
 import UIKit
 
-private let maxVisibleContentHeight: CGFloat = 400
+private let maxVisibleContentHeight: CGFloat = 600
 
 private let numberOfCountries = 20
 private let countries = Locale.isoRegionCodes.prefix(numberOfCountries).map(Locale.current.localizedString(forRegionCode:))
@@ -58,9 +58,13 @@ class CountriesTableViewController: UITableViewController, BottomSheet {
     
     // MARK: - Scroll view delegate
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("didScroll")
+    }
+    
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let targetOffset = targetContentOffset.pointee.y
-        let pulledUpOffset: CGFloat = 0
+        let pulledUpOffset: CGFloat = -100
         let pulledDownOffset: CGFloat = -maxVisibleContentHeight
         
         if (pulledDownOffset...pulledUpOffset).contains(targetOffset) {
