@@ -71,7 +71,6 @@ class BottomSheetContainerView: UIView {
         }
         return mainView.hitTest(mainView.convert(point, from: self), with: event)
     }
-
 }
 
 class BottomSheetContainerViewController: UIViewController {
@@ -107,7 +106,6 @@ class BottomSheetContainerViewController: UIViewController {
         mainViewController.didMove(toParent: self)
         sheetViewController.didMove(toParent: self)
     }
-    
 }
 
 extension BottomSheetContainerViewController: BottomSheetDelegate {
