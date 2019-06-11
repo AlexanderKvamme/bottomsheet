@@ -18,7 +18,7 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     
     var bottomSheetDelegate: BottomSheetDelegate?
     private var scrollView = UIScrollView()
-    private var testViewController = TestViewController()
+    private var alphabetController = AlphabetController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     // MARK: - Life Cycle
     
@@ -34,14 +34,14 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     
     override func viewWillAppear(_ animated: Bool) {
         // add a viewController
-        addChild(testViewController)
+        addChild(alphabetController)
 
-        scrollView.addSubview(testViewController.view)
-        testViewController.view.snp.makeConstraints { (make) in
+        scrollView.addSubview(alphabetController.view)
+        alphabetController.view.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }
         
-        scrollView.addSubview(testViewController.view)
+        scrollView.addSubview(alphabetController.view)
         
         // layout
         view.addSubview(scrollView)
@@ -62,7 +62,7 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
             scrollView.contentSize.height = scrollView.bounds.height
         }
         
-        scrollView.contentSize = testViewController.view.frame.size
+        scrollView.contentSize = alphabetController.view.frame.size
     }
     
     // MARK: ScrollViewDelegate methods
