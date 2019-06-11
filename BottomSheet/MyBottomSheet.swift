@@ -33,12 +33,13 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         scrollView.delegate = self
         
         // Add a subview
-        
         let blueView = UIView()
         blueView.backgroundColor = .blue
         blueView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 900)
-
+        blueView.roundCorners(corners: [.topLeft, .topRight], amount: 24)
         scrollView.addSubview(blueView)
+        
+        // layout
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
@@ -50,8 +51,6 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        print("vdls: ", scrollView.contentOffset)
-        
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
         
         // Make sure the content is always at least as high as the table view, to prevent the sheet
@@ -59,10 +58,7 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         if scrollView.contentSize.height < scrollView.bounds.height {
             print("if")
             scrollView.contentSize.height = scrollView.bounds.height
-//            scrollView.contentSize.height = 300
             print("setting scrollView.contentSize.height to \(scrollView.bounds.height)")
-        } else {
-            print("else")
         }
     }
     
@@ -72,9 +68,6 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         print("cvds inset: ", scrollView.contentInset)
         print("cvds ajdustedinset: ", scrollView.adjustedContentInset)
         print("cvds scrollView.contentOffset: ", scrollView.contentOffset)
-//        print("cvds scrollView.contentOffset: ", scrollView.)
-        
-//        print("cvdc inset: ", scrollView.)
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
         
         scrollView.contentSize = scrollView.frame.size
