@@ -11,13 +11,13 @@ import UIKit
 
 
 final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
+
+    // MARK: - Properties
     
     private let maxVisibleContentHeight: CGFloat = 400
     
     var bottomSheetDelegate: BottomSheetDelegate?
     var scrollView = UIScrollView()
-    
-    // MARK: - Properties
     
     // MARK: - Initializers
     
@@ -39,6 +39,12 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         blueView.roundCorners(corners: [.topLeft, .topRight], amount: 24)
         scrollView.addSubview(blueView)
         
+        // add a viewController
+        
+        let testViewController = TestViewController()
+        addChild(testViewController)
+        scrollView.addSubview(testViewController.view)
+        
         // layout
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
@@ -56,18 +62,13 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         // Make sure the content is always at least as high as the table view, to prevent the sheet
         // getting stuck half-way.
         if scrollView.contentSize.height < scrollView.bounds.height {
-            print("if")
             scrollView.contentSize.height = scrollView.bounds.height
-            print("setting scrollView.contentSize.height to \(scrollView.bounds.height)")
         }
     }
     
     // MARK: ScrollViewDelegate methods
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("cvds inset: ", scrollView.contentInset)
-        print("cvds ajdustedinset: ", scrollView.adjustedContentInset)
-        print("cvds scrollView.contentOffset: ", scrollView.contentOffset)
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
         
         scrollView.contentSize = scrollView.frame.size
@@ -75,29 +76,17 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        print("did Scroll with targetOffset", targetContentOffset.pointee)
-        
         let targetOffset = targetContentOffset.pointee.y
         let pulledUpOffset: CGFloat = 0
         let pulledDownOffset: CGFloat = -maxVisibleContentHeight
         
-        print("target range: ", pulledDownOffset...pulledUpOffset)
         if (pulledDownOffset...pulledUpOffset).contains(targetOffset) {
-            print("range did contain offset")
             if velocity.y < 0 {
-                print("had NEGATIVE speed, so should go down")
                 targetContentOffset.pointee.y = pulledDownOffset
             } else {
-                print("had positive speed, so should go up")
                 targetContentOffset.pointee.y = pulledUpOffset
             }
-        } else {
-            print("range did NOT contain offset")
         }
-        
-        // Testprint
-        
-        print("sheet frame height: ", view.frame.height)
     }
 }
 
