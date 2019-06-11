@@ -28,6 +28,8 @@ class CountriesTableViewController: UITableViewController, BottomSheet {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        print("vdls: ", tableView.contentOffset)
+        
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: tableView.contentOffset)
     
         // Make sure the content is always at least as high as the table view, to prevent the sheet

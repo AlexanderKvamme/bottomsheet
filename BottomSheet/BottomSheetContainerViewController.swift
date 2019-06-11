@@ -112,6 +112,7 @@ class BottomSheetContainerViewController: UIViewController {
 
 extension BottomSheetContainerViewController: BottomSheetDelegate {
     func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint) {
+        print("bottomSheet didScrollTo: ", contentOffset)
         bottomSheetContainerView.topDistance = max(0, -contentOffset.y)
     }
 }
