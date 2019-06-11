@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+private var defaultBottomSheetCornerRadios: CGFloat = 40 // iphone X corner radius
 
 extension UIView {
     enum Corner:Int {
@@ -29,7 +30,7 @@ extension UIView {
         })
     }
     
-    func roundCorners(corners: [Corner], amount: CGFloat = 5) {
+    func roundCorners(corners: [Corner], amount: CGFloat = defaultBottomSheetCornerRadios) {
         layer.cornerRadius = amount
         let maskedCorners: CACornerMask = CACornerMask(rawValue: createMask(corners: corners))
         layer.maskedCorners = maskedCorners

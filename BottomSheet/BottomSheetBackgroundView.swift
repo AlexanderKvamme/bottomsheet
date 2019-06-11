@@ -4,18 +4,14 @@
 
 import UIKit
 
-private let borderWidth: CGFloat = 1
-private let cornerRadius: CGFloat = 12
 
+/// Used to calculate hitbox in the bottomsheetcontainer
 class BottomSheetBackgroundView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
-        layer.cornerRadius = cornerRadius
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = borderWidth
+        backgroundColor = .clear
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,7 +23,7 @@ class BottomSheetBackgroundView: UIView {
  
         // Make sure border isn't visible
         layer.bounds = CGRect(origin: bounds.origin,
-                              size: CGSize(width: bounds.size.width + borderWidth * 2,
+                              size: CGSize(width: bounds.size.width,
                                            height: bounds.size.height))
     }
 }

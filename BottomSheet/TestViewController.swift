@@ -34,7 +34,10 @@ final class TestViewController: UIViewController {
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor.solarstein.sapphire
+        
+        
+        view.roundCorners(corners: [.topLeft, .topRight])
         
         // self
         view.snp.makeConstraints { (make) in
