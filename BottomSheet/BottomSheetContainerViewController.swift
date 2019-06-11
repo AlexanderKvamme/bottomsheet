@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol BottomSheetDelegate: AnyObject {
     func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint)
@@ -19,7 +20,7 @@ class BottomSheetContainerView: UIView {
     private let mainView: UIView
     private let sheetView: UIView
     private let sheetBackground = BottomSheetBackgroundView()
-    private var sheetBackgroundTopConstraint: NSLayoutConstraint? = nil
+    private var sheetBackgroundTopConstraint: Constraint? = nil
 
     init(mainView: UIView, sheetView: UIView) {
         self.mainView = mainView
@@ -34,42 +35,32 @@ class BottomSheetContainerView: UIView {
     
     var topDistance: CGFloat = 0 {
         didSet {
-            sheetBackgroundTopConstraint?.constant = topDistance
+            sheetBackgroundTopConstraint?.layoutConstraints[0].constant = topDistance
         }
     }
     
     private func setupViews() {
         // The main view fills the view completely
         addSubview(mainView)
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            mainView.leftAnchor.constraint(equalTo: leftAnchor),
-            mainView.rightAnchor.constraint(equalTo: rightAnchor),
-            mainView.topAnchor.constraint(equalTo: topAnchor),
-            mainView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        
+        mainView.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalToSuperview()
+        }
         
         // The sheet background
         addSubview(sheetBackground)
-        sheetBackground.translatesAutoresizingMaskIntoConstraints = false
-        let topConstraint = sheetBackground.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
-        NSLayoutConstraint.activate([
-            topConstraint,
-            sheetBackground.heightAnchor.constraint(equalTo: heightAnchor),
-            sheetBackground.leftAnchor.constraint(equalTo: leftAnchor),
-            sheetBackground.rightAnchor.constraint(equalTo: rightAnchor)
-            ])
-        sheetBackgroundTopConstraint = topConstraint
+        sheetBackground.snp.makeConstraints { (make) in
+            self.sheetBackgroundTopConstraint = make.top.equalTo(safeAreaLayoutGuide.snp.top).constraint
+            make.height.left.right.equalToSuperview()
+        }
 
         // The sheet table view goes all the way up to the status bar
         addSubview(sheetView)
-        sheetView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            sheetView.leftAnchor.constraint(equalTo: leftAnchor),
-            sheetView.rightAnchor.constraint(equalTo: rightAnchor),
-            sheetView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            sheetView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
+        
+        sheetView.snp.makeConstraints { (make) in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.left.right.bottom.equalToSuperview()
+        }
     }
 
     // MARK: - UIView overrides
