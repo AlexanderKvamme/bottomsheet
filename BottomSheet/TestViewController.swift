@@ -46,7 +46,6 @@ final class TestViewController: UIViewController {
 
         // components
         let buttons = [topLeftButton, bottomRightButton]
-        
         buttons.forEach({ view.addSubview($0) })
         buttons.forEach({ $0.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)})
         

@@ -14,14 +14,11 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
 
     // MARK: - Properties
     
-    private var maxVisibleContentHeight: CGFloat = 500 // FIXME: clean up. Spacing fra toppen
+    private var maxVisibleContentHeight: CGFloat = UIScreen.main.bounds.height - 200 // FIXME: clean up. Spacing fra toppen
     
     var bottomSheetDelegate: BottomSheetDelegate?
-    var scrollView = UIScrollView()
-    var containerView = UIView()
-    var testViewController = TestViewController()
-    
-    // MARK: - Initializers
+    private var scrollView = UIScrollView()
+    private var testViewController = TestViewController()
     
     // MARK: - Life Cycle
     
@@ -39,12 +36,11 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         // add a viewController
         addChild(testViewController)
 
-        containerView.addSubview(testViewController.view)
+        scrollView.addSubview(testViewController.view)
         testViewController.view.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }
         
-        scrollView.addSubview(containerView)
         scrollView.addSubview(testViewController.view)
         
         // layout
@@ -61,17 +57,12 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
         
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
         
-        // Make sure the content is always at least as high as the table view, to prevent the sheet
-        // getting stuck half-way.
-//        if scrollView.contentSize.height < scrollView.bounds.height {
-//            scrollView.contentSize.height = scrollView.bounds.height
-//        }
+        // Make sure the content is always at least as high as the table view, to prevent the sheet getting stuck half-way.
+        if scrollView.contentSize.height < scrollView.bounds.height {
+            scrollView.contentSize.height = scrollView.bounds.height
+        }
         
-//        scrollView.contentSize.height = testViewController.view.frame.height
         scrollView.contentSize = testViewController.view.frame.size
-        
-        print("bam contentSize = ", scrollView.contentSize.height)
-        print("bam vc height = ", testViewController.view.frame.height)
     }
     
     // MARK: ScrollViewDelegate methods
@@ -83,7 +74,7 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         let targetOffset = targetContentOffset.pointee.y
-        let pulledUpOffset: CGFloat = 0
+        let pulledUpOffset: CGFloat = -200
         let pulledDownOffset: CGFloat = -maxVisibleContentHeight
         
         if (pulledDownOffset...pulledUpOffset).contains(targetOffset) {
