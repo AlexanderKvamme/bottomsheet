@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-protocol RootSheet: class {
+protocol RootSheet: isSelfSizeable {
     func didTapNext()
     func didTapBack()
     func push(_ sheet: UIViewController)
@@ -67,6 +67,8 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         if type(of: sheet) == TransactionMenuSheet.self {
             print("got size TransactionMenuSheet.preferredSize.height")
             return TransactionMenuSheet.preferredSize.height
+        } else if type(of: sheet) == PickerSheet.self {
+            return PickerSheet.preferredSize.height
         } else {
             print("got size 500")
             return 500
@@ -76,6 +78,8 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
     func push(_ sheet: UIViewController) {
         navigationStack.append(sheet)
         setViewControllers([sheet], direction: .forward, animated: true, completion: nil)
+
+        print("updating size after push")
         updateSize(getSize(of: sheet))
     }
     
@@ -102,8 +106,10 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         print("did tap next")
         currentNumber += 1
         // show a new viewcontroller with a higher numbere label
-        let incrementedTransactionSheet = TransactionController(String(currentNumber), delegate: self)
-        push(incrementedTransactionSheet)
+//        let incrementedTransactionSheet = TransactionController(String(currentNumber), delegate: self)
+//        push(incrementedTransactionSheet)
+        let pickerSheet = PickerSheet("Pick something", delegate: self)
+        push(pickerSheet)
     }
     
     func didTapBack() {

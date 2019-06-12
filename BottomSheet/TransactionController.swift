@@ -187,3 +187,137 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
     }
 }
 
+final class PickerSheet: UIViewController, isSelfSizeable {
+    
+    // MARK: - Properties
+    
+    static let preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+    
+    private let headerLabel = UILabel()
+    private let tableView = UITableView()
+    private var choices: [String] = ["Its like", "this", "and a", "that", "and a dis and a"]
+    
+    weak var rootSheet: RootSheetController?
+    
+    // MARK: - Initializers
+    
+    init(_ string: String, delegate: RootSheetController) {
+        headerLabel.text = string
+        rootSheet = delegate
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("bam tryna set size from within")
+        rootSheet!.updateSize(2000)
+    }
+    
+    // MARK: - Methods
+    
+    private func setup() {
+        view.backgroundColor = UIColor.solarstein.sapphire
+        
+        headerLabel.textColor = .white
+        headerLabel.font = UIFont.systemFont(ofSize: 32)
+        headerLabel.textAlignment = .center
+        headerLabel.text = "Pick something"
+        
+        // Layout header
+        view.addSubview(headerLabel)
+        headerLabel.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(200)
+        }
+        
+        // setup tableview
+        tableView.register(PickerCell.self, forCellReuseIdentifier: PickerCell.identifier)
+        tableView.backgroundColor = .blue
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.bounces = false
+        
+        view.addSubview(tableView)
+        
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(headerLabel.snp.bottom).offset(24)
+            make.left.right.bottom.equalToSuperview()
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        print("vdls tableView.frame.size", tableView.frame.size)
+        print("vdls tableView.contentSize", tableView.contentSize)
+        
+        tableView.frame.size = tableView.contentSize
+    }
+    
+    @objc func didTapNextButton() {
+        rootSheet?.didTapNext()
+    }
+    
+    @objc func didTapMoreButton() {
+        print("did tap more")
+        let menuSheet = TransactionMenuSheet("MENU", delegate: rootSheet!)
+        rootSheet!.setViewControllers([menuSheet], direction: .forward, animated: true, completion: nil)
+        rootSheet!.push(menuSheet)
+    }
+}
+
+extension PickerSheet: UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return choices.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = PickerCell()
+        cell.update(with: choices[indexPath.row])
+        return cell
+    }
+}
+
+final class PickerCell: UITableViewCell {
+    
+    // MARK: - Properties
+    
+    static let identifier = "Picker cell to repreesnt a choice"
+    
+    let label = UILabel()
+    
+    // MARK: - Initializers
+
+    init() {
+        super.init(style: .default, reuseIdentifier: PickerCell.identifier)
+
+        label.text = "test"
+        label.sizeToFit()
+        contentView.backgroundColor = .yellow
+        
+        contentView.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalToSuperview()
+            make.height.equalTo(50)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
+    
+    func update(with data: String) {
+        label.text = data
+    }
+}
