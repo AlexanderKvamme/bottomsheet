@@ -12,6 +12,8 @@ import UIKit
 
 protocol SheetPageController: class {
     func didTapNext()
+    func didTapBack()
+    func push(_ sheet: UIViewController)
 }
 
 protocol hasRoundedTopCorners {
@@ -24,35 +26,69 @@ extension hasRoundedTopCorners where Self: UIViewController {
     }
 }
 
-
 /// This is the sheet main controller. It is a pagecontroller which contains any sheetpages and will be the controller
 /// of the the sheetpages. 
-final class MatchfinderSheet: UIPageViewController, SheetPageController, isSelfSizeable, hasRoundedTopCorners {
+final class MatchfinderRootSheet: UIPageViewController, SheetPageController, isSelfSizeable, hasRoundedTopCorners {
     
     // MARK: - Properties
     
-    var currentNumber = 0
+    private var currentNumber = 0
+    private var navigationStack = [UIViewController]()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.solarstein.sapphire
         roundTopCorners()
-        setSize(2000)
+//        setSize(2000)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // add first letter
-        let lvca = TransactionController(String(currentNumber), delegate: self)
-        setViewControllers([lvca], direction: .forward, animated: false, completion: nil)
+        setInitialSheet()
     }
     
     // MARK: - Methods
     
+    private func setInitialSheet() {
+        let transactionController = TransactionController(String(currentNumber), delegate: self)
+        setViewControllers([transactionController], direction: .forward, animated: false, completion: nil)
+        navigationStack = [transactionController]
+        
+        view.snp.makeConstraints { (make) in
+            make.top.left.right.bottom.equalTo(transactionController.view)
+        }
+    }
+    
+    func push(_ sheet: UIViewController) {
+        navigationStack.append(sheet)
+        setViewControllers([sheet], direction: .forward, animated: true, completion: nil)
+        setSize(900) // get proper size
+    }
+    
+    func popSheet() {
+        guard navigationStack.count > 1 else {
+            return
+        }
+        
+        navigationStack.remove(at: navigationStack.count-1)
+        
+        guard let topSheet = navigationStack.last else {
+            return
+        }
+        
+        setViewControllers([topSheet], direction: .reverse, animated: true, completion: nil)
+    }
+    
     func didTapNext() {
-        print("did tap button")
+        print("did tap next")
         currentNumber += 1
-        let lvca = TransactionController(String(currentNumber), delegate: self)
-        setViewControllers([lvca], direction: .forward, animated: true, completion: nil)
+        // show a new viewcontroller with a higher numbere label
+        let incrementedTransactionSheet = TransactionController(String(currentNumber), delegate: self)
+        push(incrementedTransactionSheet)
+    }
+    
+    func didTapBack() {
+        print("didTap back in root")
+        popSheet()
     }
 }

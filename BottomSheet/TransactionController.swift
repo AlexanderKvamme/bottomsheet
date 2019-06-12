@@ -20,12 +20,12 @@ extension isSelfSizeable where Self: UIViewController {
             make.width.equalTo(UIScreen.main.bounds.width)
         }
         
-        view.frame = CGRect(x: 0, y: 0, width: 300, height: value) // Must possibly be set when laying out subviews
+        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: value) // Must possibly be set when laying out subviews
     }
 }
 
 
-typealias MainSheetController = UIPageViewController & SheetPageController
+typealias RootSheetController = UIPageViewController & SheetPageController
     
 final class TransactionController: UIViewController, isSelfSizeable {
     
@@ -35,11 +35,11 @@ final class TransactionController: UIViewController, isSelfSizeable {
     private let bottomRightButton = KRoundButton()
     private let bottomLeftButton = KRoundButton()
     
-    weak var sheetPageController: MainSheetController?
+    weak var sheetPageController: RootSheetController?
     
     // MARK: - Initializers
     
-    init(_ string: String, delegate: MainSheetController) {
+    init(_ string: String, delegate: RootSheetController) {
         headerLabel.text = string
         sheetPageController = delegate
         
@@ -100,13 +100,14 @@ final class TransactionController: UIViewController, isSelfSizeable {
     
     @objc func didTapMoreButton() {
         print("did tap more")
-        let menuSheet = TransactionMenu("MENU", delegate: sheetPageController!)
+        let menuSheet = TransactionMenuSheet("MENU", delegate: sheetPageController!)
         sheetPageController!.setViewControllers([menuSheet], direction: .forward, animated: true, completion: nil)
+        sheetPageController!.push(menuSheet)
     }
 }
 
 // FIXME: make smaller
-final class TransactionMenu: UIViewController, isSelfSizeable {
+final class TransactionMenuSheet: UIViewController, isSelfSizeable {
   
     // MARK: - Properties
     
@@ -115,13 +116,13 @@ final class TransactionMenu: UIViewController, isSelfSizeable {
     private let secondButton = KRoundButton()
     private let backButton = KRoundButton()
     
-    weak var sheetPageController: MainSheetController?
+    weak var rootSheetController: RootSheetController?
     
     // MARK: - Initializers
     
-    init(_ string: String, delegate: MainSheetController) {
+    init(_ string: String, delegate: RootSheetController) {
         headerLabel.text = string
-        sheetPageController = delegate
+        rootSheetController = delegate
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -136,6 +137,7 @@ final class TransactionMenu: UIViewController, isSelfSizeable {
         
         backButton.setTitle("Back", for: .normal)
         backButton.setup(with: UIColor.red)
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         
         // layout header
         view.addSubview(headerLabel)
@@ -163,8 +165,10 @@ final class TransactionMenu: UIViewController, isSelfSizeable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
-    
     // MARK: - Methods
     
+    @objc func didTapBackButton() {
+        rootSheetController?.didTapBack()
+    }
 }
+
