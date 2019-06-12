@@ -11,16 +11,24 @@ import UIKit
 
 protocol isSelfSizeable: class {
     func setSize(_ value: CGFloat) -> Void
+    func updateSize(_ value: CGFloat) -> Void
 }
 
 extension isSelfSizeable where Self: UIViewController {
     func setSize(_ value: CGFloat) {
-        view.snp.makeConstraints { (make) in
+        print("gonna set size to ", value)
+        view.snp.makeConstraints{ (make) in
             make.height.equalTo(value)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
-        
-        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: value) // Must possibly be set when laying out subviews
+    }
+    
+    func updateSize(_ value: CGFloat) {
+        print("gonna update size to ", value)
+        view.snp.updateConstraints{ (make) in
+            make.height.equalTo(value)
+            make.width.equalTo(UIScreen.main.bounds.width)
+        }
     }
 }
 
@@ -30,6 +38,8 @@ typealias RootSheetController = UIPageViewController & SheetPageController
 final class TransactionController: UIViewController, isSelfSizeable {
     
     // MARK: - Properties
+    
+    static let preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
     
     private let headerLabel = UILabel()
     private let bottomRightButton = KRoundButton()
@@ -53,8 +63,7 @@ final class TransactionController: UIViewController, isSelfSizeable {
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.solarstein.mariner
-        setSize(400)
+        view.backgroundColor = UIColor.solarstein.sapphire
         
         headerLabel.textColor = .white
         headerLabel.font = UIFont.systemFont(ofSize: 100)
@@ -92,6 +101,10 @@ final class TransactionController: UIViewController, isSelfSizeable {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setSize(500)
+    }
+    
     // MARK: - Methods
     
     @objc func didTapNextButton() {
@@ -111,6 +124,7 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
   
     // MARK: - Properties
     
+    static let preferredSize = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400)
     private let headerLabel = UILabel()
     private let firstButton = KRoundButton()
     private let secondButton = KRoundButton()
@@ -154,11 +168,6 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
             make.right.equalToSuperview().offset(-24)
             make.height.equalTo(KRoundButton.size.height)
         }
-        
-        // set sheet size
-        // FIXME: Make dynamic
-        
-        setSize(300)
     }
     
     required init?(coder aDecoder: NSCoder) {
