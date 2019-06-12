@@ -14,6 +14,8 @@ final class KRoundButton: UIButton {
     
     // MARK: - Properties
     
+    static var size = CGSize(width: 200, height: 40)
+    
     // MARK: - Initializers
     
     init() {

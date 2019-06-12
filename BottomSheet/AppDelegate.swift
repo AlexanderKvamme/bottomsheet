@@ -14,10 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         let mapViewController = MapViewController()
-        var alphabetController = MatchfinderSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        let shortcutsViewController = ScrollableBottomSheetContainer(alphabetController)
+        let matchFinderController = MatchfinderSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        let bottomSheetContainer = ScrollableBottomSheetContainer(matchFinderController)
         window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController,
-                                                                       sheetViewController: shortcutsViewController)
+                                                                       sheetViewController: bottomSheetContainer)
         window.makeKeyAndVisible()
         self.window = window
         
