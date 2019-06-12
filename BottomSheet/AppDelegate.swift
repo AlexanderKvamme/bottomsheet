@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         let mapViewController = MapViewController()
-        let shortcutsViewController = MyBottomSheet()
+        var alphabetController = AlphabetController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        let shortcutsViewController = ScrollableBottomSheetContainer(alphabetController)
         window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController,
                                                                        sheetViewController: shortcutsViewController)
         window.makeKeyAndVisible()

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CA6CB9422AF965600BCE420 /* MyBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* MyBottomSheet.swift */; };
+		1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */; };
 		1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */; };
 		1CA6CB9822AFB1F400BCE420 /* AlphabetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9722AFB1F400BCE420 /* AlphabetController.swift */; };
 		1CA6CB9A22AFD6CA00BCE420 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9922AFD6CA00BCE420 /* UIColorExtensions.swift */; };
@@ -16,13 +16,12 @@
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
 		F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE158210FBD4100487323 /* MapViewController.swift */; };
-		F4EAE15B210FBD4C00487323 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15A210FBD4C00487323 /* CountriesTableViewController.swift */; };
 		F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */; };
 		F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CA6CB9322AF965600BCE420 /* MyBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomSheet.swift; sourceTree = "<group>"; };
+		1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetContainer.swift; sourceTree = "<group>"; };
 		1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1CA6CB9722AFB1F400BCE420 /* AlphabetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetController.swift; sourceTree = "<group>"; };
 		1CA6CB9922AFD6CA00BCE420 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -35,7 +34,6 @@
 		F4EAE150210FBD0100487323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EAE152210FBD0100487323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4EAE158210FBD4100487323 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		F4EAE15A210FBD4C00487323 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerViewController.swift; sourceTree = "<group>"; };
 		F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetBackgroundView.swift; sourceTree = "<group>"; };
 		F4EAE160211508DE00487323 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -95,7 +93,7 @@
 				F4EAE152210FBD0100487323 /* Info.plist */,
 				F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */,
 				F4EAE146210FBCFE00487323 /* AppDelegate.swift */,
-				1CA6CB9322AF965600BCE420 /* MyBottomSheet.swift */,
+				1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */,
 				1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */,
 				1CA6CB9722AFB1F400BCE420 /* AlphabetController.swift */,
 				1CA6CB9B22AFDDF900BCE420 /* LetterViewController.swift */,
@@ -103,7 +101,6 @@
 				F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */,
 				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
 				F4EAE158210FBD4100487323 /* MapViewController.swift */,
-				F4EAE15A210FBD4C00487323 /* CountriesTableViewController.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -222,11 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CA6CB9A22AFD6CA00BCE420 /* UIColorExtensions.swift in Sources */,
-				F4EAE15B210FBD4C00487323 /* CountriesTableViewController.swift in Sources */,
 				1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */,
 				1CA6CB9822AFB1F400BCE420 /* AlphabetController.swift in Sources */,
 				F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */,
-				1CA6CB9422AF965600BCE420 /* MyBottomSheet.swift in Sources */,
+				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
 				F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* LetterViewController.swift in Sources */,

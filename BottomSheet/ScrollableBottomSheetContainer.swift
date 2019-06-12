@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+typealias mainSheetType = UIPageViewController & SheetPageController
 
-final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
+/// This class controls anything related to the scrolling of a bottomsheet
+final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelegate, BottomSheet {
 
     // MARK: - Properties
     
@@ -18,7 +20,19 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     
     var bottomSheetDelegate: BottomSheetDelegate?
     private var scrollView = UIScrollView()
-    private var alphabetController = AlphabetController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    private var mainSheet: mainSheetType
+    
+    // MARK: - Initializers
+    
+    init(_ mainSheet: mainSheetType) {
+        self.mainSheet = mainSheet
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life Cycle
     
@@ -33,15 +47,21 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        addSubviewsAndConstraints()
+    }
+    
+    // MARK: - private Methods
+    
+    private func addSubviewsAndConstraints() {
         // add a viewController
-        addChild(alphabetController)
-
-        scrollView.addSubview(alphabetController.view)
-        alphabetController.view.snp.makeConstraints { (make) in
+        addChild(mainSheet)
+        
+        scrollView.addSubview(mainSheet.view)
+        mainSheet.view.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }
         
-        scrollView.addSubview(alphabetController.view)
+        scrollView.addSubview(mainSheet.view)
         
         // layout
         view.addSubview(scrollView)
@@ -49,8 +69,8 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
             make.top.left.right.bottom.equalToSuperview()
         }
     }
-    
-    // MARK: - Methods
+        
+    // MARK: overridden methods
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -62,17 +82,16 @@ final class MyBottomSheet: UIViewController, UIScrollViewDelegate, BottomSheet {
             scrollView.contentSize.height = scrollView.bounds.height
         }
         
-        scrollView.contentSize = alphabetController.view.frame.size
+        scrollView.contentSize = mainSheet.view.frame.size
     }
     
-    // MARK: ScrollViewDelegate methods
+    // MARK: - ScrollViewDelegate methods
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
         let targetOffset = targetContentOffset.pointee.y
         let pulledUpOffset: CGFloat = -200
         let pulledDownOffset: CGFloat = -maxVisibleContentHeight

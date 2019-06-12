@@ -45,6 +45,8 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+ 
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.solarstein.mariner
@@ -74,8 +76,6 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
             make.width.equalTo(140)
         }
     }
-    
-    // MARK: - Life Cycle
     
     // MARK: - Methods
     
