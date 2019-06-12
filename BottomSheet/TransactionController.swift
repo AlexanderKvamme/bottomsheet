@@ -33,7 +33,7 @@ extension isSelfSizeable where Self: UIViewController {
 }
 
 
-typealias RootSheetController = UIPageViewController & SheetPageController
+typealias RootSheetController = UIPageViewController & RootSheet
     
 final class TransactionController: UIViewController, isSelfSizeable {
     
@@ -148,7 +148,6 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
         headerLabel.textAlignment = .center
         
         // setup buttons
-        
         backButton.setTitle("Back", for: .normal)
         backButton.setup(with: UIColor.red)
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)

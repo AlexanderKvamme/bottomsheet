@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-typealias mainSheetType = UIPageViewController & SheetPageController
+typealias mainSheetType = UIPageViewController & RootSheet
 
 /// This class controls anything related to the scrolling of a bottomsheet
 final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelegate, BottomSheet {
@@ -28,6 +28,8 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         self.mainSheet = mainSheet
         
         super.init(nibName: nil, bundle: nil)
+        
+        self.mainSheet.scrollableSheet = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,6 +83,19 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         
         print("setting contentsize: ", mainSheet.view.frame.size)
         scrollView.contentSize = mainSheet.view.frame.size
+    }
+    
+    // MARK: internal methods
+    
+    func scrollToBottom() {
+        print("sv.contentSize: ", scrollView.contentSize.height)
+        print("sv.bounds: ", scrollView.bounds.size.height)
+        print("sv.insets: ", scrollView.contentInset.top)
+        print("screen: ", UIScreen.main.bounds.height)
+
+        var targetScrollPoint = CGPoint(x: 0, y: 0)
+        targetScrollPoint.y = -scrollView.contentSize.height + 48
+        scrollView.setContentOffset(targetScrollPoint, animated: true)
     }
     
     // MARK: - ScrollViewDelegate methods

@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 
 
-protocol SheetPageController: class {
+protocol RootSheet: class {
     func didTapNext()
     func didTapBack()
     func push(_ sheet: UIViewController)
+    
+    var scrollableSheet: ScrollableBottomSheetContainer? { get set }
 }
 
 protocol hasRoundedTopCorners {
@@ -28,12 +30,14 @@ extension hasRoundedTopCorners where Self: UIViewController {
 
 /// This is the sheet main controller. It is a pagecontroller which contains any sheetpages and will be the controller
 /// of the the sheetpages. 
-final class MatchfinderRootSheet: UIPageViewController, SheetPageController, isSelfSizeable, hasRoundedTopCorners {
+final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeable, hasRoundedTopCorners {
     
     // MARK: - Properties
     
     private var currentNumber = 0
     private var navigationStack = [UIViewController]()
+    
+    weak var scrollableSheet: ScrollableBottomSheetContainer?
     
     // MARK: - Life Cycle
     
@@ -88,6 +92,10 @@ final class MatchfinderRootSheet: UIPageViewController, SheetPageController, isS
         
         setViewControllers([topSheet], direction: .reverse, animated: true, completion: nil)
         updateSize(getSize(of: topSheet))
+        
+        print("would scroll after pop")
+        
+        scrollableSheet?.scrollToBottom()
     }
     
     func didTapNext() {
