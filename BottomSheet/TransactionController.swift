@@ -70,7 +70,7 @@ final class TransactionController: UIViewController, isSelfSizeable {
         headerLabel.textAlignment = .center
 
         bottomLeftButton.setTitle("Mer", for: .normal)
-        bottomLeftButton.setup(with: UIColor.solarstein.sapphire)
+        bottomLeftButton.setup(with: UIColor.solarstein.mariner.withAlphaComponent(0.05))
         bottomLeftButton.addTarget(self, action: #selector(didTapMoreButton), for: .touchUpInside)
         
         bottomRightButton.setTitle("next", for: .normal)
@@ -86,18 +86,25 @@ final class TransactionController: UIViewController, isSelfSizeable {
         
         // layout buttons
         view.addSubview(bottomLeftButton)
+        view.addSubview(bottomRightButton)
+        
+        let sideSpacing: CGFloat = 24
+        let interButtonSpacing: CGFloat = 24
+        let avaiableButtonSpace = UIScreen.main.bounds.width - 2 * sideSpacing - interButtonSpacing
+        let rightButtonSize = avaiableButtonSpace*0.7
+        let leftButtonSize = avaiableButtonSpace-rightButtonSize
+        
         bottomLeftButton.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-24)
-            make.left.equalToSuperview().offset(24)
+            make.bottom.equalToSuperview().offset(-sideSpacing)
+            make.left.equalToSuperview().offset(sideSpacing)
             make.height.equalTo(40)
-            make.width.equalTo(100)
+            make.width.equalTo(leftButtonSize)
         }
         
-        view.addSubview(bottomRightButton)
         bottomRightButton.snp.makeConstraints { (make) in
             make.bottom.right.equalToSuperview().offset(-24)
             make.height.equalTo(40)
-            make.width.equalTo(140)
+            make.width.equalTo(rightButtonSize)
         }
     }
     
@@ -149,7 +156,7 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
         
         // setup buttons
         backButton.setTitle("Back", for: .normal)
-        backButton.setup(with: UIColor.red)
+        backButton.setup(with: UIColor.solarstein.mariner.withAlphaComponent(0.05))
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         
         // layout header
