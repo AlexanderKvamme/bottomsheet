@@ -43,7 +43,7 @@ final class MatchfinderSheet: UIPageViewController, SheetPageController, isSelfS
     
     override func viewDidAppear(_ animated: Bool) {
         // add first letter
-        let lvca = LetterViewController(String(currentNumber), delegate: self)
+        let lvca = TransactionController(String(currentNumber), delegate: self)
         setViewControllers([lvca], direction: .forward, animated: false, completion: nil)
     }
     
@@ -52,7 +52,7 @@ final class MatchfinderSheet: UIPageViewController, SheetPageController, isSelfS
     func didTapNext() {
         print("did tap button")
         currentNumber += 1
-        let lvca = LetterViewController(String(currentNumber), delegate: self)
+        let lvca = TransactionController(String(currentNumber), delegate: self)
         setViewControllers([lvca], direction: .forward, animated: true, completion: nil)
     }
 }

@@ -24,7 +24,7 @@ extension isSelfSizeable where Self: UIViewController {
     }
 }
 
-final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTopCorners {
+final class TransactionController: UIViewController, isSelfSizeable {
     
     // MARK: - Properties
     
@@ -60,7 +60,6 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
         bottomLeftButton.setTitle("Mer", for: .normal)
         bottomLeftButton.setup(with: UIColor.solarstein.sapphire)
         
-        
         bottomRightButton.setTitle("next", for: .normal)
         bottomRightButton.setup(with: UIColor.solarstein.mediumSeaGreen)
         bottomRightButton.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
@@ -93,6 +92,10 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
     
     @objc func didTapNextButton() {
         sheetPageController?.didTapNext()
+    }
+    
+    @objc func didTapMoreButton() {
+        print("did tap more")
     }
 }
 
