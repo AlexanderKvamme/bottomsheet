@@ -51,8 +51,11 @@ class BottomSheetContainerView: UIView {
         addSubview(sheetBackground)
         sheetBackground.snp.makeConstraints { (make) in
             self.sheetBackgroundTopConstraint = make.top.equalTo(safeAreaLayoutGuide.snp.top).constraint
-            make.height.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
         }
+        
+        sheetBackground.backgroundColor = UIColor.solarstein.sapphire
 
         // The sheet table view goes all the way up to the status bar
         addSubview(sheetView)

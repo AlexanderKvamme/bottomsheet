@@ -81,7 +81,6 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
             scrollView.contentSize.height = scrollView.bounds.height
         }
         
-        print("setting contentsize: ", mainSheet.view.frame.size)
         scrollView.contentSize = mainSheet.view.frame.size
     }
     

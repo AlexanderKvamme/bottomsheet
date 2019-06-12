@@ -21,6 +21,7 @@ class BottomSheetBackgroundView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
  
+        roundCorners(corners: [.topLeft, .topRight])
         // Make sure border isn't visible
         layer.bounds = CGRect(origin: bounds.origin,
                               size: CGSize(width: bounds.size.width,
