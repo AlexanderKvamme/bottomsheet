@@ -29,7 +29,8 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
     // MARK: - Properties
     
     private let headerLabel = UILabel()
-    private let bottomRightButton = UIButton()
+    private let bottomRightButton = KRoundButton()
+    private let bottomLeftButton = KRoundButton()
     
     weak var sheetPageController: SheetPageController?
     
@@ -56,9 +57,12 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
         headerLabel.font = UIFont.systemFont(ofSize: 100)
         headerLabel.textAlignment = .center
 
+        bottomLeftButton.setTitle("Mer", for: .normal)
+        bottomLeftButton.setup(with: UIColor.solarstein.sapphire)
+        
+        
         bottomRightButton.setTitle("next", for: .normal)
-        bottomRightButton.backgroundColor = .green
-        bottomRightButton.layer.cornerRadius = 20
+        bottomRightButton.setup(with: UIColor.solarstein.mediumSeaGreen)
         bottomRightButton.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
         
         // Layout header
@@ -69,6 +73,14 @@ final class LetterViewController: UIViewController, isSelfSizeable, hasRoundedTo
         }
         
         // layout buttons
+        view.addSubview(bottomLeftButton)
+        bottomLeftButton.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(-24)
+            make.left.equalToSuperview().offset(24)
+            make.height.equalTo(40)
+            make.width.equalTo(100)
+        }
+        
         view.addSubview(bottomRightButton)
         bottomRightButton.snp.makeConstraints { (make) in
             make.bottom.right.equalToSuperview().offset(-24)

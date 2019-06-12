@@ -53,18 +53,15 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     // MARK: - private Methods
     
     private func addSubviewsAndConstraints() {
-        // add a viewController
         addChild(mainSheet)
         
         scrollView.addSubview(mainSheet.view)
+        view.addSubview(scrollView)
+        
         mainSheet.view.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }
         
-        scrollView.addSubview(mainSheet.view)
-        
-        // layout
-        view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }

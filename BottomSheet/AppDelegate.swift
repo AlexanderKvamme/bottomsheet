@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         let mapViewController = MapViewController()
-        var alphabetController = AlphabetController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        var alphabetController = MatchfinderSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         let shortcutsViewController = ScrollableBottomSheetContainer(alphabetController)
         window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController,
                                                                        sheetViewController: shortcutsViewController)

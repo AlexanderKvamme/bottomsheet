@@ -27,13 +27,11 @@ extension hasRoundedTopCorners where Self: UIViewController {
 
 /// This is the sheet main controller. It is a pagecontroller which contains any sheetpages and will be the controller
 /// of the the sheetpages. 
-final class AlphabetController: UIPageViewController, SheetPageController, isSelfSizeable, hasRoundedTopCorners {
+final class MatchfinderSheet: UIPageViewController, SheetPageController, isSelfSizeable, hasRoundedTopCorners {
     
     // MARK: - Properties
     
     var currentNumber = 0
-    
-    // MARK: - Initializers
     
     // MARK: - Life Cycle
     
