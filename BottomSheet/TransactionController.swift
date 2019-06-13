@@ -109,7 +109,7 @@ final class TransactionController: UIViewController, isSelfSizeable {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setSize(500)
+        setSize(501) // funker internt
     }
     
     // MARK: - Methods

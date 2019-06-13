@@ -56,10 +56,10 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         let transactionController = TransactionController(String(currentNumber), delegate: self)
         setViewControllers([transactionController], direction: .forward, animated: false, completion: nil)
         navigationStack = [transactionController]
-        setSize(getSize(of: transactionController))
         
         view.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalTo(transactionController.view)
+            make.height.equalTo(transactionController.view)
         }
     }
     
@@ -70,8 +70,8 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         } else if type(of: sheet) == PickerSheet.self {
             return PickerSheet.preferredSize.height
         } else {
-            print("got size 500")
-            return 500
+            print("got size 900")
+            return 900
         }
     }
     
