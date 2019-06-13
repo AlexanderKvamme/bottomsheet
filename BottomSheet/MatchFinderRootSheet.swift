@@ -12,7 +12,7 @@ import UIKit
 
 protocol RootSheet: isSelfSizeable {
     func didTapNext()
-    func didTapBack()
+    func pop()
     func push(_ sheet: UIViewController)
     
     var scrollableSheet: ScrollableBottomSheetContainer? { get set }
@@ -34,7 +34,6 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
     
     // MARK: - Properties
     
-    private var currentNumber = 0
     private var navigationStack = [UIViewController]()
     
     weak var scrollableSheet: ScrollableBottomSheetContainer?
@@ -53,14 +52,9 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
     // MARK: - Methods
     
     private func setInitialSheet() {
-        let sheet = TransactionController(String(currentNumber), delegate: self)
+        let sheet = TransactionSheet("initial sheet", delegate: self)
         navigationStack = [sheet]
-        
-        addChild(sheet)
-        view.addSubview(sheet.view)
-        view.snp.makeConstraints { (make) in
-            make.edges.equalTo(sheet.view)
-        }
+        addSheetLayout(sheet)
     }
     
     private func getSize(of sheet: UIViewController) -> CGFloat {
@@ -76,57 +70,34 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
     }
     
     func push(_ sheet: UIViewController) {
-        print()
-        print("pushing \(type(of: sheet))")
-        print("pre push: ", navigationStack)
-        
-        // remove old sheet
+        // remove topsheet
         if let topSheet = navigationStack.last {
-            print("had something to remove")
-            topSheet.view.removeFromSuperview()
-            topSheet.removeFromParent()
-        } else {
-            print("nothing to remove")
+            removeSheetLayout(topSheet)
         }
 
-        // FIXME: Dette funker første gang. Men etter en push og en pop og så ved et nytt push så funker den ikke lenger
-        
         // add new sheet
         self.navigationStack.append(sheet)
-        addSheet(sheet)
-        sheet.view.backgroundColor = .green
-        
-        print("bam sheet height: ", sheet.view.frame)
-        print("post push: ", navigationStack)
+        addSheetLayout(sheet)
     }
     
     func popSheet() {
         // remove topsheet
-        print()
-        print("pre pop: ", navigationStack)
         if let topSheet = navigationStack.last {
-            print("had something to remove")
-            topSheet.view.removeFromSuperview()
-            topSheet.removeFromParent()
+            removeSheetLayout(topSheet)
             navigationStack.remove(at: navigationStack.index(of: topSheet)!)
-        } else {
-            print("nothing to remove")
         }
 
         // add new sheet
         guard let sheet = navigationStack.last else {
+            assertionFailure("no sheet to display after pop")
             return
         }
 
-        // FIXME: Cleanup
-        print("bam popping to sheet: ", type(of: sheet))
-        addSheet(sheet)
-        
-        scrollableSheet?.scrollToBottom()
-        print("post pop: ", navigationStack)
+        addSheetLayout(sheet)
+        scrollableSheet!.scrollToBottom()
     }
     
-    private func addSheet(_ sheet: UIViewController) {
+    private func addSheetLayout(_ sheet: UIViewController) {
         addChild(sheet)
         view.addSubview(sheet.view)
         sheet.view.snp.makeConstraints { (make) in
@@ -134,18 +105,17 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         }
     }
     
+    private func removeSheetLayout(_ sheet: UIViewController) {
+        sheet.view.removeFromSuperview()
+        sheet.removeFromParent()
+    }
+    
     func didTapNext() {
-        print("did tap next")
-        currentNumber += 1
-        // show a new viewcontroller with a higher numbere label
-//        let incrementedTransactionSheet = TransactionController(String(currentNumber), delegate: self)
-//        push(incrementedTransactionSheet)
         let pickerSheet = PickerSheet("Pick something", delegate: self)
         push(pickerSheet)
     }
     
-    func didTapBack() {
-        print("didTap back in root")
+    func pop() {
         popSheet()
     }
 }

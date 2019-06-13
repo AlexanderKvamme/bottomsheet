@@ -35,7 +35,7 @@ extension isSelfSizeable where Self: UIViewController {
 
 typealias RootSheetController = UIPageViewController & RootSheet
     
-final class TransactionController: UIViewController, isSelfSizeable {
+final class TransactionSheet: UIViewController, isSelfSizeable {
     
     // MARK: - Properties
     
@@ -68,7 +68,7 @@ final class TransactionController: UIViewController, isSelfSizeable {
         view.backgroundColor = UIColor.solarstein.sapphire
         
         headerLabel.textColor = .white
-        headerLabel.font = UIFont.systemFont(ofSize: 100)
+        headerLabel.font = UIFont.systemFont(ofSize: 32)
         headerLabel.textAlignment = .center
 
         bottomLeftButton.setTitle("Mer", for: .normal)
@@ -122,82 +122,11 @@ final class TransactionController: UIViewController, isSelfSizeable {
     }
     
     @objc func didTapMoreButton() {
-        let menuSheet = TransactionMenuSheet("MENU", delegate: sheetPageController!)
+        let menuSheet = TransactionMenuSheet("Menu", delegate: sheetPageController!)
         sheetPageController!.push(menuSheet)
     }
 }
 
-// FIXME: make smaller
-final class TransactionMenuSheet: UIViewController, isSelfSizeable {
-  
-    // MARK: - Properties
-    
-    static let preferredSize = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400)
-    private let headerLabel = UILabel()
-    private let firstButton = KRoundButton()
-    private let secondButton = KRoundButton()
-    private let backButton = KRoundButton()
-    
-    weak var rootSheetController: RootSheetController?
-    
-    // MARK: - Initializers
-    
-    init(_ string: String, delegate: RootSheetController) {
-        headerLabel.text = string
-        rootSheetController = delegate
-        
-        super.init(nibName: nil, bundle: nil)
-        
-        setup()
-    }
-    
-    private func setup() {
-        // setup header
-        headerLabel.textColor = .white
-        headerLabel.font = UIFont.systemFont(ofSize: 100)
-        headerLabel.textAlignment = .center
-        
-        // setup buttons
-        backButton.setTitle("Back", for: .normal)
-        backButton.setup(with: UIColor.solarstein.mariner.withAlphaComponent(0.05))
-        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
-        
-        // layout header
-        view.addSubview(headerLabel)
-        headerLabel.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(200)
-        }
-        
-        // layout buttons
-        view.addSubview(backButton)
-        backButton.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-24)
-            make.left.equalToSuperview().offset(24)
-            make.right.equalToSuperview().offset(-24)
-            make.height.equalTo(KRoundButton.size.height)
-        }
-        
-        view.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.equalTo(400)
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Methods
-    
-    @objc func didTapBackButton() {
-        rootSheetController?.didTapBack()
-    }
-}
 
 final class PickerSheet: UIViewController, isSelfSizeable {
     
@@ -288,7 +217,7 @@ final class PickerSheet: UIViewController, isSelfSizeable {
     
     @objc private func didTapPopButton() {
         print("pop")
-        rootSheet?.didTapBack()
+        rootSheet?.pop()
     }
 }
 
