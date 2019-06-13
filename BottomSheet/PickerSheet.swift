@@ -70,7 +70,9 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(headerLabel.snp.bottom).offset(24)
-            make.left.right.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-24)
+            make.height.equalTo(777) // to make it updatable after contentView size is updated
         }
         
         view.addSubview(popButton)
@@ -81,23 +83,21 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         }
         
         view.snp.makeConstraints { (make) in
-            make.height.equalTo(400)
             make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.greaterThanOrEqualTo(400)
         }
     }
     
-    //    override func viewDidLayoutSubviews() {
-    //        print("vdls tableView.frame.size", tableView.frame.size)
-    //        print("vdls tableView.contentSize", tableView.contentSize)
-    //
-    ////        tableView.frame.size = tableView.contentSize
-    //        tableView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 900)
-    //    }
+    override func viewDidLayoutSubviews() {
+        let contentHeight = tableView.contentSize
+        tableView.snp.updateConstraints { (make) in
+            make.height.equalTo(contentHeight)
+        }
+    }
     
     // MARK: - Private methods
     
     @objc private func didTapPopButton() {
-        print("pop")
         rootSheet?.pop()
     }
 }
