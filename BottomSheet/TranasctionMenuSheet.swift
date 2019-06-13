@@ -1,6 +1,6 @@
 //
 //  TransactionMenuSheet.swift
-//  
+//
 //
 //  Created by Amia Macone on 13/06/2019.
 //
