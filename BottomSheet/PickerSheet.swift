@@ -9,11 +9,9 @@ import Foundation
 import UIKit
 
 
-final class PickerSheet: UIViewController, isSelfSizeable {
+final class PickerSheet: UIViewController {
     
     // MARK: - Properties
-    
-    static let preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
     
     private let headerLabel = UILabel()
     private let tableView = UITableView()

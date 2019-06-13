@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-protocol RootSheet: isSelfSizeable {
+protocol RootSheet {
     func didTapNext()
     func pop()
     func push(_ sheet: UIViewController)
@@ -30,7 +30,7 @@ extension hasRoundedTopCorners where Self: UIViewController {
 
 /// This is the sheet main controller. It is a pagecontroller which contains any sheetpages and will be the controller
 /// of the the sheetpages. 
-final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeable, hasRoundedTopCorners {
+final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTopCorners {
     
     // MARK: - Properties
     
@@ -57,18 +57,6 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         addSheetLayout(sheet)
     }
     
-    private func getSize(of sheet: UIViewController) -> CGFloat {
-        if type(of: sheet) == TransactionMenuSheet.self {
-            print("got size TransactionMenuSheet.preferredSize.height")
-            return TransactionMenuSheet.preferredSize.height
-        } else if type(of: sheet) == PickerSheet.self {
-            return PickerSheet.preferredSize.height
-        } else {
-            print("got size 900")
-            return 900
-        }
-    }
-    
     func push(_ sheet: UIViewController) {
         // remove topsheet
         if let topSheet = navigationStack.last {
@@ -78,6 +66,7 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
         // add new sheet
         self.navigationStack.append(sheet)
         addSheetLayout(sheet)
+        scrollableSheet!.scrollToBottom()
     }
     
     func popSheet() {

@@ -9,11 +9,10 @@ import Foundation
 import UIKit
 
 
-final class TransactionMenuSheet: UIViewController, isSelfSizeable {
+final class TransactionMenuSheet: UIViewController {
     
     // MARK: - Properties
     
-    static let preferredSize = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400)
     private let headerLabel = UILabel()
     private let firstButton = KRoundButton()
     private let secondButton = KRoundButton()

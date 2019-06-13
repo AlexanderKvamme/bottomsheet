@@ -87,6 +87,7 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     // MARK: internal methods
     
     func scrollToBottom() {
+        print()
         print("sv.contentSize: ", scrollView.contentSize.height)
         print("sv.bounds: ", scrollView.bounds.size.height)
         print("sv.insets: ", scrollView.contentInset.top)

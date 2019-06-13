@@ -9,37 +9,12 @@
 import Foundation
 import UIKit
 
-protocol isSelfSizeable: class {
-    func setSize(_ value: CGFloat) -> Void
-    func updateSize(_ value: CGFloat) -> Void
-}
-
-extension isSelfSizeable where Self: UIViewController {
-    func setSize(_ value: CGFloat) {
-        print("gonna set size to ", value)
-        view.snp.makeConstraints{ (make) in
-            make.height.equalTo(value)
-            make.width.equalTo(UIScreen.main.bounds.width)
-        }
-    }
-    
-    func updateSize(_ value: CGFloat) {
-        print("gonna update size to ", value)
-        view.snp.updateConstraints{ (make) in
-            make.height.equalTo(value)
-            make.width.equalTo(UIScreen.main.bounds.width)
-        }
-    }
-}
-
 
 typealias RootSheetController = UIPageViewController & RootSheet
     
-final class TransactionSheet: UIViewController, isSelfSizeable {
+final class TransactionSheet: UIViewController {
     
     // MARK: - Properties
-    
-    static let preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
     
     private let headerLabel = UILabel()
     private let bottomRightButton = KRoundButton()
