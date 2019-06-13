@@ -54,6 +54,8 @@ final class TransactionController: UIViewController, isSelfSizeable {
         sheetPageController = delegate
         
         super.init(nibName: nil, bundle: nil)
+        
+        view.backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -106,10 +108,11 @@ final class TransactionController: UIViewController, isSelfSizeable {
             make.height.equalTo(40)
             make.width.equalTo(rightButtonSize)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setSize(501) // funker internt
+        
+        view.snp.makeConstraints { (make) in
+            make.height.equalTo(2000)
+            make.width.equalTo(UIScreen.main.bounds.width)
+        }
     }
     
     // MARK: - Methods
@@ -173,6 +176,11 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
             make.left.equalToSuperview().offset(24)
             make.right.equalToSuperview().offset(-24)
             make.height.equalTo(KRoundButton.size.height)
+        }
+        
+        view.snp.makeConstraints { (make) in
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(2000)
         }
     }
     
@@ -257,7 +265,8 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         print("vdls tableView.frame.size", tableView.frame.size)
         print("vdls tableView.contentSize", tableView.contentSize)
         
-        tableView.frame.size = tableView.contentSize
+//        tableView.frame.size = tableView.contentSize
+        tableView.frame.size = CGSize(width: 300, height: 900)
     }
     
     @objc func didTapNextButton() {
