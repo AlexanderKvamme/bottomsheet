@@ -17,8 +17,7 @@ final class PickerSheet: UIViewController, isSelfSizeable {
     
     private let headerLabel = UILabel()
     private let tableView = UITableView()
-    private var choices: [String] = ["Its like", "this", "and a", "that", "and a dis and a"]
-    
+    private var choices: [String] = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT"]
     private var popButton = KRoundButton()
     
     weak var rootSheet: RootSheetController?
@@ -61,11 +60,12 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         
         // setup tableview
         tableView.register(PickerCell.self, forCellReuseIdentifier: PickerCell.identifier)
-        tableView.backgroundColor = .blue
+        tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
         tableView.bounces = false
-        
+        tableView.separatorStyle = .none
+
         // layout
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -130,15 +130,7 @@ final class PickerCell: UITableViewCell {
     init() {
         super.init(style: .default, reuseIdentifier: PickerCell.identifier)
         
-        label.text = "test"
-        label.sizeToFit()
-        contentView.backgroundColor = .yellow
-        
-        contentView.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            make.top.left.right.bottom.equalToSuperview()
-            make.height.equalTo(50)
-        }
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -146,6 +138,22 @@ final class PickerCell: UITableViewCell {
     }
     
     // MARK: - Methods
+    
+    private func setup() {
+        label.text = "test"
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = .white
+        label.sizeToFit()
+        
+        backgroundColor = .clear
+        
+        contentView.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(100)
+            make.top.right.bottom.equalToSuperview()
+            make.height.equalTo(50)
+        }
+    }
     
     func update(with data: String) {
         label.text = data
