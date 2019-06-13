@@ -110,7 +110,7 @@ final class TransactionController: UIViewController, isSelfSizeable {
         }
         
         view.snp.makeConstraints { (make) in
-            make.height.equalTo(2000)
+            make.height.equalTo(501)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
     }
@@ -122,9 +122,7 @@ final class TransactionController: UIViewController, isSelfSizeable {
     }
     
     @objc func didTapMoreButton() {
-        print("did tap more")
         let menuSheet = TransactionMenuSheet("MENU", delegate: sheetPageController!)
-        sheetPageController!.setViewControllers([menuSheet], direction: .forward, animated: true, completion: nil)
         sheetPageController!.push(menuSheet)
     }
 }
@@ -149,9 +147,11 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
         rootSheetController = delegate
         
         super.init(nibName: nil, bundle: nil)
+        
+        setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    private func setup() {
         // setup header
         headerLabel.textColor = .white
         headerLabel.font = UIFont.systemFont(ofSize: 100)
@@ -180,8 +180,12 @@ final class TransactionMenuSheet: UIViewController, isSelfSizeable {
         
         view.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.equalTo(2000)
+            make.height.equalTo(400)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -205,6 +209,8 @@ final class PickerSheet: UIViewController, isSelfSizeable {
     private let tableView = UITableView()
     private var choices: [String] = ["Its like", "this", "and a", "that", "and a dis and a"]
     
+    private var popButton = KRoundButton()
+    
     weak var rootSheet: RootSheetController?
     
     // MARK: - Initializers
@@ -222,13 +228,6 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("bam tryna set size from within")
-        rootSheet!.updateSize(2000)
-    }
-    
     // MARK: - Methods
     
     private func setup() {
@@ -238,6 +237,10 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         headerLabel.font = UIFont.systemFont(ofSize: 32)
         headerLabel.textAlignment = .center
         headerLabel.text = "Pick something"
+        
+        popButton.setTitle("pop", for: .normal)
+        popButton.setup(with: .red)
+        popButton.addTarget(self, action: #selector(didTapPopButton), for: .touchUpInside)
         
         // Layout header
         view.addSubview(headerLabel)
@@ -253,31 +256,39 @@ final class PickerSheet: UIViewController, isSelfSizeable {
         tableView.delegate = self
         tableView.bounces = false
         
+        // layout
         view.addSubview(tableView)
-        
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(headerLabel.snp.bottom).offset(24)
             make.left.right.bottom.equalToSuperview()
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        print("vdls tableView.frame.size", tableView.frame.size)
-        print("vdls tableView.contentSize", tableView.contentSize)
         
-//        tableView.frame.size = tableView.contentSize
-        tableView.frame.size = CGSize(width: 300, height: 900)
+        view.addSubview(popButton)
+        popButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+            make.width.equalTo(60)
+        }
+        
+        view.snp.makeConstraints { (make) in
+            make.height.equalTo(400)
+            make.width.equalTo(UIScreen.main.bounds.width)
+        }
     }
     
-    @objc func didTapNextButton() {
-        rootSheet?.didTapNext()
-    }
+//    override func viewDidLayoutSubviews() {
+//        print("vdls tableView.frame.size", tableView.frame.size)
+//        print("vdls tableView.contentSize", tableView.contentSize)
+//
+////        tableView.frame.size = tableView.contentSize
+//        tableView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 900)
+//    }
     
-    @objc func didTapMoreButton() {
-        print("did tap more")
-        let menuSheet = TransactionMenuSheet("MENU", delegate: rootSheet!)
-        rootSheet!.setViewControllers([menuSheet], direction: .forward, animated: true, completion: nil)
-        rootSheet!.push(menuSheet)
+    // MARK: - Private methods
+    
+    @objc private func didTapPopButton() {
+        print("pop")
+        rootSheet?.didTapBack()
     }
 }
 

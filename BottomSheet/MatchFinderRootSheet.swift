@@ -53,26 +53,14 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
     // MARK: - Methods
     
     private func setInitialSheet() {
-        let transactionController = TransactionController(String(currentNumber), delegate: self)
-//        setViewControllers([transactionController], direction: .forward, animated: false, completion: nil)
-        navigationStack = [transactionController]
+        let sheet = TransactionController(String(currentNumber), delegate: self)
+        navigationStack = [sheet]
         
-        addChild(transactionController)
-        view.addSubview(transactionController.view)
+        addChild(sheet)
+        view.addSubview(sheet.view)
         view.snp.makeConstraints { (make) in
-            make.edges.equalTo(transactionController.view)
+            make.edges.equalTo(sheet.view)
         }
-
-//        present(transactionController, animated: true, completion: nil)
-        
-        
-//        view.snp.makeConstraints { (make) in
-//            make.edges.equalTo(transactionController.view)
-//        }
-        
-//        transactionController.view.snp.makeConstraints { (make) in
-//            make.top.left.right.bottom.equalTo(view)
-//        }
     }
     
     private func getSize(of sheet: UIViewController) -> CGFloat {
@@ -88,57 +76,62 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, isSelfSizeabl
     }
     
     func push(_ sheet: UIViewController) {
-//        setViewControllers([sheet], direction: .forward, animated: true, completion: nil)
-//        setViewControllers([sheet], direction: .forward, animated: true) { (finished) in
-//            print("bam finished")
-//            self.navigationStack.append(sheet)
-//            sheet.view.snp.makeConstraints { (make) in
-//                make.top.left.right.bottom.equalTo(self.view)
-//            }
-//        }
+        print()
+        print("pushing \(type(of: sheet))")
+        print("pre push: ", navigationStack)
         
-        self.navigationStack.append(sheet)
-        
-        addChild(sheet)
-        view.addSubview(sheet.view)
-        
-        sheet.view.snp.makeConstraints { (make) in
-            make.top.left.right.bottom.equalTo(view)
+        // remove old sheet
+        if let topSheet = navigationStack.last {
+            print("had something to remove")
+            topSheet.view.removeFromSuperview()
+            topSheet.removeFromParent()
+        } else {
+            print("nothing to remove")
         }
+
+        // FIXME: Dette funker første gang. Men etter en push og en pop og så ved et nytt push så funker den ikke lenger
         
-        print("updating size after push")
-        print("bam test getting height:" , sheet.view.frame.height)
-//        updateSize(sheet.view.frame.height)
+        // add new sheet
+        self.navigationStack.append(sheet)
+        addSheet(sheet)
+        sheet.view.backgroundColor = .green
         
-//        view.snp.removeConstraints()
-//        view.addSubview(sheet.view)
-//        view.snp.makeConstraints { (make) in
-//            make.top.left.right.bottom.equalTo(sheet.view)
-//            make.height.equalTo(sheet.view)
-//        }
-        
-//        sheet.view.snp.makeConstraints { (make) in
-//            make.top.left.right.bottom.equalTo(view)
-//        }
+        print("bam sheet height: ", sheet.view.frame)
+        print("post push: ", navigationStack)
     }
     
     func popSheet() {
-        guard navigationStack.count > 1 else {
+        // remove topsheet
+        print()
+        print("pre pop: ", navigationStack)
+        if let topSheet = navigationStack.last {
+            print("had something to remove")
+            topSheet.view.removeFromSuperview()
+            topSheet.removeFromParent()
+            navigationStack.remove(at: navigationStack.index(of: topSheet)!)
+        } else {
+            print("nothing to remove")
+        }
+
+        // add new sheet
+        guard let sheet = navigationStack.last else {
             return
         }
-        
-        navigationStack.remove(at: navigationStack.count-1)
-        
-        guard let topSheet = navigationStack.last else {
-            return
-        }
-        
-        setViewControllers([topSheet], direction: .reverse, animated: true, completion: nil)
-        updateSize(getSize(of: topSheet))
-        
-        print("would scroll after pop")
+
+        // FIXME: Cleanup
+        print("bam popping to sheet: ", type(of: sheet))
+        addSheet(sheet)
         
         scrollableSheet?.scrollToBottom()
+        print("post pop: ", navigationStack)
+    }
+    
+    private func addSheet(_ sheet: UIViewController) {
+        addChild(sheet)
+        view.addSubview(sheet.view)
+        sheet.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
     }
     
     func didTapNext() {
