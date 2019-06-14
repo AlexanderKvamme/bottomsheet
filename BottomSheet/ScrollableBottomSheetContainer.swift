@@ -87,15 +87,11 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     // MARK: internal methods
     
     func scrollToBottom() {
-        print()
-        print("sv.contentSize: ", scrollView.contentSize.height)
-        print("sv.bounds: ", scrollView.bounds.size.height)
-        print("sv.insets: ", scrollView.contentInset.top)
-        print("screen: ", UIScreen.main.bounds.height)
+        scrollView.layoutIfNeeded() // recalculates subviews
 
-        var targetScrollPoint = CGPoint(x: 0, y: 0)
-        targetScrollPoint.y = -scrollView.contentSize.height + 48
-        scrollView.setContentOffset(targetScrollPoint, animated: true)
+        let targetY = scrollView.contentSize.height - scrollView.bounds.height
+        scrollView.setContentOffset(CGPoint(x: 0, y: targetY), animated: true) // Dette er til bunnen av "PickerSheet"
+        
     }
     
     // MARK: - ScrollViewDelegate methods
