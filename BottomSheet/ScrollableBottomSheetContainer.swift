@@ -29,7 +29,7 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         
         super.init(nibName: nil, bundle: nil)
         
-        self.mainSheet.scrollableSheet = self
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,18 +41,20 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addSubviewsAndConstraints()
+    }
+    
+    // MARK: - private Methods
+    
+    private func setup() {
+        mainSheet.scrollableSheet = self
+        
         scrollView.contentInset.top = maxVisibleContentHeight
         scrollView.backgroundColor = .clear
         scrollView.showsVerticalScrollIndicator = true
         scrollView.decelerationRate = .fast
         scrollView.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        addSubviewsAndConstraints()
-    }
-    
-    // MARK: - private Methods
     
     private func addSubviewsAndConstraints() {
         addChild(mainSheet)
@@ -76,27 +78,22 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
         
-        // Make sure the content is always at least as high as the table view, to prevent the sheet getting stuck half-way.
-        if scrollView.contentSize.height < scrollView.bounds.height {
-            scrollView.contentSize.height = scrollView.bounds.height
+        // Make sure the content is always at least as high as the content, to prevent the sheet getting stuck half-way.
+        if self.scrollView.contentSize.height < self.scrollView.bounds.height {
+            self.scrollView.contentSize.height = self.scrollView.bounds.height
         }
         
-        scrollView.contentSize = mainSheet.view.frame.size
+        self.scrollView.contentSize = self.mainSheet.view.frame.size
     }
     
     // MARK: internal methods
     
     func scrollToBottom() {
-        
-        // FIXME: Maybe animate here
-        
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 1, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
-                self.scrollView.layoutIfNeeded() // recalculates subviews
-                let targetOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.height)
-                self.scrollView.setContentOffset(targetOffset, animated: true) // Dette er til bunnen av "PickerSheet"
-            }, completion: nil)
-        }
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.scrollView.layoutSubviews()
+            let targetOffsetToBottom = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.height)
+            self.scrollView.setContentOffset(targetOffsetToBottom, animated: true)
+        })
     }
     
     // MARK: - ScrollViewDelegate methods

@@ -29,10 +29,20 @@ final class PickerSheet: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         setup()
+        addSubviewsAndConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Overrides
+    
+    override func viewDidLayoutSubviews() {
+        let contentHeight = tableView.contentSize
+        tableView.snp.updateConstraints { (make) in
+            make.height.equalTo(contentHeight)
+        }
     }
     
     // MARK: - Methods
@@ -56,19 +66,8 @@ final class PickerSheet: UIViewController {
         tableView.delegate = self
         tableView.bounces = false
         tableView.separatorStyle = .none
-     
-        UIView.performWithoutAnimation {
-            addSubviewsAndConstraints()
-        }
     }
-    
-    override func viewDidLayoutSubviews() {
-        let contentHeight = tableView.contentSize
-        tableView.snp.updateConstraints { (make) in
-            make.height.equalTo(contentHeight)
-        }
-    }
-    
+
     // MARK: - Private methods
     
     @objc private func didTapPopButton() {

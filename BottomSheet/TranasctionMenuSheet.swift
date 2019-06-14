@@ -42,6 +42,19 @@ final class TransactionMenuSheet: UIViewController {
         backButton.setup(with: UIColor.solarstein.mariner.withAlphaComponent(0.05))
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         
+        UIView.performWithoutAnimation {
+            addSubviewsAndConstraints()
+            view.layoutIfNeeded()
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
+    
+    private func addSubviewsAndConstraints() {
         // layout header
         view.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in
@@ -60,19 +73,9 @@ final class TransactionMenuSheet: UIViewController {
         
         view.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.equalTo(400)
+            make.height.equalTo(600)
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setup()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Methods
     
     @objc func didTapBackButton() {
         rootSheetController?.pop()

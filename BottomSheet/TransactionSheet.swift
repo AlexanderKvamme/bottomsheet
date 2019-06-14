@@ -29,21 +29,24 @@ final class TransactionSheet: UIViewController {
         sheetPageController = delegate
         
         super.init(nibName: nil, bundle: nil)
+        
+        setup()
+        addSubviewsAndConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
  
-    // MARK: - Life Cycle
+    // MARK: - Methods
     
-    override func viewDidLoad() {
+    private func setup() {
         view.backgroundColor = UIColor.solarstein.sapphire
         
         headerLabel.textColor = .white
         headerLabel.font = UIFont.systemFont(ofSize: 32)
         headerLabel.textAlignment = .center
-
+        
         bottomLeftButton.setTitle("Mer", for: .normal)
         bottomLeftButton.setup(with: UIColor.solarstein.mariner.withAlphaComponent(0.05))
         bottomLeftButton.addTarget(self, action: #selector(didTapMoreButton), for: .touchUpInside)
@@ -51,7 +54,9 @@ final class TransactionSheet: UIViewController {
         bottomRightButton.setTitle("next", for: .normal)
         bottomRightButton.setup(with: UIColor.solarstein.mediumSeaGreen)
         bottomRightButton.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
-        
+    }
+    
+    private func addSubviewsAndConstraints() {
         // Layout header
         view.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in
@@ -83,12 +88,12 @@ final class TransactionSheet: UIViewController {
         }
         
         view.snp.makeConstraints { (make) in
-            make.height.equalTo(501)
+            make.height.equalTo(500)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
+        
+        view.layoutIfNeeded()
     }
-    
-    // MARK: - Methods
     
     @objc func didTapNextButton() {
         sheetPageController?.didTapNext()
@@ -99,5 +104,4 @@ final class TransactionSheet: UIViewController {
         sheetPageController!.push(menuSheet)
     }
 }
-
 
