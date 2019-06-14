@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
+		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
 		1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */; };
 		1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */; };
 		1CA6CB9A22AFD6CA00BCE420 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9922AFD6CA00BCE420 /* UIColorExtensions.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
+		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetContainer.swift; sourceTree = "<group>"; };
 		1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1CA6CB9922AFD6CA00BCE420 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
 				F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */,
 				1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */,
+				1C3DC8FC22B39ED800B0902A /* PickerCell.swift */,
 				F4EAE146210FBCFE00487323 /* AppDelegate.swift */,
 				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
 				1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */,
@@ -231,6 +234,7 @@
 				1CA6CB9A22AFD6CA00BCE420 /* UIColorExtensions.swift in Sources */,
 				1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */,
 				F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */,
+				1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */,
 				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */,
