@@ -49,13 +49,6 @@ final class PickerSheet: UIViewController {
         popButton.setup(with: .red)
         popButton.addTarget(self, action: #selector(didTapPopButton), for: .touchUpInside)
         
-        // Layout header
-        view.addSubview(headerLabel)
-        headerLabel.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(200)
-        }
-        
         // setup tableview
         tableView.register(PickerCell.self, forCellReuseIdentifier: PickerCell.identifier)
         tableView.backgroundColor = .clear
@@ -63,7 +56,32 @@ final class PickerSheet: UIViewController {
         tableView.delegate = self
         tableView.bounces = false
         tableView.separatorStyle = .none
-
+     
+        UIView.performWithoutAnimation {
+            addSubviewsAndConstraints()
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let contentHeight = tableView.contentSize
+        tableView.snp.updateConstraints { (make) in
+            make.height.equalTo(contentHeight)
+        }
+    }
+    
+    // MARK: - Private methods
+    
+    @objc private func didTapPopButton() {
+        rootSheet?.pop()
+    }
+    
+    private func addSubviewsAndConstraints() {
+        // Layout header
+        view.addSubview(headerLabel)
+        headerLabel.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(200)
+        }
         // layout
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -84,23 +102,8 @@ final class PickerSheet: UIViewController {
             make.width.equalTo(UIScreen.main.bounds.width)
         }
         
-        UIView.performWithoutAnimation {
-            view.layoutIfNeeded()
-            tableView.reloadData()
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        let contentHeight = tableView.contentSize
-        tableView.snp.updateConstraints { (make) in
-            make.height.equalTo(contentHeight)
-        }
-    }
-    
-    // MARK: - Private methods
-    
-    @objc private func didTapPopButton() {
-        rootSheet?.pop()
+        view.layoutIfNeeded()
+        tableView.reloadData()
     }
 }
 
