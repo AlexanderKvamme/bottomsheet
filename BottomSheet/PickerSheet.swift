@@ -16,7 +16,6 @@ final class PickerSheet: UIViewController {
     private let headerLabel = UILabel()
     private let tableView = UITableView()
     private var choices: [String]
-    private var popButton = KRoundButton()
     
     weak var rootSheet: RootSheetController!
     
@@ -56,10 +55,6 @@ final class PickerSheet: UIViewController {
         headerLabel.textAlignment = .center
         headerLabel.text = "Pick something"
         
-        popButton.setTitle("pop", for: .normal)
-        popButton.setup(with: .red)
-        popButton.addTarget(self, action: #selector(didTapPopButton), for: .touchUpInside)
-        
         // setup tableview
         tableView.register(PickerCell.self, forCellReuseIdentifier: PickerCell.identifier)
         tableView.backgroundColor = .clear
@@ -71,10 +66,6 @@ final class PickerSheet: UIViewController {
 
     // MARK: - Private methods
     
-    @objc private func didTapPopButton() {
-        rootSheet?.pop()
-    }
-    
     private func addSubviewsAndConstraints() {
         // Layout header
         view.addSubview(headerLabel)
@@ -82,6 +73,7 @@ final class PickerSheet: UIViewController {
             make.top.left.right.equalToSuperview()
             make.height.equalTo(200)
         }
+        
         // layout
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -91,19 +83,12 @@ final class PickerSheet: UIViewController {
             make.height.equalTo(777) // to make it updatable after contentView size is updated
         }
         
-        view.addSubview(popButton)
-        popButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(16)
-            make.right.equalToSuperview().offset(-16)
-            make.width.equalTo(60)
-        }
-        
         view.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.main.bounds.width)
         }
-        
-        view.layoutIfNeeded()
+
         tableView.reloadData()
+        view.layoutIfNeeded()
     }
 }
 
