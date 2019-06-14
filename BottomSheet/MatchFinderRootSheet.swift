@@ -43,9 +43,6 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     override func viewDidLoad() {
         view.backgroundColor = UIColor.solarstein.sapphire
         roundTopCorners()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         setInitialSheet()
     }
     

@@ -82,7 +82,11 @@ final class PickerSheet: UIViewController {
         
         view.snp.makeConstraints { (make) in
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.greaterThanOrEqualTo(400)
+        }
+        
+        UIView.performWithoutAnimation {
+            view.layoutIfNeeded()
+            tableView.reloadData()
         }
     }
     
