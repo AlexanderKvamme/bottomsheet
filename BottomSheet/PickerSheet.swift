@@ -15,15 +15,16 @@ final class PickerSheet: UIViewController {
     
     private let headerLabel = UILabel()
     private let tableView = UITableView()
-    private var choices: [String] = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT"]
+    private var choices: [String]
     private var popButton = KRoundButton()
     
     weak var rootSheet: RootSheetController!
     
     // MARK: - Initializers
     
-    init(_ string: String, delegate: RootSheetController) {
+    init(_ string: String, choices: [String], delegate: RootSheetController) {
         headerLabel.text = string
+        self.choices = choices
         rootSheet = delegate
         
         super.init(nibName: nil, bundle: nil)
@@ -121,7 +122,7 @@ extension PickerSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newSheet = TransactionSheet("new sheet", delegate: rootSheet)
+        let newSheet = TransactionSheet(choices[indexPath.row], delegate: rootSheet)
         rootSheet?.push(newSheet)
     }
 }
