@@ -18,7 +18,7 @@ final class PickerSheet: UIViewController {
     private var choices: [String] = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT"]
     private var popButton = KRoundButton()
     
-    weak var rootSheet: RootSheetController?
+    weak var rootSheet: RootSheetController!
     
     // MARK: - Initializers
     
@@ -113,6 +113,11 @@ extension PickerSheet: UITableViewDataSource, UITableViewDelegate {
         cell.update(with: choices[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newSheet = TransactionSheet("new sheet", delegate: rootSheet)
+        rootSheet?.push(newSheet)
+    }
 }
 
 final class PickerCell: UITableViewCell {
@@ -144,6 +149,7 @@ final class PickerCell: UITableViewCell {
         label.sizeToFit()
         
         backgroundColor = .clear
+        selectionStyle = .none
         
         contentView.addSubview(label)
         label.snp.makeConstraints { (make) in
