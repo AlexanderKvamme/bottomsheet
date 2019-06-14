@@ -79,7 +79,7 @@ final class PickerSheet: UIViewController {
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(headerLabel.snp.bottom).offset(24)
             make.left.right.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview().offset(-48)
             make.height.equalTo(777) // to make it updatable after contentView size is updated
         }
         
