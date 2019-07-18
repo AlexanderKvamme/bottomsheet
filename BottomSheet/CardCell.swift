@@ -101,8 +101,7 @@ final class TransactionCardView: UIView {
     }
     
     private func style() {
-        // add border
-        let clr = UIColor.hex("FFFCF9").withAlphaComponent(0.1)
+        let clr = UIColor.hex("FFFCF9").withAlphaComponent(0.03)
         layer.borderColor = clr.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 20
