@@ -45,7 +45,8 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
         headerLabel.textAlignment = .center
         
         // setup buttons
-        backButton.setTitle("SNAPBACK", for: .normal)
+        backButton.setTitle("TILBAKE", for: .normal)
+        backButton.titleLabel?.setCharacterSpacing(1)
         backButton.setup(with: UIColor.solarstein.mariner.withAlphaComponent(0.05))
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         
@@ -131,6 +132,4 @@ final class TransactionCardModel {
     // MARK: - Methods
     
 }
-
-
 

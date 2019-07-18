@@ -49,7 +49,8 @@ final class TransactionStatusView: UIView {
         headerLabel.textColor = UIColor.solarstein.seashell
         
         subheaderLabel.text = "Trykk for å komme i gang"
-        subheaderLabel.font = UIFont.kolibrix.body
+        subheaderLabel.font = UIFont.kolibrix.small
+        subheaderLabel.alpha = 0.2
         subheaderLabel.textColor = UIColor.solarstein.seashell
         
         backgroundColor = UIColor.solarstein.sapphire

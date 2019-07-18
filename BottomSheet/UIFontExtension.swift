@@ -20,6 +20,7 @@ extension UIFont {
         static let subheader =  sofia(style: .bold, ofSize: 24)
         static let bold =       sofia(style: .bold, ofSize: 16)
         static let body =       sofia(style: .regular, ofSize: 16)
+        static let small =       sofia(style: .regular, ofSize: 12)
     }
     
     enum FontWeight: String {

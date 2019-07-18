@@ -14,7 +14,7 @@ final class KRoundButton: UIButton {
     
     // MARK: - Properties
     
-    static var size = CGSize(width: 200, height: 40)
+    static var size = CGSize(width: 200, height: 48)
     
     // MARK: - Initializers
     
@@ -26,12 +26,12 @@ final class KRoundButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
-    
     // MARK: - Methods
     
     func setup(with color: UIColor) {
         backgroundColor = color
         layer.cornerRadius = 20
+        titleLabel?.font = UIFont.kolibrix.bold
+        titleLabel?.alpha = 0.2
     }
 }
