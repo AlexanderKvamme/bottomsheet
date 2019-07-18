@@ -12,13 +12,17 @@ import UIKit
 
 typealias mainSheetType = UIPageViewController & RootSheet
 
+enum SheetTopVisibility: CGFloat {
+    case minimum = 120
+    case visibleHeader = 200
+}
+
 /// This class controls anything related to the scrolling of a bottomsheet
 final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelegate, BottomSheet {
 
     // MARK: - Properties
     
-    private var maxVisibleContentHeight: CGFloat = UIScreen.main.bounds.height - 200 // FIXME: clean up. Spacing fra toppen
-    
+    var sheetTopVisibility = SheetTopVisibility.minimum
     var bottomSheetDelegate: BottomSheetDelegate?
     private var scrollView = UIScrollView()
     private var mainSheet: mainSheetType
@@ -50,7 +54,7 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     private func setup() {
         mainSheet.scrollableSheet = self
         
-        scrollView.contentInset.top = maxVisibleContentHeight
+        scrollView.contentInset.top = getMaxVisibleContentHeight()
         scrollView.backgroundColor = .clear
         scrollView.showsVerticalScrollIndicator = true
         scrollView.decelerationRate = .fast
@@ -70,6 +74,10 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         scrollView.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }
+    }
+    
+    private func getMaxVisibleContentHeight() -> CGFloat {
+        return UIScreen.main.bounds.height - sheetTopVisibility.rawValue
     }
         
     // MARK: overridden methods
@@ -106,15 +114,19 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let targetOffset = targetContentOffset.pointee.y
         let pulledUpOffset: CGFloat = -200
-        let pulledDownOffset: CGFloat = -maxVisibleContentHeight
+        let pulledDownOffset: CGFloat = -getMaxVisibleContentHeight()
         
         if (pulledDownOffset...pulledUpOffset).contains(targetOffset) {
             if velocity.y < 0 {
                 targetContentOffset.pointee.y = pulledDownOffset
+                print("pulledDownOffset: ", pulledDownOffset)
+                // HER
             } else {
                 targetContentOffset.pointee.y = pulledUpOffset
+                print("pulledUpOffset: ", pulledUpOffset)
             }
         }
     }
+    
 }
 
