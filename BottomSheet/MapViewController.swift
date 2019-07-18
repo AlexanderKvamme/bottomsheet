@@ -15,5 +15,4 @@ class MapViewController: UIViewController {
         view.addSubview(mapView)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-    
 }

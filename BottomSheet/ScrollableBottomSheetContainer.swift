@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 typealias mainSheetType = UIPageViewController & RootSheet
 
 /// This class controls anything related to the scrolling of a bottomsheet
