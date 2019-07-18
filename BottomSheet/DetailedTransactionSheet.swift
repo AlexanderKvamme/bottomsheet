@@ -101,20 +101,30 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
     }
     
     private func makeDummyCard() -> TransactionCardView {
-        return TransactionCardView()
+        let model = TransactionCardModel(title: "Barnehagedørprodusenten AS", value: "399 kr", tax: "Legg til MVA", account: "Legg til konto")
+        let cardView = TransactionCardView()
+        cardView.update(with: model)
+        return cardView
     }
 }
 
 
 final class TransactionCardModel {
-    
+
     // MARK: - Properties
+    
+    let title: String
+    let value: String
+    let tax: String
+    let account: String
     
     // MARK: - Initializers
     
-    // MARK: - Life Cycle
-    
-    // MARK: - Methods
-    
+    init(title: String, value: String, tax: String, account: String) {
+        self.title = title
+        self.value = value
+        self.tax = tax
+        self.account = account
+    }
 }
 

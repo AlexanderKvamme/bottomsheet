@@ -119,11 +119,8 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         if (pulledDownOffset...pulledUpOffset).contains(targetOffset) {
             if velocity.y < 0 {
                 targetContentOffset.pointee.y = pulledDownOffset
-                print("pulledDownOffset: ", pulledDownOffset)
-                // HER
             } else {
                 targetContentOffset.pointee.y = pulledUpOffset
-                print("pulledUpOffset: ", pulledUpOffset)
             }
         }
     }

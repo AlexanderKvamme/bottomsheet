@@ -33,6 +33,16 @@ final class TransactionCardView: UIView {
         style()
     }
     
+    init(with model: TransactionCardModel) {
+        super.init(frame: .zero)
+        
+        setup()
+        addSubviewsAndConstraints()
+        style()
+        
+        update(with: model)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -118,6 +128,13 @@ final class TransactionCardView: UIView {
         layer.shadowRadius = 30
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.15
+    }
+    
+    func update(with model: TransactionCardModel) {
+        headerLabel.text = model.title
+        valueLabel.text = model.value
+        mvaLabel.text = model.tax
+        accountLabel.text = model.account
     }
 }
 
