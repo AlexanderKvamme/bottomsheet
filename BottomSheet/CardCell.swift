@@ -107,37 +107,15 @@ final class TransactionCardView: UIView {
         layer.borderWidth = 1
         layer.cornerRadius = 20
     }
-}
-
-final class CardCell: UICollectionViewCell {
     
-    // MARK: - Properties
-    
-    static let identifier = "Card cell"
-    static let estimatedItemSize = CGSize(width: UIScreen.main.bounds.width-32*2, height: 160)
-    
-    // MARK: - Initializers
-    
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-
-        contentView.snp.makeConstraints { (make) in
-            make.size.equalTo(CardCell.estimatedItemSize)
-            make.edges.equalToSuperview()
-        }
-        
-        layer.cornerRadius = 20
-        
-        alpha = 0.5
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: Methods
-    
-    func setFaded(_ b: Bool) {
-        alpha = b ? 0.5 : 1
+    func addShadow() {
+        let size = TransactionCardView.estimatedItemSize
+        frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let contactRect = CGRect(x: 0, y: 24, width: frame.width, height: frame.height)
+        layer.shadowPath = UIBezierPath(rect: contactRect).cgPath
+        layer.shadowRadius = 30
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.15
     }
 }
+

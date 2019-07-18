@@ -94,6 +94,8 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
             make.centerX.equalToSuperview()
             make.size.equalTo(TransactionCardView.estimatedItemSize)
         }
+        
+        transactionCardView.addShadow()
     }
     
     private func makeDummyCard() -> TransactionCardView {

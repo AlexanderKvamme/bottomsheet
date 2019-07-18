@@ -30,6 +30,7 @@
 		1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* CardCell.swift */; };
 		1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DF22E079E000701DF3 /* DateView.swift */; };
 		1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6E022E079E000701DF3 /* CardStatusIndicator.swift */; };
+		1CF6D6E522E0909300701DF3 /* ContactShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6E422E0909300701DF3 /* ContactShadowView.swift */; };
 		5431D893033552C6A54C57A0 /* Pods_BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		1CF6D6DE22E079DF00701DF3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		1CF6D6DF22E079E000701DF3 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		1CF6D6E022E079E000701DF3 /* CardStatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStatusIndicator.swift; sourceTree = "<group>"; };
+		1CF6D6E422E0909300701DF3 /* ContactShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactShadowView.swift; sourceTree = "<group>"; };
 		4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE982F4F1298548A5DE0B89 /* Pods-BottomSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.release.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.release.xcconfig"; sourceTree = "<group>"; };
 		EF84516C5D6E94C9EBA1D170 /* Pods-BottomSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.debug.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */,
 				1C6E63CF22E06EF1002DC799 /* BottomSheetContainerView.swift */,
 				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
+				1CF6D6E422E0909300701DF3 /* ContactShadowView.swift */,
 				1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */,
 				1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */,
 				F4EAE158210FBD4100487323 /* MapViewController.swift */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF6D6E522E0909300701DF3 /* ContactShadowView.swift in Sources */,
 				1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */,
 				1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */,
 				1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */,
