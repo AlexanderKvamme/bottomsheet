@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-final class PickerSheet: UIViewController {
+final class PickerSheet: UIViewController, HasHorizontalSheetIndicator {
     
     // MARK: - Properties
     
@@ -67,6 +67,8 @@ final class PickerSheet: UIViewController {
     // MARK: - Private methods
     
     private func addSubviewsAndConstraints() {
+        addHorizontalDragIndicator()
+    
         // Layout header
         view.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in

@@ -12,7 +12,7 @@ import UIKit
 
 typealias RootSheetController = UIPageViewController & RootSheet
     
-final class TransactionSheet: UIViewController {
+final class TransactionSheet: UIViewController, HasHorizontalSheetIndicator {
     
     // MARK: - Properties
     
@@ -57,6 +57,8 @@ final class TransactionSheet: UIViewController {
     }
     
     private func addSubviewsAndConstraints() {
+        addHorizontalDragIndicator()
+        
         // Layout header
         view.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in

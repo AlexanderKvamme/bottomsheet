@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-final class TransactionMenuSheet: UIViewController {
+final class TransactionMenuSheet: UIViewController, HasHorizontalSheetIndicator {
     
     // MARK: - Properties
     
@@ -29,6 +29,8 @@ final class TransactionMenuSheet: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         setup()
+        
+        addHorizontalDragIndicator()
     }
     
     private func setup() {

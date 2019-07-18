@@ -46,7 +46,7 @@ final class PickerCell: UITableViewCell {
         label.snp.makeConstraints { (make) in
             make.left.equalTo(checkbox.snp.right).offset(16)
             make.top.right.bottom.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(40)
         }
         
         checkbox.snp.makeConstraints { (make) in
