@@ -14,7 +14,6 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
 
     // MARK: - Properties
     
-    private let headerLabel = UILabel()
     private let firstButton = KRoundButton()
     private let secondButton = KRoundButton()
     private let backButton = KRoundButton()
@@ -26,7 +25,6 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
     // MARK: - Initializers
     
     init(_ string: String, delegate: RootSheetController) {
-        headerLabel.text = string
         rootSheetController = delegate
         
         super.init(nibName: nil, bundle: nil)
@@ -39,11 +37,6 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
     }
     
     private func setup() {
-        // setup header
-        headerLabel.textColor = .white
-        headerLabel.font = UIFont.systemFont(ofSize: 32)
-        headerLabel.textAlignment = .center
-        
         // setup buttons
         backButton.setTitle("TILBAKE", for: .normal)
         backButton.titleLabel?.setCharacterSpacing(1)
@@ -63,14 +56,6 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
     // MARK: - Methods
     
     private func addSubviewsAndConstraints() {
-        // layout header
-        view.addSubview(headerLabel)
-        headerLabel.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(200)
-        }
-        
-        // layout buttons
         view.addSubview(backButton)
         backButton.snp.makeConstraints { (make) in
             make.bottom.equalToSuperview().offset(-24)
@@ -94,7 +79,7 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
         
         view.addSubview(transactionCardView)
         transactionCardView.snp.makeConstraints { (make) in
-            make.top.equalTo(headerLabel.snp.bottom).offset(0)
+            make.top.equalToSuperview().offset(SheetTopVisibility.minimum.rawValue-40)
             make.centerX.equalToSuperview()
             make.size.equalTo(TransactionCardView.estimatedItemSize)
         }
