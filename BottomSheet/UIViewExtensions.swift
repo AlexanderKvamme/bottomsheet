@@ -35,4 +35,20 @@ extension UIView {
         let maskedCorners: CACornerMask = CACornerMask(rawValue: createMask(corners: corners))
         layer.maskedCorners = maskedCorners
     }
+    
+    // MARK: - Subtle shake animation
+    
+    @objc func shakeByX() {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        let distance: CGFloat = 3
+        animation.duration = 0.04
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - distance, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + distance, y: self.center.y))
+        self.layer.add(animation, forKey: "position")
+    }
 }

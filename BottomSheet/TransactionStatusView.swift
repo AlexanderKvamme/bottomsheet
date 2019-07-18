@@ -53,6 +53,9 @@ final class TransactionStatusView: UIView {
         subheaderLabel.textColor = UIColor.solarstein.seashell
         
         backgroundColor = UIColor.solarstein.sapphire
+        
+        let tapGesture = UITapGestureRecognizer(target: self as UIView, action: #selector(shakeByX))
+        addGestureRecognizer(tapGesture)
     }
     
     private func addSubviewsAndConstraints() {

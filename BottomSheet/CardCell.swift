@@ -57,6 +57,9 @@ final class TransactionCardView: UIView {
         accountLabel.text = "Legg til konto"
         
         backgroundColor = UIColor.solarstein.sapphire
+        
+        let tapGesture = UITapGestureRecognizer(target: self as UIView, action: #selector(shakeByX))
+        addGestureRecognizer(tapGesture)
     }
     
     private func addSubviewsAndConstraints() {
