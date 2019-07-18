@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         let mapViewController = MapViewController()
-        let matchFinderController = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        let bottomSheetContainer = ScrollableBottomSheetContainer(matchFinderController)
+        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
         window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController,
                                                                        sheetViewController: bottomSheetContainer)
         window.makeKeyAndVisible()

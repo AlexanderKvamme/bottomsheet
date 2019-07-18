@@ -49,7 +49,7 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     // MARK: - Methods
     
     private func setInitialSheet() {
-        let sheet = TransactionSheet("initial sheet", delegate: self)
+        let sheet = DetailedTransactionSheet("Mic Check", delegate: self)
         navigationStack = [sheet]
         addSheetLayout(sheet)
     }
@@ -67,16 +67,16 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     }
     
     func popSheet() {
+        // add new sheet
+        guard let sheet = navigationStack.last else {
+            print("no sheet to display after pop")
+            return
+        }
+        
         // remove topsheet
         if let topSheet = navigationStack.last {
             removeSheetLayout(topSheet)
             navigationStack.remove(at: navigationStack.index(of: topSheet)!)
-        }
-
-        // add new sheet
-        guard let sheet = navigationStack.last else {
-            assertionFailure("no sheet to display after pop")
-            return
         }
 
         addSheetLayout(sheet)

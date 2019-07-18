@@ -81,5 +81,5 @@ final class TransactionMenuSheet: UIViewController, HasHorizontalSheetIndicator 
     
     @objc func didTapBackButton() {
         rootSheetController?.pop()
-    }
+    }   
 }

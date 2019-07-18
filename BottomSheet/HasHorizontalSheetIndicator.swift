@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 protocol HasHorizontalSheetIndicator: UIViewController {}
 
 extension HasHorizontalSheetIndicator {

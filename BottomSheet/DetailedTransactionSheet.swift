@@ -32,6 +32,7 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
         setup()
         
         addHorizontalDragIndicator()
+        addTransactionCard()
     }
     
     private func setup() {
@@ -84,5 +85,34 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
         rootSheetController?.pop()
     }
     
+    private func addTransactionCard() {
+        let transactionCardView = makeDummyCard()
+        
+        view.addSubview(transactionCardView)
+        transactionCardView.snp.makeConstraints { (make) in
+            make.top.equalTo(headerLabel.snp.bottom).offset(0)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(TransactionCardView.estimatedItemSize)
+        }
+    }
+    
+    private func makeDummyCard() -> TransactionCardView {
+        return TransactionCardView()
+    }
 }
+
+
+final class TransactionCardModel {
+    
+    // MARK: - Properties
+    
+    // MARK: - Initializers
+    
+    // MARK: - Life Cycle
+    
+    // MARK: - Methods
+    
+}
+
+
 
