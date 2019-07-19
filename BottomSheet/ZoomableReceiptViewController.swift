@@ -32,3 +32,12 @@ class ZoomableReceiptViewController: UIViewController {
     }
 }
 
+// MARK: - SheetScrollResponder Conformance
+
+extension ZoomableReceiptViewController: SheetScrollResponder {
+    func bottomsheetDidScrollTo(_ value: CGPoint) {
+        let percentage = (value.y * -1)/768
+        imagePreview.coloredOverlay.alpha = 1-percentage
+    }
+}
+

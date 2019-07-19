@@ -5,15 +5,19 @@
 import UIKit
 import SnapKit
 
+protocol SheetScrollResponder: UIViewController {
+    func bottomsheetDidScrollTo(_ value: CGPoint)
+}
 
 class BottomSheetContainerViewController: UIViewController {
 
-    private let mainViewController: UIViewController
+//    private let mainViewController: UIViewController
+    private let mainViewController: SheetScrollResponder
     private let sheetViewController: BottomSheetViewController
     private lazy var bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view,
                                                                          sheetView: sheetViewController.view)
     
-    init(mainViewController: UIViewController, sheetViewController: BottomSheetViewController) {
+    init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
         self.mainViewController = mainViewController
         self.sheetViewController = sheetViewController
         
@@ -44,5 +48,6 @@ class BottomSheetContainerViewController: UIViewController {
 extension BottomSheetContainerViewController: BottomSheetDelegate {
     func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint) {
         bottomSheetContainerView.topDistance = max(0, -contentOffset.y)
+        mainViewController.bottomsheetDidScrollTo(contentOffset)
     }
 }

@@ -20,6 +20,7 @@ class SImagePreview: UIView {
     private var scrollView: UIScrollView = UIScrollView()
     private var originalCellFrame: CGRect
     private var xButton = SShadowButton()
+    let coloredOverlay = UIView()
     
     private var isAnimating = false
     
@@ -45,6 +46,7 @@ class SImagePreview: UIView {
         setupScrollView()
         setupImageView()
         setupXButton()
+        setupOverlay()
         
         addSubviewsAndConstraints()
     }
@@ -72,8 +74,14 @@ class SImagePreview: UIView {
         xButton.tintColor = .white
     }
     
+    private func setupOverlay() {
+        coloredOverlay.backgroundColor = UIColor.solarstein.sapphire
+        coloredOverlay.alpha = 0.4
+        coloredOverlay.isUserInteractionEnabled = false
+    }
+    
     private func addSubviewsAndConstraints() {
-        [scrollView, xButton].forEach({ addSubview($0) })
+        [scrollView, coloredOverlay, xButton].forEach({ addSubview($0) })
         
         scrollView.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
@@ -82,6 +90,10 @@ class SImagePreview: UIView {
         imageView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
             make.size.equalToSuperview()
+        }
+        
+        coloredOverlay.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
         xButton.snp.makeConstraints { (make) in
