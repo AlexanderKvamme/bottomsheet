@@ -13,10 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let mapViewController = MapViewController()
+//        let receiptViewController = DummyReceiptViewController()
+//        let receiptViewController = SImagePreview(for: UIImage.init(named: "receiptExample")!, from: CGRect.zero)
+        let receiptViewController = ZoomableReceiptViewController()
         let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
-        window.rootViewController = BottomSheetContainerViewController(mainViewController: mapViewController,
+        window.rootViewController = BottomSheetContainerViewController(mainViewController: receiptViewController,
                                                                        sheetViewController: bottomSheetContainer)
         window.makeKeyAndVisible()
         self.window = window
