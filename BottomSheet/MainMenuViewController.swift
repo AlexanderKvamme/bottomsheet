@@ -18,6 +18,7 @@ final class MainMenuViewController: UIViewController {
     private var settingsIcon = UIImageView()
     private var cameraIcon = UIImageView()
     private var dataSourceAndDelegate = ModulesDataSourceAndDelegate()
+    private var userGuideCard: UserGuideCard?
     
     // MARK: - Initializers
     
@@ -27,6 +28,11 @@ final class MainMenuViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         view.backgroundColor = UIColor.solarstein.seashell
+        
+        let userGuideModel = UserGuideModel(badgeValue: 6)
+        userGuideCard = UserGuideCard(userGuideModel: userGuideModel)
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shakeUserGuide))
+        userGuideCard?.addGestureRecognizer(tapRecognizer)
         
         setup()
         addSubviewsAndConstraints()
@@ -42,6 +48,10 @@ final class MainMenuViewController: UIViewController {
         super.viewWillAppear(true)
 
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     // MARK: - Methods
@@ -77,6 +87,22 @@ final class MainMenuViewController: UIViewController {
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview().offset(-100)
         }
+        
+        // FIXME: Find better solution
+        
+        if let card = userGuideCard {
+            view.addSubview(card)
+            card.snp.makeConstraints { (make) in
+                make.centerX.equalToSuperview()
+                make.width.equalTo(360)
+                make.height.equalTo(100)
+                make.top.equalToSuperview().offset(120)
+            }
+        }
+    }
+    
+    @objc private func shakeUserGuide() {
+        userGuideCard?.shakeByX()
     }
 }
 

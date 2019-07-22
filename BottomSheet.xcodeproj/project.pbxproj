@@ -21,6 +21,8 @@
 		1C6E63E422E0704F002DC799 /* Sofia Pro Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DF22E0704F002DC799 /* Sofia Pro Light.ttf */; };
 		1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63E522E07067002DC799 /* UIFontExtension.swift */; };
 		1C6E63E822E070A6002DC799 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */; };
+		1CA434E222E5EDB0000C6753 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434E122E5EDAF000C6753 /* ModuleCell.swift */; };
+		1CA434E422E5EDB2000C6753 /* UserGuideCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434E322E5EDB1000C6753 /* UserGuideCard.swift */; };
 		1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */; };
 		1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */; };
 		1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */; };
@@ -72,6 +74,8 @@
 		1C6E63DF22E0704F002DC799 /* Sofia Pro Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Light.ttf"; sourceTree = "<group>"; };
 		1C6E63E522E07067002DC799 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = ../../horizontalcards/horizontalcards/horizontalcards/UIColorExtensions.swift; sourceTree = "<group>"; };
+		1CA434E122E5EDAF000C6753 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
+		1CA434E322E5EDB1000C6753 /* UserGuideCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserGuideCard.swift; path = /Users/amiamacone/Documents/workspaces/code/other/bottomsheets/BottomSheet/UserGuideCard.swift; sourceTree = "<absolute>"; };
 		1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetContainer.swift; sourceTree = "<group>"; };
 		1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		F4EAE145210FBCFE00487323 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				1CA434E322E5EDB1000C6753 /* UserGuideCard.swift */,
+				1CA434E122E5EDAF000C6753 /* ModuleCell.swift */,
 				1CF6D70822E5D19600701DF3 /* ModuleCellView.swift */,
 				1CF6D70622E5CA7800701DF3 /* ModuleCell.swift */,
 				DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */,
@@ -340,6 +346,7 @@
 				1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */,
 				1CF6D6F122E0C74A00701DF3 /* ZoomableReceiptViewController.swift in Sources */,
 				1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */,
+				1CA434E422E5EDB2000C6753 /* UserGuideCard.swift in Sources */,
 				1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */,
 				1CF6D6FD22E5B22700701DF3 /* ModulesDataSourceAndDelegate.swift in Sources */,
 				1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */,
@@ -365,6 +372,7 @@
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
+				1CA434E222E5EDB0000C6753 /* ModuleCell.swift in Sources */,
 				1CF6D70722E5CA7900701DF3 /* ModuleCell.swift in Sources */,
 				DDD7DF3A22E3ACBA00883D0D /* Coordinator.swift in Sources */,
 				1CF6D70522E5CA4000701DF3 /* ModuleModel.swift in Sources */,

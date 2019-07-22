@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/amiamacone/Documents/workspaces/code/other/bottomsheets/BottomSheet/UserGuideCard.swift">
+   </FileRef>
+   <FileRef
       location = "group:BottomSheet.xcodeproj">
    </FileRef>
    <FileRef
