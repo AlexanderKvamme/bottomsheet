@@ -11,25 +11,6 @@ import Foundation
 import UIKit
 
 
-
-
-
-final class TestViewController: UIViewController {
-    
-    var coordinator: Coordinator!
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        
-        view.backgroundColor = .green
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
 protocol AuthCoordinatorDelegate {
     func logIn()
 }
@@ -82,7 +63,7 @@ final class MainCoordinator: Coordinator {
     }
     
     private func showContent() {
-        let vc = TestViewController()
+        let vc = MainMenuViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
         
