@@ -39,6 +39,8 @@
 		1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6F422E1CE0800701DF3 /* SShadowButton.swift */; };
 		1CF6D6F722E1CE4600701DF3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6F622E1CE4600701DF3 /* Device.swift */; };
 		5431D893033552C6A54C57A0 /* Pods_BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */; };
+		DDD7DF3822E3816C00883D0D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7DF3722E3816C00883D0D /* MainCoordinator.swift */; };
+		DDD7DF3A22E3ACBA00883D0D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
 		F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE158210FBD4100487323 /* MapViewController.swift */; };
@@ -80,6 +82,8 @@
 		1CF6D6F622E1CE4600701DF3 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE982F4F1298548A5DE0B89 /* Pods-BottomSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.release.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.release.xcconfig"; sourceTree = "<group>"; };
+		DDD7DF3722E3816C00883D0D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EF84516C5D6E94C9EBA1D170 /* Pods-BottomSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.debug.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.debug.xcconfig"; sourceTree = "<group>"; };
 		F4EAE143210FBCFE00487323 /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAE146210FBCFE00487323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		F4EAE13A210FBCFE00487323 = {
 			isa = PBXGroup;
 			children = (
+				DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */,
 				F4EAE160211508DE00487323 /* README.md */,
 				F4EAE145210FBCFE00487323 /* BottomSheet */,
 				F4EAE144210FBCFE00487323 /* Products */,
@@ -163,6 +168,7 @@
 				1CF6D6EC22E0B42100701DF3 /* UILabelExtensions.swift */,
 				1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */,
 				F4EAE158210FBD4100487323 /* MapViewController.swift */,
+				DDD7DF3722E3816C00883D0D /* MainCoordinator.swift */,
 				1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */,
 				1C6E63E522E07067002DC799 /* UIFontExtension.swift */,
 				1C6E63DE22E0704F002DC799 /* Sofia Pro Bold.ttf */,
@@ -315,6 +321,7 @@
 				1CF6D6F722E1CE4600701DF3 /* Device.swift in Sources */,
 				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
+				DDD7DF3822E3816C00883D0D /* MainCoordinator.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */,
@@ -325,6 +332,7 @@
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
+				DDD7DF3A22E3ACBA00883D0D /* Coordinator.swift in Sources */,
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */,
 				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
