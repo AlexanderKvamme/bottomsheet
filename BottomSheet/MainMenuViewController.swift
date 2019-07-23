@@ -62,8 +62,13 @@ final class MainMenuViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.isScrollEnabled = false
         
-        settingsIcon.image = UIImage(named: "icon-settings")
         cameraIcon.image = UIImage(named: "icon-camera")
+        
+        // Settings button
+        settingsIcon.image = UIImage(named: "icon-settings")
+        let tapRec = UITapGestureRecognizer(target: self, action: #selector(showSettingsController))
+        settingsIcon.addGestureRecognizer(tapRec)
+        settingsIcon.isUserInteractionEnabled = true
     }
     
     private func addSubviewsAndConstraints() {
@@ -103,6 +108,13 @@ final class MainMenuViewController: UIViewController {
     
     @objc private func shakeUserGuide() {
         userGuideCard?.shakeByX()
+    }
+    
+    @objc private func showSettingsController() {
+        print("would show settings")
+
+        let settingsCoordinator = SettingsCoordinator(navigationController: navigationController!)
+        settingsCoordinator.start()
     }
 }
 

@@ -1,8 +1,9 @@
 //
 //  UserGuideCard.swift
-//  
+//  BottomSheet
 //
-//  Created by Amia Macone on 22/07/2019.
+//  Created by Amia Macone on 23/07/2019.
+//  Copyright © 2019 Simon Kågedal Reimer. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +15,7 @@ struct UserGuideModel {
 }
 
 final class UserGuideCard: UIView {
-
+    
     // MARK: - Properties
     
     private var model: UserGuideModel

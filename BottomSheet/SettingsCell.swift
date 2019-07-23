@@ -1,5 +1,5 @@
 //
-//  ModuleCell.swift
+//  SettingsCell.swift
 //  BottomSheet
 //
 //  Created by Amia Macone on 23/07/2019.
@@ -10,18 +10,18 @@ import Foundation
 import UIKit
 
 
-final class ModuleCell: UITableViewCell {
+final class SettingsCell: UITableViewCell {
     
     // MARK: - Properties
     
-    static let identifier = "MainMenuModuleCell"
+    static let identifier = "SettingsCell"
     
-    private let moduleCellView = ModuleCellView()
+    private let cellView = SettingsCellView()
     
     // MARK: - Initializers
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    init() {
+        super.init(style: .default, reuseIdentifier: SettingsCell.identifier)
         
         setup()
         addSubviewsAndConstraints()
@@ -34,24 +34,24 @@ final class ModuleCell: UITableViewCell {
     // MARK: - Methods
     
     private func setup() {
+        // Add a sample control
+        let uiControl = UISwitch(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+        accessoryView = uiControl
+        accessoryView?.alpha = 0.5
         selectionStyle = .none
     }
     
     private func addSubviewsAndConstraints() {
-        contentView.addSubview(moduleCellView)
-        moduleCellView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+        contentView.addSubview(cellView)
+        cellView.snp.makeConstraints { (make) in
+            make.top.right.bottom.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { (make) in
-            make.top.left.right.bottom.equalTo(moduleCellView)
+            make.left.equalToSuperview()
         }
     }
-    
-    // MARK: - Internal Methods
-    
-    func update(withModel model: ModuleModel) {
-        moduleCellView.update(withModel: model)
-    }
 }
+
 
