@@ -36,6 +36,8 @@ final class SettingsTableHeaderView: UIView {
         iconView.image = UIImage(named: "x-icon")
         
         titleLabel.font = UIFont.kolibrix.subheader
+        titleLabel.font = UIFont(name: "SofiaPro-Regular", size: 16)
+        titleLabel.alpha = 0.3
         titleLabel.textColor = UIColor.solarstein.sapphire
     }
     
@@ -43,19 +45,20 @@ final class SettingsTableHeaderView: UIView {
         [iconView, titleLabel].forEach{( addSubview($0) )}
         
         iconView.snp.makeConstraints { (make) in
-            make.height.width.equalTo(24)
-            make.top.equalToSuperview().offset(8)
+            make.height.width.equalTo(16)
+            make.top.equalToSuperview().offset(16)
             make.left.equalToSuperview().offset(32)
         }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(iconView.snp.right).offset(8)
+            make.left.equalTo(iconView.snp.right).offset(16)
+            make.top.equalTo(iconView.snp.top).offset(-4)
         }
     }
     
     func setTitle(_ value: String) {
-        titleLabel.text = value
+        titleLabel.text = value.uppercased()
+        titleLabel.setCharacterSpacing(1)
     }
 }
-
 
