@@ -44,7 +44,7 @@ final class ModuleCell: UITableViewCell {
         }
         
         contentView.snp.makeConstraints { (make) in
-            make.top.left.right.bottom.equalTo(moduleCellView)
+            make.edges.equalTo(moduleCellView)
         }
     }
     

@@ -31,8 +31,6 @@ final class SettingsCellView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
-    
     // MARK: - Methods
     
     private func setup() {

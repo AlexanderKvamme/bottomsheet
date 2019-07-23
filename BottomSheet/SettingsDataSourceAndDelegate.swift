@@ -19,7 +19,8 @@ final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITa
     // MARK: - Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return SettingsCell()
+        let cell = SettingsCell()
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,12 +56,11 @@ final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITa
     // MARK: Round section
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        roundSection(forCell: cell, in: tableView, at: indexPath)
+//        roundSection(forCell: cell, in: tableView, at: indexPath)
     }
     
     func roundSection(forCell cell: UITableViewCell, in tableView: UITableView, at indexPath: IndexPath) {
         let cornerRadius : CGFloat = 12.0
-        cell.backgroundColor = UIColor.clear
         let layer: CAShapeLayer = CAShapeLayer()
         let pathRef:CGMutablePath = CGMutablePath()
         let bounds: CGRect = cell.bounds.insetBy(dx:0,dy:0)
@@ -107,5 +107,4 @@ final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITa
         cell.backgroundView = testView
     }
 }
-
 

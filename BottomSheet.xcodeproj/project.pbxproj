@@ -32,6 +32,7 @@
 		1CA434FD22E7328C000C6753 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434FB22E7328B000C6753 /* ModuleCell.swift */; };
 		1CA4350422E732D7000C6753 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350322E732D7000C6753 /* ModuleCell.swift */; };
 		1CA4350622E732FC000C6753 /* UserGuideCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350522E732FC000C6753 /* UserGuideCard.swift */; };
+		1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350F22E87FA7000C6753 /* ShadowView.swift */; };
 		1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */; };
 		1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */; };
 		1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */; };
@@ -92,6 +93,7 @@
 		1CA434FB22E7328B000C6753 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModuleCell.swift; path = /Users/amiamacone/Documents/workspaces/code/other/bottomsheets/BottomSheet/ModuleCell.swift; sourceTree = "<absolute>"; };
 		1CA4350322E732D7000C6753 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		1CA4350522E732FC000C6753 /* UserGuideCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideCard.swift; sourceTree = "<group>"; };
+		1CA4350F22E87FA7000C6753 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetContainer.swift; sourceTree = "<group>"; };
 		1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		F4EAE145210FBCFE00487323 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				1CA4350F22E87FA7000C6753 /* ShadowView.swift */,
 				1CA4350322E732D7000C6753 /* ModuleCell.swift */,
 				1CA434FB22E7328B000C6753 /* ModuleCell.swift */,
 				1CA4350522E732FC000C6753 /* UserGuideCard.swift */,
@@ -387,6 +390,7 @@
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
 				DDD7DF3822E3816C00883D0D /* MainCoordinator.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
+				1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */,
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,

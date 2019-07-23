@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreGraphics
 
 
 final class SettingsCell: UITableViewCell {
@@ -17,11 +18,13 @@ final class SettingsCell: UITableViewCell {
     static let identifier = "SettingsCell"
     
     private let cellView = SettingsCellView()
+    private var isFirstRow: Bool = false
+    private var isLastRow: Bool = false
     
     // MARK: - Initializers
     
-    init() {
-        super.init(style: .default, reuseIdentifier: SettingsCell.identifier)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setup()
         addSubviewsAndConstraints()
@@ -44,14 +47,12 @@ final class SettingsCell: UITableViewCell {
     private func addSubviewsAndConstraints() {
         contentView.addSubview(cellView)
         cellView.snp.makeConstraints { (make) in
-            make.top.right.bottom.equalToSuperview()
-            make.left.equalToSuperview()
+            make.edges.equalToSuperview()
         }
         
         contentView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
+            make.edges.equalTo(cellView)
         }
     }
 }
-
 

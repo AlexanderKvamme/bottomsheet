@@ -30,10 +30,9 @@ final class ContactShadowView: UIView {
         let contactRect = CGRect(x: 50, y: 0, width: frame.width-50, height: frame.height)
         layer.shadowPath = UIBezierPath(rect: contactRect).cgPath
         layer.shadowRadius = 30
-        layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowColor = UIColor.solarstein.sapphire.cgColor
-        layer.shadowColor = UIColor.green.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowOpacity = 0.5
     }
 }
+

@@ -32,7 +32,7 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     // MARK: - Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ModuleCell(style: .default, reuseIdentifier: ModuleCell.identifier)
+        let cell = ModuleCell()
         cell.update(withModel: moduleModels[indexPath.row])
         return cell
     }

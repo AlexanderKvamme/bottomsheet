@@ -21,6 +21,7 @@ final class SettingsViewController: UIViewController {
     private let subheaderLabel = UILabel()
     private var tableView = UITableView(frame: .zero, style: .grouped)
     private var dataSourceAndDelegate = SettingsDataSourceAndDelegate()
+    private let tableViewShadow = ShadowView()
     
     // MARK: - Initializers
     
@@ -73,10 +74,18 @@ final class SettingsViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.separatorColor = UIColor.solarstein.sapphire
+        tableView.clipsToBounds = true
     }
     
     private func addSubviewsAndConstraints() {
-        [headerLabel, subheaderLabel, tableView, xButton, tableView].forEach({ view.addSubview($0) })
+        [tableViewShadow, headerLabel, subheaderLabel, tableView, xButton, tableView].forEach({ view.addSubview($0) })
+        
+        tableViewShadow.backgroundColor = .clear
+        
+        tableViewShadow.snp.makeConstraints { (make) in
+            make.top.equalTo(tableView.snp.top)
+            make.left.right.bottom.equalToSuperview()
+        }
         
         headerLabel.snp.makeConstraints { (make) in
             make.top.equalTo(xButton.snp.bottom).offset(24)
