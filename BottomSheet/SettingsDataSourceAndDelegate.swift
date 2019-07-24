@@ -40,7 +40,7 @@ final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     // MARK: Footer (for spacing)
