@@ -52,9 +52,6 @@ final class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let coordinator = SettingsCoordinator(navigationController: navigationController!)
-        coordinator.start()
     }
     
     // MARK: - Methods
@@ -114,8 +111,6 @@ final class MainMenuViewController: UIViewController {
     }
     
     @objc private func showSettingsController() {
-        print("would show settings")
-
         let settingsCoordinator = SettingsCoordinator(navigationController: navigationController!)
         settingsCoordinator.start()
     }

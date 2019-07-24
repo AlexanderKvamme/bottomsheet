@@ -51,7 +51,7 @@ final class SettingsViewController: UIViewController {
     
     private func setupXButton() {
         xButton.setImage(UIImage(named: "x-icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        //        xButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        xButton.addTarget(self, action: #selector(dismissScreen), for: .touchUpInside)
         xButton.tintColor = UIColor.solarstein.sapphire
         xButton.alpha = 0.1
     }
@@ -111,6 +111,11 @@ final class SettingsViewController: UIViewController {
             make.top.equalTo(subheaderLabel.snp.bottom).offset(40)
             make.bottom.equalToSuperview().offset(-16)
         }
+    }
+    
+    @objc private func dismissScreen() {
+        let coordinator = MainCoordinator(navigationController: navigationController!)
+        coordinator.start()
     }
 }
 
