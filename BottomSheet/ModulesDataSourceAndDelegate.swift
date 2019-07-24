@@ -21,11 +21,11 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     override init() {
         let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
         
-        let detailedTestModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Detailed Test", bodyText: dummytext)
-        let settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Settings Test", bodyText: dummytext)
-        let module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Third module", bodyText: dummytext)
-        let module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Fourth module", bodyText: dummytext)
-        let module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Fifth module", bodyText: dummytext)
+        let detailedTestModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Korttransaksjoner", bodyText: dummytext)
+        let settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Utlegg", bodyText: dummytext)
+        let module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Lønnsslipper", bodyText: dummytext)
+        let module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Timeregistrering", bodyText: dummytext)
+        let module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Reiseregning", bodyText: dummytext)
         moduleModels = [detailedTestModel, settingsModel, module3, module4, module5]
     }
     
