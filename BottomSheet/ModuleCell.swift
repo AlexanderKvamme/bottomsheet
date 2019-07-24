@@ -35,6 +35,7 @@ final class ModuleCell: UITableViewCell {
     
     private func setup() {
         selectionStyle = .none
+        backgroundColor = .clear
     }
     
     private func addSubviewsAndConstraints() {
