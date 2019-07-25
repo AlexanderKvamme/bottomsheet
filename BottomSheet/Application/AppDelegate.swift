@@ -9,16 +9,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var coordinator: Coordinator?
+    var rootController = UINavigationController()
+    
+    lazy private var applicationCoordinator = makeCoordinator()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController()
-        window.rootViewController = navigationController
+        window.rootViewController = rootController
         
         // NEW
-//        coordinator = App
-        
+        let router = RouterImp(rootController: rootController)
+        let coordinatorFactory = CoordinatorFactoryImp()
+        coordinator = ApplicationCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+        coordinator?.start()
         
         // OLD
 //        coordinator = MainCoordinator(navigationController: navigationController)
@@ -36,5 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // MARK: - Methods
+    
+    private func makeCoordinator() -> Coordinator {
+        return ApplicationCoordinator(
+            router: RouterImp(rootController: self.rootController),
+            coordinatorFactory: CoordinatorFactoryImp()
+        )
+    }
 }
 

@@ -11,73 +11,25 @@ import Foundation
 import UIKit
 
 
-protocol AuthCoordinatorDelegate {
-    func logIn()
-}
-
-final class AuthCoordinator: Coordinator {
-
+final class MainMenuCoordinator: Coordinator {
+    
     // MARK: - Properties
-
-    var childCoordinators = [Coordinator]()
-    var delegate: AuthCoordinatorDelegate!
-    unowned var navigationController: UINavigationController
+    
+    let viewController: UIViewController
+    let coordinatorFactory: CoordinatorFactory
     
     // MARK: - Initializers
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(controller: UIViewController, coordinatorFactory: CoordinatorFactory) {
+        self.viewController = controller
+        self.coordinatorFactory = coordinatorFactory
     }
     
     // MARK: - Methods
     
     func start() {
-        print("would start")
-    }
-}
-
-
-final class MainCoordinator: Coordinator {
-    
-    // MARK: - Properties
-    
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
-    
-    // MARK: - Initializers
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
-    // MARK: - Methods
-    
-    func start() {
-        let isLoggedIn = true
-        
-        if isLoggedIn {
-            self.showContent()
-        } else {
-            self.showAuthentication()
-        }
-    }
-    
-    private func showContent() {
-        let vc = MainMenuViewController()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-        
-        let coordinator = AuthCoordinator(navigationController: navigationController)
-        coordinator.delegate = self
-        coordinator.start()
-    }
-    
-    private func showAuthentication() {}
-}
-
-extension MainCoordinator: AuthCoordinatorDelegate {
-    func logIn() {
-        print("would log in")
+        print("would start main menu coordinator")
+//        router.setRootModule(controller)
     }
 }
 

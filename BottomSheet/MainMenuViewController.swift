@@ -111,8 +111,8 @@ final class MainMenuViewController: UIViewController {
     }
     
     @objc private func showSettingsController() {
-        let settingsCoordinator = SettingsCoordinator(navigationController: navigationController!)
-        settingsCoordinator.start()
+//        let settingsCoordinator = SettingsCoordinator(navigationController: navigationController!)
+//        settingsCoordinator.start()
     }
 }
 

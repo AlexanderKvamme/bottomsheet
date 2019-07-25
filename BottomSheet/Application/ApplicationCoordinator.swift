@@ -14,10 +14,8 @@ fileprivate var isAutorized = false
 fileprivate enum LaunchInstructor {
     case main, auth, onboarding
     
-    static func configure(
-        tutorialWasShown: Bool = onboardingWasShown,
-        isAutorized: Bool = isAutorized) -> LaunchInstructor {
-        
+    static func configure(tutorialWasShown: Bool = onboardingWasShown,
+                          isAutorized: Bool = isAutorized) -> LaunchInstructor {
         switch (tutorialWasShown, isAutorized) {
         case (true, false), (false, false): return .auth
         case (false, true): return .onboarding
@@ -25,6 +23,8 @@ fileprivate enum LaunchInstructor {
         }
     }
 }
+
+// MARK: - Class ApplicationCoordinator
 
 final class ApplicationCoordinator: BaseCoordinator {
     
@@ -44,32 +44,9 @@ final class ApplicationCoordinator: BaseCoordinator {
     
     // MARK: Methods
     
-//    override func start(with option: DeepLinkOption?) {
-//        //start with deepLink
-//        if let option = option {
-//            switch option {
-//            case .onboarding: runOnboardingFlow()
-//            case .signUp: runAuthFlow()
-//            default: childCoordinators.forEach { coordinator in
-//                coordinator.start()
-//                }
-//            }
-//            // default start
-//        } else {
-//            switch instructor {
-//            case .onboarding: runOnboardingFlow()
-//            case .auth: runAuthFlow()
-//            case .main: runMainFlow()
-//            }
-//        }
-//    }
-    
     override func start() {
-        switch instructor {
-        case .onboarding: runOnboardingFlow()
-        case .auth: runAuthFlow()
-        case .main: runMainFlow()
-        }
+        // Use a switch on the instructor value to decide if user is logged inn and decide flow
+        runMainMenuFlow()
     }
     
     private func runAuthFlow() {
@@ -94,10 +71,13 @@ final class ApplicationCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
-    private func runMainFlow() {
-        let (coordinator, module) = coordinatorFactory.makeTabbarCoordinator()
+    /// Main flow is just the main view controller as RootModule
+    private func runMainMenuFlow() {
+        let (coordinator, presentable) = coordinatorFactory.makeMainMenuCoordinator(router: router)
+        // remove self on finish?
         addDependency(coordinator)
-        router.setRootModule(module, hideBar: true)
+        router.setRootModule(presentable)
         coordinator.start()
     }
 }
+

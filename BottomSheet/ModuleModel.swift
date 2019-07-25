@@ -14,4 +14,6 @@ struct ModuleModel {
     var icon: UIImage
     var headerText: String
     var bodyText: String
+    
+    var didTapCell: ( () -> () )?
 }

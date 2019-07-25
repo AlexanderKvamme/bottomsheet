@@ -38,17 +38,18 @@ final class ItemCoordinator: BaseCoordinator {
   
   private func runCreationFlow() {
     
-    let (coordinator, module) = coordinatorFactory.makeItemCreationCoordinatorBox()
-    coordinator.finishFlow = { [weak self, weak coordinator] item in
-      
-      self?.router.dismissModule()
-      self?.removeDependency(coordinator)
-      if let item = item {
-        self?.showItemDetail(item)
-      }
-    }
-    addDependency(coordinator)
-    router.present(module)
-    coordinator.start()
+//    let (coordinator, module) = coordinatorFactory.makeItemCreationCoordinatorBox()
+//    coordinator.finishFlow = { [weak self, weak coordinator] item in
+//      
+//      self?.router.dismissModule()
+//      self?.removeDependency(coordinator)
+//      if let item = item {
+//        self?.showItemDetail(item)
+//      }
+//    }
+//    addDependency(coordinator)
+//    router.present(module)
+//    coordinator.start()
   }
 }
+

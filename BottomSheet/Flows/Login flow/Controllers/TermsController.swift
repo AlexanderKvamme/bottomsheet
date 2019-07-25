@@ -1,3 +1,5 @@
+import UIKit
+
 class TermsController: UIViewController, TermsView {
   
   @IBOutlet weak var termsSwitch: UISwitch! {

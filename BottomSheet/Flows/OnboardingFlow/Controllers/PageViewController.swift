@@ -1,3 +1,5 @@
+import UIKit
+
 class PageController: UIViewController {
   
   var pageViewController: UIPageViewController!
@@ -11,7 +13,7 @@ class PageController: UIViewController {
       options: nil
     )
     pageViewController.delegate = self
-    addChildViewController(pageViewController)
+    addChild(pageViewController)
     view.addSubview(pageViewController.view)
   }
 }

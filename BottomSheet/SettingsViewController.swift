@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-final class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController, SettingsView {
     
     // MARK: - Properties
     
@@ -114,8 +114,8 @@ final class SettingsViewController: UIViewController {
     }
     
     @objc private func dismissScreen() {
-        let coordinator = MainCoordinator(navigationController: navigationController!)
-        coordinator.start()
+//        let coordinator = MainMenuCoordinator(navigationController: navigationController!)
+//        coordinator.start()
     }
 }
 

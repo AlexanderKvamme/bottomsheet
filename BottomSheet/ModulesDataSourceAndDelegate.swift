@@ -21,11 +21,27 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     override init() {
         let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
         
-        let detailedTestModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Korttransaksjoner", bodyText: dummytext)
-        let settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Utlegg", bodyText: dummytext)
-        let module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Lønnsslipper", bodyText: dummytext)
-        let module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Timeregistrering", bodyText: dummytext)
-        let module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Reiseregning", bodyText: dummytext)
+        
+        let detailedTapAction: ( () -> () ) = {
+            print("did tap the cell")
+            
+            // FIXME: May have to use router?
+//            let coordinator = 
+            
+            // Slik ble det gjort i appDelegate sist gang jeg brukte shhet
+            
+            //        let zoomableReceiptViewController = ZoomableReceiptViewController()
+            //        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+            //        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
+            //        window.rootViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
+        }
+        
+        let detailedTestModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Korttransaksjoner", bodyText: dummytext, didTapCell: detailedTapAction)
+        let settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Utlegg", bodyText: dummytext, didTapCell: nil)
+        let module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Lønnsslipper", bodyText: dummytext, didTapCell: nil)
+        let module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Timeregistrering", bodyText: dummytext, didTapCell: nil)
+        let module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Reiseregning", bodyText: dummytext, didTapCell: nil)
+        
         moduleModels = [detailedTestModel, settingsModel, module3, module4, module5]
     }
     
@@ -43,6 +59,11 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moduleModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("bam selected: ", indexPath)
+        moduleModels[indexPath.row].didTapCell?()
     }
 }
 

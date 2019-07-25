@@ -1,3 +1,5 @@
+import UIKit
+
 class TabbarCoordinator: BaseCoordinator {
   
   private let tabbarView: TabbarView
