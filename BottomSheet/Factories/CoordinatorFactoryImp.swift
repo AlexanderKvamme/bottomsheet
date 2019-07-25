@@ -9,8 +9,21 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     //    return (coordinator, controller)
     //  }
     
+    
+    func makeDetailedTransactionCoordinator() -> (coordinator: Coordinator, toPresent: Presentable) {
+        
+        let zoomableReceiptViewController = ZoomableReceiptViewController()
+        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
+        let viewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
+        
+        let coordinator = DetailedTransactionCoordinator()
+//        let presentable = DetailedTransactionSheet()
+        return (coordinator, viewController)
+    }
+    
     func makeMainMenuCoordinator(router: Router) -> (coordinator: Coordinator, toPresent: Presentable) {
-        let controller = MainMenuViewController()
+        let controller = MainMenuViewController(router: router)
         let coordinator = MainMenuCoordinator(controller: controller, coordinatorFactory: CoordinatorFactoryImp())
         return (coordinator, controller)
     }

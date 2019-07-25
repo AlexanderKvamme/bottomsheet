@@ -15,6 +15,8 @@ protocol CoordinatorFactory {
     
     func makeMainMenuCoordinator(router: Router) -> (coordinator: Coordinator, toPresent: Presentable)
     
+    func makeDetailedTransactionCoordinator() -> (coordinator: Coordinator, toPresent: Presentable) 
+    
     //  func makeItemCreationCoordinatorBox() ->
     //    (configurator: Coordinator & ItemCreateCoordinatorOutput,
     //    toPresent: Presentable?)

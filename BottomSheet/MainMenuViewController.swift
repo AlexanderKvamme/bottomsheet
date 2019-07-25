@@ -17,14 +17,18 @@ final class MainMenuViewController: UIViewController {
     private var tableView = ModulesTableView()
     private var settingsIcon = UIImageView()
     private var cameraIcon = UIImageView()
-    private var dataSourceAndDelegate = ModulesDataSourceAndDelegate()
+    private var dataSourceAndDelegate: ModulesDataSourceAndDelegate
     private var userGuideCard: UserGuideCard?
+    private var router: Router
     
     // MARK: - Initializers
     
     var coordinator: Coordinator!
     
-    init() {
+    init(router: Router) {
+        self.dataSourceAndDelegate = ModulesDataSourceAndDelegate(router: router)
+        self.router = router
+        
         super.init(nibName: nil, bundle: nil)
         
         view.backgroundColor = UIColor.solarstein.seashell

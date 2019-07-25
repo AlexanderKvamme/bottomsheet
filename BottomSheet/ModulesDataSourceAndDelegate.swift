@@ -10,20 +10,45 @@ import Foundation
 import UIKit
 
 
+class DetailedTransactionCoordinator: Coordinator {
+    
+    // MARK: - Properties
+    
+    // MARK: - Initializers
+    
+    // MARK: - Life Cycle
+    
+    // MARK: - Methods
+    
+    func start() {
+        print("would start DetailedTransactionCoordinator")
+    }
+}
+
+
 final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
     private var moduleModels: [ModuleModel]
+    private var router: Router
 
     // MARK: - Initializers
     
-    override init() {
-        let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
+    init(router: Router) {
+        self.router = router
         
+        let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
         
         let detailedTapAction: ( () -> () ) = {
             print("did tap the cell")
+            
+            // Prøv å pushe en module
+            let coordinatorFactory = CoordinatorFactoryImp()
+            let detailedModule = coordinatorFactory.makeDetailedTransactionCoordinator()
+            router.push(detailedModule.toPresent)
+            detailedModule.coordinator.start()
+            
             
             // FIXME: May have to use router?
 //            let coordinator = 
