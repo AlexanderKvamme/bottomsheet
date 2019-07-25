@@ -15,9 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
         window.rootViewController = navigationController
-        coordinator = MainCoordinator(navigationController: navigationController)
-        coordinator?.start()
         
+        // NEW
+//        coordinator = App
+        
+        
+        // OLD
+//        coordinator = MainCoordinator(navigationController: navigationController)
+//        coordinator?.start()
+
+        // ANCIENT
 //        let zoomableReceiptViewController = ZoomableReceiptViewController()
 //        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
 //        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
