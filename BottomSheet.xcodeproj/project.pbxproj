@@ -53,7 +53,6 @@
 		1CA435A422E9A6BE000C6753 /* AuthModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4359C22E9A6BE000C6753 /* AuthModuleFactory.swift */; };
 		1CA435A522E9A6D8000C6753 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4354422E9A039000C6753 /* LoginView.swift */; };
 		1CA435A622E9A6EE000C6753 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4354C22E9A039000C6753 /* SettingsView.swift */; };
-		1CA435A722E9A6EE000C6753 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4354D22E9A039000C6753 /* SettingsController.swift */; };
 		1CA435A822E9A6EE000C6753 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4354E22E9A039000C6753 /* SettingsCoordinator.swift */; };
 		1CA435A922E9A79F000C6753 /* ItemCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4356222E9A039000C6753 /* ItemCreateView.swift */; };
 		1CA435AA22E9A7AD000C6753 /* ItemCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4356322E9A039000C6753 /* ItemCreateController.swift */; };
@@ -153,7 +152,6 @@
 		1CA4354922E9A039000C6753 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		1CA4354A22E9A039000C6753 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1CA4354C22E9A039000C6753 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		1CA4354D22E9A039000C6753 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		1CA4354E22E9A039000C6753 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		1CA4355022E9A039000C6753 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		1CA4355122E9A039000C6753 /* ItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; };
@@ -323,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				1CA4354C22E9A039000C6753 /* SettingsView.swift */,
-				1CA4354D22E9A039000C6753 /* SettingsController.swift */,
 				1CA4354E22E9A039000C6753 /* SettingsCoordinator.swift */,
 			);
 			path = "Settings flow";
@@ -701,7 +698,6 @@
 				1C6E63D022E06EF1002DC799 /* BottomSheetContainerView.swift in Sources */,
 				1CA435B822E9A7BC000C6753 /* TabbarView.swift in Sources */,
 				1CA435BE22E9A7C3000C6753 /* OnboardingController.swift in Sources */,
-				1CA435A722E9A6EE000C6753 /* SettingsController.swift in Sources */,
 				1CA4359D22E9A6BE000C6753 /* OnboardingModuleFactory.swift in Sources */,
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,

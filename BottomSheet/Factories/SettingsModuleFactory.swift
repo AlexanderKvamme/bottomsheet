@@ -1,3 +1,7 @@
 protocol SettingsModuleFactory {
-  func makeSettingsOutput() -> SettingsView
+  func makeSettingsModule() -> SettingsView
+}
+
+protocol DetailedTransactionFactory {
+    func makeDetailedTransactionModule() -> DetailedTransactionView
 }

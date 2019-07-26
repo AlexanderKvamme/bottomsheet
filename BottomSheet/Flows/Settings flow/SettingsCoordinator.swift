@@ -15,7 +15,7 @@ final class SettingsCoordinator: BaseCoordinator {
   //MARK: - Run current flow's controllers
   
   private func showSettings() {
-    let settingsFlowOutput = factory.makeSettingsOutput()
-    router.setRootModule(settingsFlowOutput)
+    let settingsFlow = factory.makeSettingsModule()
+    router.setRootModule(settingsFlow)
   }
 }

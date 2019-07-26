@@ -13,6 +13,8 @@ import UIKit
 final class SettingsViewController: UIViewController, SettingsView {
     
     // MARK: - Properties
+
+    var onFinish: (() -> ())?
     
     var coordinator: Coordinator!
     
@@ -51,7 +53,7 @@ final class SettingsViewController: UIViewController, SettingsView {
     
     private func setupXButton() {
         xButton.setImage(UIImage(named: "x-icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        xButton.addTarget(self, action: #selector(dismissScreen), for: .touchUpInside)
+        xButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
         xButton.tintColor = UIColor.solarstein.sapphire
         xButton.alpha = 0.1
     }
@@ -113,9 +115,8 @@ final class SettingsViewController: UIViewController, SettingsView {
         }
     }
     
-    @objc private func dismissScreen() {
-//        let coordinator = MainMenuCoordinator(navigationController: navigationController!)
-//        coordinator.start()
+    @objc private func finish() {
+        onFinish?()
     }
 }
 

@@ -115,8 +115,12 @@ final class MainMenuViewController: UIViewController {
     }
     
     @objc private func showSettingsController() {
-//        let settingsCoordinator = SettingsCoordinator(navigationController: navigationController!)
-//        settingsCoordinator.start()
+        let presentable = ModuleFactoryImp().makeSettingsModule()
+        presentable.onFinish = { [weak self] in
+            self?.router.popModule()
+        }
+        
+        router.push(presentable)
     }
 }
 
