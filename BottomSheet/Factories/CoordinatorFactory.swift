@@ -10,12 +10,11 @@ protocol CoordinatorFactory {
     func makeItemCoordinator(navController: UINavigationController?) -> Coordinator
     func makeItemCoordinator() -> Coordinator
     
-    func makeSettingsCoordinator() -> Coordinator
-    func makeSettingsCoordinator(navController: UINavigationController?) -> Coordinator
+    func makeSettingsCoordinator(router: Router) -> Coordinator
     
     func makeMainMenuCoordinator(router: Router) -> (coordinator: Coordinator, toPresent: Presentable)
     
-    func makeDetailedTransactionCoordinator() -> (coordinator: Coordinator, toPresent: Presentable) 
+    func makeDetailedTransactionCoordinator(router: Router) -> Coordinator
     
     //  func makeItemCreationCoordinatorBox() ->
     //    (configurator: Coordinator & ItemCreateCoordinatorOutput,

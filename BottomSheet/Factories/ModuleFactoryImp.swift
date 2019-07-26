@@ -1,37 +1,6 @@
 import UIKit
 
-class DetailedTransactionViewController: BottomSheetContainerViewController, DetailedTransactionView, hasXButton {
 
-    // MARK: - Properties
-    
-    lazy var xButton = makeXButton()
-    
-    var onFinish: (() -> ())?
-    
-    override init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
-        super.init(mainViewController: mainViewController, sheetViewController: sheetViewController)
-
-        print(" bam did init")
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Life Cycle
-    
-    override func viewDidLoad() {
-        applyXButtonConstraints()
-        xButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
-    }
-    
-    // MARK: - Methods
-    
-    @objc private func performFinish() {
-        print("bam would perform onFinish")
-        onFinish?()
-    }
-}
 
 final class ModuleFactoryImp:
     AuthModuleFactory,
@@ -41,11 +10,8 @@ final class ModuleFactoryImp:
     SettingsModuleFactory,
     DetailedTransactionFactory
 {
-    func makeDetailedTransactionModule() -> DetailedTransactionView {
-        return makeDetailedViewController()
-    }
     
-    private func makeDetailedViewController() -> DetailedTransactionView {
+    func makeDetailedTransactionModule() -> DetailedTransactionView {
         let zoomableReceiptViewController = ZoomableReceiptViewController()
         let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)

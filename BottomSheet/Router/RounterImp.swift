@@ -55,12 +55,12 @@ final class RouterImp: NSObject, Router {
         push(module, animated: true)
     }
     
-    func push(_ module: Presentable?, hideBottomBar: Bool)  {
-        push(module, animated: true, hideBottomBar: hideBottomBar, completion: nil)
-    }
-    
     func push(_ module: Presentable?, animated: Bool)  {
         push(module, animated: animated, completion: nil)
+    }
+    
+    func push(_ module: Presentable?, hideBottomBar: Bool)  {
+        push(module, animated: true, hideBottomBar: hideBottomBar, completion: nil)
     }
     
     func push(_ module: Presentable?, animated: Bool, completion: (() -> Void)?) {

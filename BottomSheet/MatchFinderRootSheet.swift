@@ -49,7 +49,7 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     // MARK: - Methods
     
     private func setInitialSheet() {
-        let sheet = DetailedTransactionSheet("Mic Check", delegate: self)
+        let sheet = DetailedTransactionSheet(delegate: self)
         navigationStack = [sheet]
         addSheetLayout(sheet)
     }

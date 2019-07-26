@@ -10,18 +10,29 @@ import Foundation
 import UIKit
 
 
-class DetailedTransactionCoordinator: Coordinator {
+class DetailedTransactionCoordinator: BaseCoordinator {
     
     // MARK: - Properties
     
+    private var router: Router
+    private var factory: DetailedTransactionFactory
+    
     // MARK: - Initializers
     
-    // MARK: - Life Cycle
+    init(router: Router, factory: DetailedTransactionFactory) {
+        self.router = router
+        self.factory = factory
+    }
     
     // MARK: - Methods
     
-    func start() {
-        print("would start DetailedTransactionCoordinator")
+    override func start() {
+        let detailedTransactionModule = factory.makeDetailedTransactionModule()
+        detailedTransactionModule.onFinish = { [weak self] in
+            self?.router.popModule()
+        }
+        
+        router.push(detailedTransactionModule.toPresent())
     }
 }
 
@@ -30,44 +41,32 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     
     // MARK: - Properties
     
-    private var moduleModels: [ModuleModel]
+    let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
+    private lazy var detailedTransactionModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Korttransaksjoner", bodyText: dummytext, didTapCell: nil)
+    private lazy var settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Utlegg", bodyText: dummytext, didTapCell: nil)
+    private lazy var module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Lønnsslipper", bodyText: dummytext, didTapCell: nil)
+    private lazy var module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Timeregistrering", bodyText: dummytext, didTapCell: nil)
+    private lazy var module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Reiseregning", bodyText: dummytext, didTapCell: nil)
+    private lazy var moduleModels = [detailedTransactionModel, settingsModel, module3, module4, module5]
     private var router: Router
+    private var baseCoordinator =  BaseCoordinator()
 
     // MARK: - Initializers
     
     init(router: Router) {
         self.router = router
-        
-        let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
-        
-        let detailedTapAction: ( () -> () ) = {
-            print("did tap the cell")
-            
-            // Prøv å pushe en module
+        super.init()
+        addTapTargets()
+    }
+    
+    func addTapTargets() {
+        detailedTransactionModel.didTapCell = {
             let coordinatorFactory = CoordinatorFactoryImp()
-            let detailedModule = coordinatorFactory.makeDetailedTransactionCoordinator()
-            router.push(detailedModule.toPresent)
-            detailedModule.coordinator.start()
-            
-            
-            // FIXME: May have to use router?
-//            let coordinator = 
-            
-            // Slik ble det gjort i appDelegate sist gang jeg brukte shhet
-            
-            //        let zoomableReceiptViewController = ZoomableReceiptViewController()
-            //        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-            //        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
-            //        window.rootViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
+            let detailedModule = coordinatorFactory.makeDetailedTransactionCoordinator(router: self.router)
+            // TODO: - Remove dependency on pop
+            self.baseCoordinator.addDependency(detailedModule)
+            detailedModule.start()
         }
-        
-        let detailedTestModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Korttransaksjoner", bodyText: dummytext, didTapCell: detailedTapAction)
-        let settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Utlegg", bodyText: dummytext, didTapCell: nil)
-        let module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Lønnsslipper", bodyText: dummytext, didTapCell: nil)
-        let module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Timeregistrering", bodyText: dummytext, didTapCell: nil)
-        let module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Reiseregning", bodyText: dummytext, didTapCell: nil)
-        
-        moduleModels = [detailedTestModel, settingsModel, module3, module4, module5]
     }
     
     // MARK: - Methods
@@ -87,7 +86,6 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("bam selected: ", indexPath)
         moduleModels[indexPath.row].didTapCell?()
     }
 }

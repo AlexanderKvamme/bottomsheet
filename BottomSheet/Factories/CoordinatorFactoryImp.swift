@@ -9,19 +9,12 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     //    return (coordinator, controller)
     //  }
     
-    
-    func makeDetailedTransactionCoordinator() -> (coordinator: Coordinator, toPresent: Presentable) {
-        
-        let zoomableReceiptViewController = ZoomableReceiptViewController()
-        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
-        let viewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
-        
-        let coordinator = DetailedTransactionCoordinator()
-//        let presentable = DetailedTransactionSheet()
-        return (coordinator, viewController)
+    func makeDetailedTransactionCoordinator(router: Router) -> Coordinator {
+        let coordinator = DetailedTransactionCoordinator(router: router, factory: ModuleFactoryImp())
+        return coordinator
     }
     
+    // FIXME: Tror ikke controlleren skal returneres her. Mener coordinatoren skal fikse det
     func makeMainMenuCoordinator(router: Router) -> (coordinator: Coordinator, toPresent: Presentable) {
         let controller = MainMenuViewController(router: router)
         let coordinator = MainMenuCoordinator(controller: controller, coordinatorFactory: CoordinatorFactoryImp())
@@ -50,12 +43,8 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
         return coordinator
     }
     
-    func makeSettingsCoordinator() -> Coordinator {
-        return makeSettingsCoordinator(navController: nil)
-    }
-    
-    func makeSettingsCoordinator(navController: UINavigationController? = nil) -> Coordinator {
-        let coordinator = SettingsCoordinator(router: router(navController), factory: ModuleFactoryImp())
+    func makeSettingsCoordinator(router: Router) -> Coordinator {
+        let coordinator = SettingsCoordinator(router: router, factory: ModuleFactoryImp())
         return coordinator
     }
     

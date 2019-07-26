@@ -8,15 +8,12 @@
 
 import Foundation
 
+/// The BaseCoordinator's responsibility is the manage references to its childCoordinators for memory reasons
 class BaseCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     
-    func start() {
-        start()
-    }
-    
-//    func start(with option: DeepLinkOption?) { }
+    func start() { }
     
     // add only unique object
     func addDependency(_ coordinator: Coordinator) {
@@ -36,6 +33,7 @@ class BaseCoordinator: Coordinator {
                 .filter({ $0 !== coordinator })
                 .forEach({ coordinator.removeDependency($0) })
         }
+        
         for (index, element) in childCoordinators.enumerated() where element === coordinator {
             childCoordinators.remove(at: index)
             break

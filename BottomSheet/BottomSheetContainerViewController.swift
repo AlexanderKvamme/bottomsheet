@@ -9,59 +9,76 @@ protocol SheetScrollResponder: UIViewController {
     func bottomsheetDidScrollTo(_ value: CGPoint)
 }
 
-class BottomSheetContainerViewController: UIViewController, hasXButton {
+protocol isSheetViewController: class {
+    var mainViewController: SheetScrollResponder { get set }
+    var sheetViewController: BottomSheetViewController { get set }
+    var bottomSheetContainerView: BottomSheetContainerView { get set }
+}
 
+class DetailedTransactionViewController: UIViewController, isSheetViewController, DetailedTransactionView, hasXButton {
+    
     // MARK: - Properties
     
+    var onFinish: (() -> ())?
+    
+    var mainViewController: SheetScrollResponder
+    var sheetViewController: BottomSheetViewController
+    var bottomSheetContainerView: BottomSheetContainerView
     lazy var xButton = makeXButton()
-    
-    private let mainViewController: SheetScrollResponder
-    private let sheetViewController: BottomSheetViewController
-    private lazy var bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view,
-                                                                         sheetView: sheetViewController.view)
-    
-    // MARK: - Initializers
     
     init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
         self.mainViewController = mainViewController
         self.sheetViewController = sheetViewController
+        self.bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view, sheetView: sheetViewController.view)
         
         super.init(nibName: nil, bundle: nil)
         
         setup()
-        addSubviewsAndConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mainViewController.didMove(toParent: self)
+        sheetViewController.didMove(toParent: self)
+        
+        applyXButtonConstraints()
+        xButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
     }
     
     // MARK: - Methods
+    
+    @objc private func performFinish() {
+        print("BAM! DID FINISH!!!")
+        onFinish?()
+    }
     
     private func setup() {
         addChild(mainViewController)
         addChild(sheetViewController)
         
         sheetViewController.bottomSheetDelegate = self
-    }
-    
-    private func addSubviewsAndConstraints() {
+        
+        // FIXME: - Cleanup
+        // alternativ til loadView
+        
+        view.addSubview(bottomSheetContainerView)
+        bottomSheetContainerView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         applyXButtonConstraints()
-    }
-    
-    override func loadView() {
-        view = bottomSheetContainerView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        mainViewController.didMove(toParent: self)
-        sheetViewController.didMove(toParent: self)
+        xButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
     }
 }
 
-extension BottomSheetContainerViewController: BottomSheetDelegate {
+extension DetailedTransactionViewController: BottomSheetDelegate {
     func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint) {
         bottomSheetContainerView.topDistance = max(0, -contentOffset.y)
         mainViewController.bottomsheetDidScrollTo(contentOffset)
