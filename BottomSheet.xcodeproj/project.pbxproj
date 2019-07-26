@@ -78,6 +78,7 @@
 		1CA435BE22E9A7C3000C6753 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4355A22E9A039000C6753 /* OnboardingController.swift */; };
 		1CA435BF22E9A7C3000C6753 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4355B22E9A039000C6753 /* PageViewController.swift */; };
 		1CA435C022E9A7C3000C6753 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4355C22E9A039000C6753 /* OnboardingView.swift */; };
+		1CA435C222EAFE9D000C6753 /* hasXButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA435C122EAFE9D000C6753 /* hasXButton.swift */; };
 		1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */; };
 		1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */; };
 		1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */; };
@@ -184,6 +185,7 @@
 		1CA4359A22E9A6BE000C6753 /* SettingsModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModuleFactory.swift; sourceTree = "<group>"; };
 		1CA4359B22E9A6BE000C6753 /* ItemCreateModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCreateModuleFactory.swift; sourceTree = "<group>"; };
 		1CA4359C22E9A6BE000C6753 /* AuthModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModuleFactory.swift; sourceTree = "<group>"; };
+		1CA435C122EAFE9D000C6753 /* hasXButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hasXButton.swift; path = ../../hasXButton.swift; sourceTree = "<group>"; };
 		1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetContainer.swift; sourceTree = "<group>"; };
 		1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		1CA4351122E8C022000C6753 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1CA435C122EAFE9D000C6753 /* hasXButton.swift */,
 				DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */,
 				1CA4351922E8C0EA000C6753 /* Presentable.swift */,
 				1CA4356622E9A1F7000C6753 /* BaseView.swift */,
@@ -703,6 +706,7 @@
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
 				1CF6D70922E5D19600701DF3 /* ModuleCellView.swift in Sources */,
+				1CA435C222EAFE9D000C6753 /* hasXButton.swift in Sources */,
 				1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */,
 				1CA4351A22E8C0EA000C6753 /* Presentable.swift in Sources */,
 				1CA434FD22E7328C000C6753 /* ModuleCell.swift in Sources */,

@@ -19,7 +19,6 @@ class SImagePreview: UIView {
     private var imageView: UIImageView = UIImageView()
     private var scrollView: UIScrollView = UIScrollView()
     private var originalCellFrame: CGRect
-    private var xButton = SShadowButton()
     let coloredOverlay = UIView()
     
     private var isAnimating = false
@@ -45,7 +44,6 @@ class SImagePreview: UIView {
         backgroundColor = .clear
         setupScrollView()
         setupImageView()
-        setupXButton()
         setupOverlay()
         
         addSubviewsAndConstraints()
@@ -68,12 +66,6 @@ class SImagePreview: UIView {
         scrollView.backgroundColor = .clear
     }
     
-    private func setupXButton() {
-        xButton.setImage(UIImage(named: "x-icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        xButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
-        xButton.tintColor = .white
-    }
-    
     private func setupOverlay() {
         coloredOverlay.backgroundColor = UIColor.solarstein.sapphire
         coloredOverlay.alpha = 0.4
@@ -81,7 +73,7 @@ class SImagePreview: UIView {
     }
     
     private func addSubviewsAndConstraints() {
-        [scrollView, coloredOverlay, xButton].forEach({ addSubview($0) })
+        [scrollView, coloredOverlay].forEach({ addSubview($0) })
         
         scrollView.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
@@ -95,16 +87,10 @@ class SImagePreview: UIView {
         coloredOverlay.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        xButton.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide.snp.topMargin).offset(16)
-            make.left.equalTo(safeAreaLayoutGuide.snp.leftMargin).offset(32+Device.additionalInsetsIfNotched)
-            make.height.width.equalTo(48)
-        }
     }
     
     @objc private func dismissView() {
-        print("would dismiss")
+        print("would dismiss SImagePreview")
     }
 }
 

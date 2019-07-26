@@ -9,13 +9,18 @@ protocol SheetScrollResponder: UIViewController {
     func bottomsheetDidScrollTo(_ value: CGPoint)
 }
 
-class BottomSheetContainerViewController: UIViewController {
+class BottomSheetContainerViewController: UIViewController, hasXButton {
 
-//    private let mainViewController: UIViewController
+    // MARK: - Properties
+    
+    lazy var xButton = makeXButton()
+    
     private let mainViewController: SheetScrollResponder
     private let sheetViewController: BottomSheetViewController
     private lazy var bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view,
                                                                          sheetView: sheetViewController.view)
+    
+    // MARK: - Initializers
     
     init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
         self.mainViewController = mainViewController
@@ -23,14 +28,25 @@ class BottomSheetContainerViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
+        setup()
+        addSubviewsAndConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+    
+    // MARK: - Methods
+    
+    private func setup() {
         addChild(mainViewController)
         addChild(sheetViewController)
         
         sheetViewController.bottomSheetDelegate = self
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError()
+    private func addSubviewsAndConstraints() {
+        applyXButtonConstraints()
     }
     
     override func loadView() {
@@ -51,3 +67,4 @@ extension BottomSheetContainerViewController: BottomSheetDelegate {
         mainViewController.bottomsheetDidScrollTo(contentOffset)
     }
 }
+
