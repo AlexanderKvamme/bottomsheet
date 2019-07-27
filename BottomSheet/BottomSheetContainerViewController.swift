@@ -55,7 +55,6 @@ class DetailedTransactionViewController: UIViewController, isSheetViewController
     // MARK: - Methods
     
     @objc private func performFinish() {
-        print("BAM! DID FINISH!!!")
         onFinish?()
     }
     

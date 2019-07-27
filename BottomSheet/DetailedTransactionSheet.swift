@@ -71,7 +71,6 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
     }
     
     @objc func didTapBackButton() {
-        print("bam did tap back button in DetailedTransactionSheet")
         rootSheetController?.pop()
     }
     

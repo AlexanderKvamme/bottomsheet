@@ -29,9 +29,9 @@ class TabbarCoordinator: BaseCoordinator {
   private func runSettingsFlow() -> ((UINavigationController) -> ()) {
     return { [unowned self] navController in
       if navController.viewControllers.isEmpty == true {
-        let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator(navController: navController)
-        self.addDependency(settingsCoordinator)
-        settingsCoordinator.start()
+//        let settingsCoordinator = self.coordinatorFactory.makeSettingsCoordinator(navController: navController)
+//        self.addDependency(settingsCoordinator)
+//        settingsCoordinator.start()
       }
     }
   }
