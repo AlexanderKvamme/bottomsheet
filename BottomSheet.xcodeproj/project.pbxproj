@@ -28,7 +28,6 @@
 		1CA434F222E7320D000C6753 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F122E7320D000C6753 /* SettingsCell.swift */; };
 		1CA434F422E7322A000C6753 /* SettingsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */; };
 		1CA434F622E73242000C6753 /* SettingsDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */; };
-		1CA434FD22E7328C000C6753 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434FB22E7328B000C6753 /* ModuleCell.swift */; };
 		1CA4350422E732D7000C6753 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350322E732D7000C6753 /* ModuleCell.swift */; };
 		1CA4350622E732FC000C6753 /* UserGuideCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350522E732FC000C6753 /* UserGuideCard.swift */; };
 		1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350F22E87FA7000C6753 /* ShadowView.swift */; };
@@ -134,7 +133,6 @@
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableHeaderView.swift; sourceTree = "<group>"; };
 		1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourceAndDelegate.swift; sourceTree = "<group>"; };
-		1CA434FB22E7328B000C6753 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModuleCell.swift; path = /Users/amiamacone/Documents/workspaces/code/other/bottomsheets/BottomSheet/ModuleCell.swift; sourceTree = "<absolute>"; };
 		1CA4350322E732D7000C6753 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		1CA4350522E732FC000C6753 /* UserGuideCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideCard.swift; sourceTree = "<group>"; };
 		1CA4350F22E87FA7000C6753 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -436,7 +434,6 @@
 				1CA4352022E8C411000C6753 /* Factories */,
 				1CA4357522E9A3D8000C6753 /* Models */,
 				1CA4350322E732D7000C6753 /* ModuleCell.swift */,
-				1CA434FB22E7328B000C6753 /* ModuleCell.swift */,
 				1CA4350522E732FC000C6753 /* UserGuideCard.swift */,
 				1CA434ED22E72B42000C6753 /* SettingsCellView.swift */,
 				1CA434EB22E72B32000C6753 /* SettingsCellView.swift */,
@@ -705,7 +702,6 @@
 				1CA435C222EAFE9D000C6753 /* hasXButton.swift in Sources */,
 				1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */,
 				1CA4351A22E8C0EA000C6753 /* Presentable.swift in Sources */,
-				1CA434FD22E7328C000C6753 /* ModuleCell.swift in Sources */,
 				1CA4356A22E9A351000C6753 /* ItemCreateCoordinatorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
