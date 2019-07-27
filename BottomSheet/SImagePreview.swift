@@ -64,6 +64,10 @@ class SImagePreview: UIView {
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 10.0
         scrollView.backgroundColor = .clear
+
+        if Device.hasTopNotch {
+            scrollView.contentInset = UIEdgeInsets(top: -50, left: 0, bottom: 0, right: 0)
+        }
     }
     
     private func setupOverlay() {
