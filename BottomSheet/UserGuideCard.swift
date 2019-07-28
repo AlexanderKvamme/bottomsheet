@@ -72,7 +72,6 @@ final class UserGuideCard: UIView {
         }
         
         headerLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(snp.centerY).offset(20)
             make.left.equalTo(valueLabel.snp.right).offset(16)
             make.right.equalToSuperview()
             make.bottom.equalTo(snp.centerY)

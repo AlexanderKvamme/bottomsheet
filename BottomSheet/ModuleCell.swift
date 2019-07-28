@@ -41,11 +41,7 @@ final class ModuleCell: UITableViewCell {
     private func addSubviewsAndConstraints() {
         contentView.addSubview(moduleCellView)
         moduleCellView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        
-        contentView.snp.makeConstraints { (make) in
-            make.edges.equalTo(moduleCellView)
+            make.edges.equalTo(contentView)
         }
     }
     

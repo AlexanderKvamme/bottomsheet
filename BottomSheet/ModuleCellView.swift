@@ -47,7 +47,7 @@ final class ModuleCellView: UIView {
         
         iconView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(16)
-            make.left.equalToSuperview().offset(80)
+            make.left.equalToSuperview().offset(60)
             make.width.height.equalTo(20)
         }
         
@@ -59,7 +59,7 @@ final class ModuleCellView: UIView {
         
         bodyTextView.snp.makeConstraints { (make) in
             make.left.equalTo(headerLabel).offset(-4)
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(-60)
             make.top.equalTo(headerLabel.snp.bottom)
             make.height.equalTo(54)
         }
