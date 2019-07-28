@@ -24,16 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = ApplicationCoordinator(router: router, coordinatorFactory: coordinatorFactory)
         coordinator?.start()
         
-        // OLD
-//        coordinator = MainCoordinator(navigationController: navigationController)
-//        coordinator?.start()
-
-        // ANCIENT
-//        let zoomableReceiptViewController = ZoomableReceiptViewController()
-//        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-//        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
-//        window.rootViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
-        
         window.makeKeyAndVisible()
         self.window = window
         

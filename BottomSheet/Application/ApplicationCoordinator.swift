@@ -49,28 +49,6 @@ final class ApplicationCoordinator: BaseCoordinator {
         runMainMenuFlow()
     }
     
-    private func runAuthFlow() {
-        let coordinator = coordinatorFactory.makeAuthCoordinatorBox(router: router)
-        coordinator.finishFlow = { [weak self, weak coordinator] in
-            isAutorized = true
-            self?.start()
-            self?.removeDependency(coordinator)
-        }
-        addDependency(coordinator)
-        coordinator.start()
-    }
-    
-    private func runOnboardingFlow() {
-        let coordinator = coordinatorFactory.makeOnboardingCoordinator(router: router)
-        coordinator.finishFlow = { [weak self, weak coordinator] in
-            onboardingWasShown = true
-            self?.start()
-            self?.removeDependency(coordinator)
-        }
-        addDependency(coordinator)
-        coordinator.start()
-    }
-    
     /// Main flow is just the main view controller as RootModule
     private func runMainMenuFlow() {
         let (coordinator, presentable) = coordinatorFactory.makeMainMenuCoordinator(router: router)
