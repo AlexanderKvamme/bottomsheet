@@ -24,8 +24,6 @@
 		1C6E63E822E070A6002DC799 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */; };
 		1CA434E622E6FC2F000C6753 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */; };
 		1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434EB22E72B32000C6753 /* SettingsCellView.swift */; };
-		1CA434EE22E72B42000C6753 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434ED22E72B42000C6753 /* SettingsCellView.swift */; };
-		1CA434F022E72B65000C6753 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434EF22E72B65000C6753 /* SettingsCellView.swift */; };
 		1CA434F222E7320D000C6753 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F122E7320D000C6753 /* SettingsCell.swift */; };
 		1CA434F422E7322A000C6753 /* SettingsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */; };
 		1CA434F622E73242000C6753 /* SettingsDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */; };
@@ -54,6 +52,7 @@
 		1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */; };
 		1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */; };
 		1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */; };
+		1CD66B0F22EDEA9B00C43669 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */; };
 		1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */; };
 		1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* CardCell.swift */; };
 		1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DF22E079E000701DF3 /* DateView.swift */; };
@@ -101,8 +100,6 @@
 		1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = ../../horizontalcards/horizontalcards/horizontalcards/UIColorExtensions.swift; sourceTree = "<group>"; };
 		1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CA434EB22E72B32000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
-		1CA434ED22E72B42000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
-		1CA434EF22E72B65000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableHeaderView.swift; sourceTree = "<group>"; };
 		1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourceAndDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +128,7 @@
 		1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRoundButton.swift; sourceTree = "<group>"; };
 		1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinderRootSheet.swift; sourceTree = "<group>"; };
 		1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionFactory.swift; sourceTree = "<group>"; };
+		1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionSheet.swift; sourceTree = "<group>"; };
 		1CF6D6DE22E079DF00701DF3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		1CF6D6DF22E079E000701DF3 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
@@ -242,6 +240,12 @@
 			children = (
 				1CA4354C22E9A039000C6753 /* SettingsView.swift */,
 				1CA4354E22E9A039000C6753 /* SettingsCoordinator.swift */,
+				1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */,
+				1CA434F122E7320D000C6753 /* SettingsCell.swift */,
+				1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */,
+				1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */,
+				1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */,
+				1CA434EB22E72B32000C6753 /* SettingsCellView.swift */,
 			);
 			path = "Settings flow";
 			sourceTree = "<group>";
@@ -303,17 +307,11 @@
 				1CA4357522E9A3D8000C6753 /* Models */,
 				1CA4350322E732D7000C6753 /* ModuleCell.swift */,
 				1CA4350522E732FC000C6753 /* UserGuideCard.swift */,
-				1CA434ED22E72B42000C6753 /* SettingsCellView.swift */,
-				1CA434EB22E72B32000C6753 /* SettingsCellView.swift */,
 				1CF6D70822E5D19600701DF3 /* ModuleCellView.swift */,
 				1CF6D70022E5B4E400701DF3 /* ModuleCell.swift */,
 				1CF6D70422E5CA4000701DF3 /* ModuleModel.swift */,
 				F4EAE152210FBD0100487323 /* Info.plist */,
 				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
-				1CA434EF22E72B65000C6753 /* SettingsCellView.swift */,
-				1CA434F122E7320D000C6753 /* SettingsCell.swift */,
-				1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */,
-				1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */,
 				1CF6D70A22E5E91F00701DF3 /* ModuleCell.swift */,
 				F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */,
 				1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */,
@@ -341,7 +339,6 @@
 				1C6E63DD22E0704F002DC799 /* Sofia Pro Regular.ttf */,
 				1C6E63DC22E0704F002DC799 /* Sofia Pro SemiBold.ttf */,
 				1CF6D6EA22E0A0A100701DF3 /* Assets.xcassets */,
-				1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */,
 				1CF6D6F022E0C74A00701DF3 /* ZoomableReceiptViewController.swift */,
 				1CF6D6F222E1CDEE00701DF3 /* SImagePreview.swift */,
 				1CF6D6F622E1CE4600701DF3 /* Device.swift */,
@@ -494,7 +491,6 @@
 				1CA4357922E9A3F3000C6753 /* Settings.swift in Sources */,
 				1CF6D70B22E5E92000701DF3 /* ModuleCell.swift in Sources */,
 				1CA4350422E732D7000C6753 /* ModuleCell.swift in Sources */,
-				1CA434EE22E72B42000C6753 /* SettingsCellView.swift in Sources */,
 				1CA4357722E9A3E6000C6753 /* ItemList.swift in Sources */,
 				1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */,
 				F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */,
@@ -518,7 +514,6 @@
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
 				1CF6D6F922E5ADD900701DF3 /* MainMenuViewController.swift in Sources */,
-				1CA434F022E72B65000C6753 /* SettingsCellView.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
 				1CA435A822E9A6EE000C6753 /* SettingsCoordinator.swift in Sources */,
 				1CA4356822E9A1F8000C6753 /* DeepLinkOption.swift in Sources */,
@@ -536,6 +531,7 @@
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */,
 				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
+				1CD66B0F22EDEA9B00C43669 /* SettingsCellView.swift in Sources */,
 				1C6E63D022E06EF1002DC799 /* BottomSheetContainerView.swift in Sources */,
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
