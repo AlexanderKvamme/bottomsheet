@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C00DF8C22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00DF8B22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift */; };
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
@@ -82,6 +83,7 @@
 		1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */; };
 		1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */; };
 		1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */; };
+		1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */; };
 		1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */; };
 		1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* CardCell.swift */; };
 		1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DF22E079E000701DF3 /* DateView.swift */; };
@@ -112,6 +114,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C00DF8B22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedTransactionCoordinator.swift; path = ../../../DetailedTransactionCoordinator.swift; sourceTree = "<group>"; };
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 		1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
 		1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRoundButton.swift; sourceTree = "<group>"; };
 		1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFinderRootSheet.swift; sourceTree = "<group>"; };
+		1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionFactory.swift; sourceTree = "<group>"; };
 		1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionSheet.swift; sourceTree = "<group>"; };
 		1CF6D6DE22E079DF00701DF3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		1CF6D6DF22E079E000701DF3 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
@@ -233,6 +237,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C00DF8D22EDE16900F7D54B /* Detailed Transaction Flow */ = {
+			isa = PBXGroup;
+			children = (
+				1C00DF8B22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift */,
+			);
+			path = "Detailed Transaction Flow";
+			sourceTree = "<group>";
+		};
 		1CA4351122E8C022000C6753 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 				1CA4359922E9A6BE000C6753 /* ModuleFactoryImp.swift */,
 				1CA4359522E9A6BD000C6753 /* OnboardingModuleFactory.swift */,
 				1CA4359A22E9A6BE000C6753 /* SettingsModuleFactory.swift */,
+				1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -282,6 +295,7 @@
 		1CA4352322E99DA5000C6753 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				1C00DF8D22EDE16900F7D54B /* Detailed Transaction Flow */,
 				1CA4356122E9A039000C6753 /* Create flow */,
 				1CA4354F22E9A039000C6753 /* Items flow */,
 				1CA4354122E9A039000C6753 /* Login flow */,
@@ -651,6 +665,7 @@
 				1CA435BF22E9A7C3000C6753 /* PageViewController.swift in Sources */,
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
 				DDD7DF3822E3816C00883D0D /* MainCoordinator.swift in Sources */,
+				1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */,
 				1CA435A222E9A6BE000C6753 /* SettingsModuleFactory.swift in Sources */,
 				1CA435B922E9A7BC000C6753 /* TabbarController.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
@@ -672,6 +687,7 @@
 				1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */,
 				1CA435A322E9A6BE000C6753 /* ItemCreateModuleFactory.swift in Sources */,
 				1CF6D6ED22E0B42100701DF3 /* UILabelExtensions.swift in Sources */,
+				1C00DF8C22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift in Sources */,
 				1CA435AF22E9A7B1000C6753 /* ItemsListController.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
