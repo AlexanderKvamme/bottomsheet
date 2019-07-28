@@ -27,7 +27,6 @@
 		1CA434F222E7320D000C6753 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F122E7320D000C6753 /* SettingsCell.swift */; };
 		1CA434F422E7322A000C6753 /* SettingsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */; };
 		1CA434F622E73242000C6753 /* SettingsDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */; };
-		1CA4350422E732D7000C6753 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350322E732D7000C6753 /* ModuleCell.swift */; };
 		1CA4350622E732FC000C6753 /* UserGuideCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350522E732FC000C6753 /* UserGuideCard.swift */; };
 		1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4350F22E87FA7000C6753 /* ShadowView.swift */; };
 		1CA4351622E8C0BD000C6753 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4351522E8C0BD000C6753 /* Router.swift */; };
@@ -71,9 +70,8 @@
 		1CF6D70122E5B4E500701DF3 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D70022E5B4E400701DF3 /* ModuleCell.swift */; };
 		1CF6D70522E5CA4000701DF3 /* ModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D70422E5CA4000701DF3 /* ModuleModel.swift */; };
 		1CF6D70922E5D19600701DF3 /* ModuleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D70822E5D19600701DF3 /* ModuleCellView.swift */; };
-		1CF6D70B22E5E92000701DF3 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D70A22E5E91F00701DF3 /* ModuleCell.swift */; };
 		5431D893033552C6A54C57A0 /* Pods_BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */; };
-		DDD7DF3822E3816C00883D0D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7DF3722E3816C00883D0D /* MainCoordinator.swift */; };
+		DDD7DF3822E3816C00883D0D /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7DF3722E3816C00883D0D /* MainMenuCoordinator.swift */; };
 		DDD7DF3A22E3ACBA00883D0D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
@@ -103,7 +101,6 @@
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		1CA434F322E7322A000C6753 /* SettingsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableHeaderView.swift; sourceTree = "<group>"; };
 		1CA434F522E73242000C6753 /* SettingsDataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourceAndDelegate.swift; sourceTree = "<group>"; };
-		1CA4350322E732D7000C6753 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		1CA4350522E732FC000C6753 /* UserGuideCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideCard.swift; sourceTree = "<group>"; };
 		1CA4350F22E87FA7000C6753 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1CA4351522E8C0BD000C6753 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -147,10 +144,9 @@
 		1CF6D70022E5B4E400701DF3 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		1CF6D70422E5CA4000701DF3 /* ModuleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleModel.swift; sourceTree = "<group>"; };
 		1CF6D70822E5D19600701DF3 /* ModuleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCellView.swift; sourceTree = "<group>"; };
-		1CF6D70A22E5E91F00701DF3 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE982F4F1298548A5DE0B89 /* Pods-BottomSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.release.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.release.xcconfig"; sourceTree = "<group>"; };
-		DDD7DF3722E3816C00883D0D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DDD7DF3722E3816C00883D0D /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
 		DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EF84516C5D6E94C9EBA1D170 /* Pods-BottomSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BottomSheet.debug.xcconfig"; path = "Target Support Files/Pods-BottomSheet/Pods-BottomSheet.debug.xcconfig"; sourceTree = "<group>"; };
 		F4EAE143210FBCFE00487323 /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				1C00DF8B22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift */,
+				1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */,
 			);
 			path = "Detailed Transaction Flow";
 			sourceTree = "<group>";
@@ -229,6 +226,7 @@
 		1CA4352322E99DA5000C6753 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				1CD66B1022EDEADF00C43669 /* Main Menu Flow */,
 				1C00DF8D22EDE16900F7D54B /* Detailed Transaction Flow */,
 				1CA4354B22E9A039000C6753 /* Settings flow */,
 			);
@@ -256,8 +254,22 @@
 				1CA4350F22E87FA7000C6753 /* ShadowView.swift */,
 				1CA4357622E9A3E6000C6753 /* ItemList.swift */,
 				1CA4357822E9A3F3000C6753 /* Settings.swift */,
+				1CF6D70422E5CA4000701DF3 /* ModuleModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1CD66B1022EDEADF00C43669 /* Main Menu Flow */ = {
+			isa = PBXGroup;
+			children = (
+				DDD7DF3722E3816C00883D0D /* MainMenuCoordinator.swift */,
+				1CF6D70822E5D19600701DF3 /* ModuleCellView.swift */,
+				1CF6D70022E5B4E400701DF3 /* ModuleCell.swift */,
+				1CF6D6F822E5ADD900701DF3 /* MainMenuViewController.swift */,
+				1CF6D6FA22E5B1CF00701DF3 /* ModulesTableView.swift */,
+				1CF6D6FC22E5B22700701DF3 /* ModulesDataSourceAndDelegate.swift */,
+			);
+			path = "Main Menu Flow";
 			sourceTree = "<group>";
 		};
 		61CA0EE13F7D8C6B9C1E1F44 /* Pods */ = {
@@ -305,16 +317,10 @@
 				1CA4352322E99DA5000C6753 /* Flows */,
 				1CA4352022E8C411000C6753 /* Factories */,
 				1CA4357522E9A3D8000C6753 /* Models */,
-				1CA4350322E732D7000C6753 /* ModuleCell.swift */,
 				1CA4350522E732FC000C6753 /* UserGuideCard.swift */,
-				1CF6D70822E5D19600701DF3 /* ModuleCellView.swift */,
-				1CF6D70022E5B4E400701DF3 /* ModuleCell.swift */,
-				1CF6D70422E5CA4000701DF3 /* ModuleModel.swift */,
 				F4EAE152210FBD0100487323 /* Info.plist */,
 				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
-				1CF6D70A22E5E91F00701DF3 /* ModuleCell.swift */,
 				F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */,
-				1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */,
 				1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */,
 				1C3DC8FC22B39ED800B0902A /* PickerCell.swift */,
 				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
@@ -331,7 +337,6 @@
 				1CF6D6EC22E0B42100701DF3 /* UILabelExtensions.swift */,
 				1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */,
 				F4EAE158210FBD4100487323 /* MapViewController.swift */,
-				DDD7DF3722E3816C00883D0D /* MainCoordinator.swift */,
 				1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */,
 				1C6E63E522E07067002DC799 /* UIFontExtension.swift */,
 				1C6E63DE22E0704F002DC799 /* Sofia Pro Bold.ttf */,
@@ -342,9 +347,6 @@
 				1CF6D6F022E0C74A00701DF3 /* ZoomableReceiptViewController.swift */,
 				1CF6D6F222E1CDEE00701DF3 /* SImagePreview.swift */,
 				1CF6D6F622E1CE4600701DF3 /* Device.swift */,
-				1CF6D6F822E5ADD900701DF3 /* MainMenuViewController.swift */,
-				1CF6D6FA22E5B1CF00701DF3 /* ModulesTableView.swift */,
-				1CF6D6FC22E5B22700701DF3 /* ModulesDataSourceAndDelegate.swift */,
 				1CF6D6F422E1CE0800701DF3 /* SShadowButton.swift */,
 				1C6E63DB22E0704F002DC799 /* RobotoMono-Bold.ttf */,
 				1CF6D6DE22E079DF00701DF3 /* CardCell.swift */,
@@ -489,8 +491,6 @@
 				1CA4351622E8C0BD000C6753 /* Router.swift in Sources */,
 				1CF6D6FB22E5B1CF00701DF3 /* ModulesTableView.swift in Sources */,
 				1CA4357922E9A3F3000C6753 /* Settings.swift in Sources */,
-				1CF6D70B22E5E92000701DF3 /* ModuleCell.swift in Sources */,
-				1CA4350422E732D7000C6753 /* ModuleCell.swift in Sources */,
 				1CA4357722E9A3E6000C6753 /* ItemList.swift in Sources */,
 				1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */,
 				F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */,
@@ -503,7 +503,7 @@
 				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
 				1CF6D70122E5B4E500701DF3 /* ModuleCell.swift in Sources */,
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
-				DDD7DF3822E3816C00883D0D /* MainCoordinator.swift in Sources */,
+				DDD7DF3822E3816C00883D0D /* MainMenuCoordinator.swift in Sources */,
 				1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */,
 				1CA435A222E9A6BE000C6753 /* SettingsModuleFactory.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
