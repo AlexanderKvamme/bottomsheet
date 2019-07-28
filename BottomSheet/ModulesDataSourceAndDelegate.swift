@@ -42,11 +42,11 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     // MARK: - Properties
     
     let dummytext = "Kort tekst om denne partikulære delen av appen kommer her."
-    private lazy var detailedTransactionModel = ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Korttransaksjoner", bodyText: dummytext, didTapCell: nil)
-    private lazy var settingsModel =     ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Utlegg", bodyText: dummytext, didTapCell: nil)
-    private lazy var module3 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Lønnsslipper", bodyText: dummytext, didTapCell: nil)
-    private lazy var module4 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Timeregistrering", bodyText: dummytext, didTapCell: nil)
-    private lazy var module5 =           ModuleModel(icon: UIImage.init(named: "x-icon")!, headerText: "Reiseregning", bodyText: dummytext, didTapCell: nil)
+    private lazy var detailedTransactionModel = ModuleModel(icon: UIImage.init(named: "icon-credit-card")!, headerText: "Korttransaksjoner", bodyText: dummytext, didTapCell: nil)
+    private lazy var settingsModel =     ModuleModel(icon: UIImage.init(named: "icon-shopping-cart")!, headerText: "Utlegg", bodyText: dummytext, didTapCell: nil)
+    private lazy var module3 =           ModuleModel(icon: UIImage.init(named: "icon-chat-bubble")!, headerText: "Lønnsslipper", bodyText: dummytext, didTapCell: nil)
+    private lazy var module4 =           ModuleModel(icon: UIImage.init(named: "icon-receipt")!, headerText: "Timeregistrering", bodyText: dummytext, didTapCell: nil)
+    private lazy var module5 =           ModuleModel(icon: UIImage.init(named: "icon-plane-take-off")!, headerText: "Reiseregning", bodyText: dummytext, didTapCell: nil)
     private lazy var moduleModels = [detailedTransactionModel, settingsModel, module3, module4, module5]
     private var router: Router
     private var baseCoordinator =  BaseCoordinator()

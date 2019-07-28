@@ -9,12 +9,17 @@
 import Foundation
 import UIKit
 
+struct SettingModel {
+    let title: String
+    let iconName: String
+}
 
 final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
     
-    private var sectionNames = ["The first", "The second", "The third"]
+    private var sectionNames = ["Generelt", "Farger og fasonger", "Andre ting"]
+    private var iconNames = ["icon-credit-card", "icon-chat-bubble", "icon-receipt"]
     
     // MARK: - Methods
     
@@ -36,6 +41,7 @@ final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = SettingsTableHeaderView()
         headerView.setTitle(sectionNames[section])
+        headerView.setIcon(UIImage(named: iconNames[section])!)
         return headerView
     }
     

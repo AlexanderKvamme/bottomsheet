@@ -60,5 +60,9 @@ final class SettingsTableHeaderView: UIView {
         titleLabel.text = value.uppercased()
         titleLabel.setCharacterSpacing(1)
     }
+    
+    func setIcon(_ image: UIImage) {
+        iconView.image = image
+    }
 }
 
