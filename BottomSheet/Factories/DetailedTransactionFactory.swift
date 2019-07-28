@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailedTransactionFactory {
-    func makeDetailedTransactionModule() -> DetailedTransactionView
+    func makeDetailedTransactionModule(router: Router) -> DetailedTransactionView
 }

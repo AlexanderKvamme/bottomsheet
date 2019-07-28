@@ -15,6 +15,8 @@ protocol RootSheet {
     func pop()
     func push(_ sheet: UIViewController)
     
+    var router: Router { get }
+    
     var scrollableSheet: ScrollableBottomSheetContainer? { get set }
 }
 
@@ -37,6 +39,19 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     private var navigationStack = [UIViewController]()
     
     weak var scrollableSheet: ScrollableBottomSheetContainer?
+    let router: Router
+    
+    // MARK: - Initializers
+    
+    init(router: Router) {
+        self.router = router
+        
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life Cycle
     
@@ -79,8 +94,11 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
             navigationStack.remove(at: navigationStack.index(of: topSheet)!)
         }
 
+        // TODO: clean up
         addSheetLayout(sheet)
         scrollableSheet!.scrollToBottom()
+        
+        router.popModule()
     }
     
     private func addSheetLayout(_ sheet: UIViewController) {

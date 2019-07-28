@@ -25,7 +25,7 @@ class DetailedTransactionCoordinator: BaseCoordinator {
     // MARK: - Methods
     
     override func start() {
-        let detailedTransactionModule = factory.makeDetailedTransactionModule()
+        let detailedTransactionModule = factory.makeDetailedTransactionModule(router: router)
         detailedTransactionModule.onFinish = { [weak self] in
             self?.router.popModule()
         }
