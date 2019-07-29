@@ -26,6 +26,8 @@
 		1C98E78C22EEEC52004B2C07 /* CardTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */; };
 		1C98E78E22EEED04004B2C07 /* CardTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */; };
 		1C98E79022EF05F1004B2C07 /* hasNavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78F22EF05F1004B2C07 /* hasNavigationHeader.swift */; };
+		1C98E79622EF0C17004B2C07 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E79222EF0985004B2C07 /* CardController.swift */; };
+		1C98E79822EF0C1A004B2C07 /* SwipeableCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E79422EF09A7004B2C07 /* SwipeableCardCell.swift */; };
 		1CA434E622E6FC2F000C6753 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */; };
 		1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434EB22E72B32000C6753 /* SettingsCellView.swift */; };
 		1CA434F222E7320D000C6753 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F122E7320D000C6753 /* SettingsCell.swift */; };
@@ -104,9 +106,7 @@
 		1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionsViewController.swift; sourceTree = "<group>"; };
 		1C98E78F22EF05F1004B2C07 /* hasNavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasNavigationHeader.swift; sourceTree = "<group>"; };
 		1C98E79222EF0985004B2C07 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
-		1C98E79322EF099C004B2C07 /* CardStatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatusIndicator.swift; sourceTree = "<group>"; };
-		1C98E79422EF09A7004B2C07 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		1C98E79522EF09A7004B2C07 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		1C98E79422EF09A7004B2C07 /* SwipeableCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardCell.swift; sourceTree = "<group>"; };
 		1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CA434EB22E72B32000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -196,9 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				1C98E79222EF0985004B2C07 /* CardController.swift */,
-				1C98E79322EF099C004B2C07 /* CardStatusIndicator.swift */,
-				1C98E79422EF09A7004B2C07 /* CardCell.swift */,
-				1C98E79522EF09A7004B2C07 /* DateView.swift */,
+				1C98E79422EF09A7004B2C07 /* SwipeableCardCell.swift */,
 			);
 			path = SwipeableCards;
 			sourceTree = "<group>";
@@ -567,6 +565,7 @@
 			files = (
 				1CF6D6E522E0909300701DF3 /* ContactShadowView.swift in Sources */,
 				1CA434F622E73242000C6753 /* SettingsDataSourceAndDelegate.swift in Sources */,
+				1C98E79822EF0C1A004B2C07 /* SwipeableCardCell.swift in Sources */,
 				1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */,
 				1CF6D6F122E0C74A00701DF3 /* ZoomableReceiptViewController.swift in Sources */,
 				1CA4351822E8C0D3000C6753 /* RounterImp.swift in Sources */,
@@ -611,6 +610,7 @@
 				1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */,
 				1CF6D6ED22E0B42100701DF3 /* UILabelExtensions.swift in Sources */,
 				1C00DF8C22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift in Sources */,
+				1C98E79622EF0C17004B2C07 /* CardController.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,

@@ -16,6 +16,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
 
     lazy var xButton = makeXButton()
     lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
+    private let swipeableCardsController = CardController()
     var onFinish: (() -> ())?
     
     // MARK: - Initializers
@@ -34,15 +35,29 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     // MARK: - Methods
     
     private func setup() {
-        view.backgroundColor = UIColor.solarstein.seashell
+        view.backgroundColor = .white
         xButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
         
         navigationHeaderLabel.text = "Juli"
+        
+        addSwipeableCards()
+    }
+    
+    private func addSwipeableCards() {
+        let controller = CardController()
+        addChild(controller)
     }
     
     private func addSubviewsAndConstraints() {
         applyXButtonConstraints()
         applyNavigationHeaderConstraints()
+        
+        view.addSubview(swipeableCardsController.view)
+        swipeableCardsController.view.snp.makeConstraints{ make in
+            make.height.equalTo(SwipeableCardCell.estimatedItemSize.height)
+            make.top.equalToSuperview().offset(160)
+            make.left.right.equalToSuperview()
+        }
     }
     
     @objc private func finish() {

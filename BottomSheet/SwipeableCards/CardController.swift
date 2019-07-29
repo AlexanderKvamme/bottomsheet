@@ -28,7 +28,7 @@ final class CardController: UIViewController {
     
     init() {
         layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CardCell.estimatedItemSize
+        layout.estimatedItemSize = SwipeableCardCell.estimatedItemSize
         layout.minimumLineSpacing = CardController.horizontalInterItemSpacing
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -46,7 +46,7 @@ final class CardController: UIViewController {
     // MARK: - Methods
     
     private func setup() {
-        collectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
+        collectionView.register(SwipeableCardCell.self, forCellWithReuseIdentifier: SwipeableCardCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clear
@@ -82,10 +82,10 @@ extension CardController: UIScrollViewDelegate {
     
     // used to avoid choppy animation when weakly swiping a new card and finger is released with acceleration
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let newCardIndex = (scrollView.contentOffset.x / CardCell.estimatedItemSize.width).rounded()
+        let newCardIndex = (scrollView.contentOffset.x / SwipeableCardCell.estimatedItemSize.width).rounded()
         let newCellIndex = IndexPath(item: Int(newCardIndex), section: 0)
         let accumulatedInterItemSpacing = CGFloat(newCellIndex.row) * CardController.horizontalInterItemSpacing
-        let accumulatedCardSize = CGFloat(newCellIndex.row)*CardCell.estimatedItemSize.width
+        let accumulatedCardSize = CGFloat(newCellIndex.row)*SwipeableCardCell.estimatedItemSize.width
         let targetXPoint = -32 + accumulatedCardSize + accumulatedInterItemSpacing
         scrollView.setContentOffset(CGPoint(x: targetXPoint, y: 0), animated: true)
     }
@@ -94,7 +94,7 @@ extension CardController: UIScrollViewDelegate {
 extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CardCell.estimatedItemSize
+        return SwipeableCardCell.estimatedItemSize
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -103,7 +103,7 @@ extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as! CardCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SwipeableCardCell.identifier, for: indexPath) as! SwipeableCardCell
         cell.update(with: data[indexPath.row])
         cell.alpha = 0.5
         
@@ -116,7 +116,7 @@ extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pointee = targetContentOffset.pointee
-        let cardSize = CardCell.estimatedItemSize
+        let cardSize = SwipeableCardCell.estimatedItemSize
         let newCardIndex = (pointee.x / cardSize.width).rounded()
         let newPageIndex = getPageNumber(for: Int(newCardIndex), currentCardNumber: currentCardIndex)
         
@@ -147,14 +147,14 @@ extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFl
         guard newCellIndex != oldCellIndex else { return }
         
         UIView.animate(withDuration: 0.2) {
-            if let oldCell = self.collectionView.cellForItem(at: oldCellIndex) as? CardCell {
+            if let oldCell = self.collectionView.cellForItem(at: oldCellIndex) as? SwipeableCardCell {
                 oldCell.setFaded(true)
             } else {
                 print("could not get cellForItem for oldCellIndex: \(oldCellIndex.row)")
             }
             
             // fade in new cell
-            if let newCell = self.collectionView.cellForItem(at: newCellIndex) as? CardCell {
+            if let newCell = self.collectionView.cellForItem(at: newCellIndex) as? SwipeableCardCell {
                 newCell.setFaded(false)
             } else {
                 print("could not get cellForItem for newCellIndex: \(newCellIndex!.row). Cell is probably out of visible area")

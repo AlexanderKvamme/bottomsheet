@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-final class CardCell: UICollectionViewCell {
+final class SwipeableCardCell: UICollectionViewCell {
     
     // MARK: - Properties
     
@@ -87,7 +87,7 @@ final class CardCell: UICollectionViewCell {
         }
         
         contentView.snp.makeConstraints { (make) in
-            make.size.equalTo(CardCell.estimatedItemSize)
+            make.size.equalTo(SwipeableCardCell.estimatedItemSize)
             make.edges.equalToSuperview()
         }
         

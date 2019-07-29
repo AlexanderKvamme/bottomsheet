@@ -6,6 +6,7 @@ target 'BottomSheet' do
   use_frameworks!
 
   pod 'SnapKit', '~> 5.0.0'
+  pod 'CHIPageControl/Aleppo'
   # Pods for BottomSheet
 
 end
