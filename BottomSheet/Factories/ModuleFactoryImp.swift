@@ -4,9 +4,9 @@ import UIKit
 
 final class ModuleFactoryImp:
     SettingsModuleFactory,
-    DetailedTransactionFactory
+    DetailedTransactionFactory,
+    CardTransactionsFactory
 {
-    
     func makeDetailedTransactionModule(router: Router) -> DetailedTransactionView {
         let zoomableReceiptViewController = ZoomableReceiptViewController()
 //        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil, router: Router)
@@ -18,6 +18,10 @@ final class ModuleFactoryImp:
     
     func makeSettingsModule() -> SettingsView {
         return SettingsViewController()
+    }
+
+    func makeCardTransactionsModule(router: Router) -> CardTransactionsView {
+        return CardTransactionsViewController()
     }
 }
 

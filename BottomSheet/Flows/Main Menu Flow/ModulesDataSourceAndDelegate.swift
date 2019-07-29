@@ -40,6 +40,12 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
             self.baseCoordinator.addDependency(detailedModule)
             detailedModule.start()
         }
+        
+        module3.didTapCell = {
+            let cardTransactionsCoordinator = CoordinatorFactoryImp().makeCardTransactionsCoordinator(router: self.router)
+            self.baseCoordinator.addDependency(cardTransactionsCoordinator)
+            cardTransactionsCoordinator.start()
+        }
     }
     
     // MARK: - Methods

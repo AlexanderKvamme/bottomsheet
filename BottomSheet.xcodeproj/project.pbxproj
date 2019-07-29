@@ -22,6 +22,9 @@
 		1C6E63E422E0704F002DC799 /* Sofia Pro Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DF22E0704F002DC799 /* Sofia Pro Light.ttf */; };
 		1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63E522E07067002DC799 /* UIFontExtension.swift */; };
 		1C6E63E822E070A6002DC799 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */; };
+		1C98E78A22EEE986004B2C07 /* CardTransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78922EEE986004B2C07 /* CardTransactionsCoordinator.swift */; };
+		1C98E78C22EEEC52004B2C07 /* CardTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */; };
+		1C98E78E22EEED04004B2C07 /* CardTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */; };
 		1CA434E622E6FC2F000C6753 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */; };
 		1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434EB22E72B32000C6753 /* SettingsCellView.swift */; };
 		1CA434F222E7320D000C6753 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F122E7320D000C6753 /* SettingsCell.swift */; };
@@ -95,6 +98,9 @@
 		1C6E63DF22E0704F002DC799 /* Sofia Pro Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Light.ttf"; sourceTree = "<group>"; };
 		1C6E63E522E07067002DC799 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		1C6E63E722E070A6002DC799 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		1C98E78922EEE986004B2C07 /* CardTransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionsCoordinator.swift; sourceTree = "<group>"; };
+		1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionFactory.swift; sourceTree = "<group>"; };
+		1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionsViewController.swift; sourceTree = "<group>"; };
 		1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CA434EB22E72B32000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 				1CA4359922E9A6BE000C6753 /* ModuleFactoryImp.swift */,
 				1CA4359A22E9A6BE000C6753 /* SettingsModuleFactory.swift */,
 				1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */,
+				1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 		1CA4352322E99DA5000C6753 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				1CDA9DA522EEE93700A1E6F2 /* Card Transactions Flow */,
 				1CD66B1022EDEADF00C43669 /* Main Menu Flow */,
 				1C00DF8D22EDE16900F7D54B /* Detailed Transaction Flow */,
 				1CA4354B22E9A039000C6753 /* Settings flow */,
@@ -350,6 +358,15 @@
 				1CF6D6F622E1CE4600701DF3 /* Device.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1CDA9DA522EEE93700A1E6F2 /* Card Transactions Flow */ = {
+			isa = PBXGroup;
+			children = (
+				1C98E78922EEE986004B2C07 /* CardTransactionsCoordinator.swift */,
+				1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */,
+			);
+			path = "Card Transactions Flow";
 			sourceTree = "<group>";
 		};
 		61CA0EE13F7D8C6B9C1E1F44 /* Pods */ = {
@@ -544,6 +561,7 @@
 				1CA4351622E8C0BD000C6753 /* Router.swift in Sources */,
 				1CF6D6FB22E5B1CF00701DF3 /* ModulesTableView.swift in Sources */,
 				1CA4357922E9A3F3000C6753 /* Settings.swift in Sources */,
+				1C98E78C22EEEC52004B2C07 /* CardTransactionFactory.swift in Sources */,
 				1CA4357722E9A3E6000C6753 /* ItemList.swift in Sources */,
 				1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */,
 				F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */,
@@ -565,6 +583,7 @@
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
+				1C98E78E22EEED04004B2C07 /* CardTransactionsViewController.swift in Sources */,
 				1CF6D6F922E5ADD900701DF3 /* MainMenuViewController.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
 				1CA435A822E9A6EE000C6753 /* SettingsCoordinator.swift in Sources */,
@@ -589,6 +608,7 @@
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
 				1CF6D70922E5D19600701DF3 /* ModuleCellView.swift in Sources */,
 				1CA435C222EAFE9D000C6753 /* hasXButton.swift in Sources */,
+				1C98E78A22EEE986004B2C07 /* CardTransactionsCoordinator.swift in Sources */,
 				1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */,
 				1CA4351A22E8C0EA000C6753 /* Presentable.swift in Sources */,
 			);

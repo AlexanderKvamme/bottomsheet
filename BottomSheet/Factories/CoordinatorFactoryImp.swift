@@ -19,6 +19,11 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
         return coordinator
     }
     
+    func makeCardTransactionsCoordinator(router: Router) -> Coordinator {
+        let coordinator = CardTransactionsCoordinator(router: router)
+        return coordinator
+    }
+    
     private func router(_ navController: UINavigationController?) -> Router {
         return RouterImp(rootController: navigationController(navController))
     }
