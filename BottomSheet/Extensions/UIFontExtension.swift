@@ -33,11 +33,6 @@ extension UIFont {
     // MARK: Fileprivate helper methods
     
     fileprivate static func sofia(style: FontWeight, ofSize: CGFloat) -> UIFont {
-        UIFont.familyNames.forEach({ familyName in
-            let fontNames = UIFont.fontNames(forFamilyName: familyName)
-            print(familyName, fontNames)
-        })
-        
         return UIFont(name: style.rawValue, size: ofSize)!
     }
 }
