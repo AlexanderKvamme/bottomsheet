@@ -58,6 +58,7 @@
 		1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */; };
 		1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */; };
 		1CD66B0F22EDEA9B00C43669 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */; };
+		1CE47E5A22EF155900AC242C /* SectionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */; };
 		1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */; };
 		1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* CardCell.swift */; };
 		1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DF22E079E000701DF3 /* DateView.swift */; };
@@ -138,6 +139,7 @@
 		1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionFactory.swift; sourceTree = "<group>"; };
 		1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CDA9DA422EDF1CD00A1E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = BottomSheet/Info.plist; sourceTree = "<group>"; };
+		1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionView.swift; sourceTree = "<group>"; };
 		1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionSheet.swift; sourceTree = "<group>"; };
 		1CF6D6DE22E079DF00701DF3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		1CF6D6DF22E079E000701DF3 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				1CD66B1322EDEC3800C43669 /* Views */,
 				1CA059D922EDF052004C68DF /* Fonts */,
 				1CD66B1622EDEEA100C43669 /* Utilities */,
+				1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				1CA4350622E732FC000C6753 /* UserGuideCard.swift in Sources */,
 				1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */,
 				1CA435A022E9A6BE000C6753 /* CoordinatorFactory.swift in Sources */,
+				1CE47E5A22EF155900AC242C /* SectionDescriptionView.swift in Sources */,
 				1CF6D6FD22E5B22700701DF3 /* ModulesDataSourceAndDelegate.swift in Sources */,
 				1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */,
 				1CA434F422E7322A000C6753 /* SettingsTableHeaderView.swift in Sources */,

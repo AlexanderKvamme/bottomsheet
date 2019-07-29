@@ -63,7 +63,7 @@ final class SettingsViewController: UIViewController, SettingsView {
         headerLabel.textColor = UIColor.solarstein.sapphire
         headerLabel.font = UIFont.kolibrix.header
         
-        subheaderLabel.text = "Her kan du justere dine preferanesr"
+        subheaderLabel.text = "Her kan du justere dine preferanser"
         subheaderLabel.textColor = UIColor.solarstein.sapphire
         subheaderLabel.alpha = 0.3
         subheaderLabel.font = UIFont.kolibrix.body

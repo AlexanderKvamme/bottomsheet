@@ -18,6 +18,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
     private let swipeableCardsController = CardController()
     private var userGuideCard: UserGuideCard?
+    private let sectionDescription = SectionDescriptionView()
     var onFinish: (() -> ())?
     
     // MARK: - Initializers
@@ -73,11 +74,24 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     private func addSubviewsAndConstraints() {
         applyXButtonConstraints()
         applyNavigationHeaderConstraints()
+
+        view.addSubview(sectionDescription)
+        sectionDescription.snp.makeConstraints { (make) in
+            // align to userGuid of one exists
+            if let userGuide = userGuideCard {
+                make.top.equalTo(userGuide.snp.bottom).offset(24)
+            } else {
+                make.top.equalTo(view.snp.top).offset(24)
+            }
+            
+            make.left.right.equalToSuperview()
+            make.height.equalTo(100)
+        }
         
         view.addSubview(swipeableCardsController.view)
         swipeableCardsController.view.snp.makeConstraints{ make in
             make.height.equalTo(SwipeableCardCell.estimatedItemSize.height)
-            make.top.equalToSuperview().offset(240)
+            make.top.equalTo(sectionDescription.snp.bottom).offset(24)
             make.left.right.equalToSuperview()
         }
     }
