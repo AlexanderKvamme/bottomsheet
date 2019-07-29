@@ -18,12 +18,15 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
     private let swipeableCardsController = CardController()
     private var userGuideCard: UserGuideCard?
-    private let sectionDescription = SectionDescriptionView()
+    private let topSectionDescription: SectionDescriptionView!
+    private let bottomSectionDescription :SectionDescriptionView!
     var onFinish: (() -> ())?
     
     // MARK: - Initializers
     
     init() {
+        topSectionDescription = SectionDescriptionView(header: "Ventende", description: "Transaksjoner som mangler føring, match mot kvittering eller annet")
+        bottomSectionDescription = SectionDescriptionView(header: "Godkjente", description: "Transaksjoner som er kontert, og er ferdig matchet mot en kvittering")
         super.init(nibName: nil, bundle: nil)
 
         setup()
@@ -45,7 +48,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         addUserGuide()
         addSwipeableCards()
         
-        sectionDescription.setBadgeNumber(9)
+        topSectionDescription.setBadgeNumber(9)
     }
     
     private func addUserGuide() {
@@ -77,8 +80,8 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         applyXButtonConstraints()
         applyNavigationHeaderConstraints()
 
-        view.addSubview(sectionDescription)
-        sectionDescription.snp.makeConstraints { (make) in
+        view.addSubview(topSectionDescription)
+        topSectionDescription.snp.makeConstraints { (make) in
             // align to userGuid of one exists
             if let userGuide = userGuideCard {
                 make.top.equalTo(userGuide.snp.bottom).offset(24)
@@ -93,8 +96,15 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         view.addSubview(swipeableCardsController.view)
         swipeableCardsController.view.snp.makeConstraints{ make in
             make.height.equalTo(SwipeableCardCell.estimatedItemSize.height)
-            make.top.equalTo(sectionDescription.snp.bottom).offset(24)
+            make.top.equalTo(topSectionDescription.snp.bottom).offset(24)
             make.left.right.equalToSuperview()
+        }
+        
+        view.addSubview(bottomSectionDescription)
+        bottomSectionDescription.snp.makeConstraints { (make) in
+            make.top.equalTo(swipeableCardsController.view.snp.bottom).offset(48)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(100)
         }
     }
     
