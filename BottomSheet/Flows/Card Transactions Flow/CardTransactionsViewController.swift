@@ -65,7 +65,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         if let card = userGuideCard {
             view.addSubview(card)
             card.snp.makeConstraints { (make) in
-                make.top.equalToSuperview().offset(120)
+                make.top.equalToSuperview().offset(140)
                 make.left.equalToSuperview().offset(24)
                 make.right.equalToSuperview().offset(-24)
                 make.height.equalTo(100)
@@ -86,7 +86,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         topSectionDescription.snp.makeConstraints { (make) in
             // align to userGuid of one exists
             if let userGuide = userGuideCard {
-                make.top.equalTo(userGuide.snp.bottom).offset(24)
+                make.top.equalTo(userGuide.snp.bottom).offset(32)
             } else {
                 make.top.equalTo(view.snp.top).offset(24)
             }
@@ -98,7 +98,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         view.addSubview(swipeableCardsController.view)
         swipeableCardsController.view.snp.makeConstraints{ make in
             make.height.equalTo(SwipeableCardCell.estimatedItemSize.height)
-            make.top.equalTo(topSectionDescription.snp.bottom).offset(24)
+            make.top.equalTo(topSectionDescription.snp.bottom).offset(8)
             make.left.right.equalToSuperview()
         }
         
