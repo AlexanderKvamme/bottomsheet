@@ -44,6 +44,8 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         
         addUserGuide()
         addSwipeableCards()
+        
+        sectionDescription.setBadgeNumber(9)
     }
     
     private func addUserGuide() {

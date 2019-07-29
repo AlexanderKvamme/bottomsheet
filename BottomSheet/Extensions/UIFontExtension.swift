@@ -21,7 +21,8 @@ extension UIFont {
         static let navigation = sofia(style: .semibold, ofSize: 24)
         static let bold =       sofia(style: .bold, ofSize: 16)
         static let body =       sofia(style: .regular, ofSize: 16)
-        static let small =       sofia(style: .regular, ofSize: 12)
+        static let small =      sofia(style: .regular, ofSize: 12)
+        static let badge =      sofia(style: .bold, ofSize: 16)
     }
     
     enum FontWeight: String {

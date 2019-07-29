@@ -59,6 +59,7 @@
 		1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */; };
 		1CD66B0F22EDEA9B00C43669 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */; };
 		1CE47E5A22EF155900AC242C /* SectionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */; };
+		1CE47E5C22EF1A6600AC242C /* ColoredBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5B22EF1A6600AC242C /* ColoredBadge.swift */; };
 		1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */; };
 		1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* CardCell.swift */; };
 		1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DF22E079E000701DF3 /* DateView.swift */; };
@@ -140,6 +141,7 @@
 		1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CDA9DA422EDF1CD00A1E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = BottomSheet/Info.plist; sourceTree = "<group>"; };
 		1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionView.swift; sourceTree = "<group>"; };
+		1CE47E5B22EF1A6600AC242C /* ColoredBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBadge.swift; sourceTree = "<group>"; };
 		1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionSheet.swift; sourceTree = "<group>"; };
 		1CF6D6DE22E079DF00701DF3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		1CF6D6DF22E079E000701DF3 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				1CA059D922EDF052004C68DF /* Fonts */,
 				1CD66B1622EDEEA100C43669 /* Utilities */,
 				1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */,
+				1CE47E5B22EF1A6600AC242C /* ColoredBadge.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				1CA4351F22E8C282000C6753 /* BaseCoordinator.swift in Sources */,
 				1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */,
 				1CA435A122E9A6BE000C6753 /* ModuleFactoryImp.swift in Sources */,
+				1CE47E5C22EF1A6600AC242C /* ColoredBadge.swift in Sources */,
 				1CF6D6F722E1CE4600701DF3 /* Device.swift in Sources */,
 				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
 				1CF6D70122E5B4E500701DF3 /* ModuleCell.swift in Sources */,
