@@ -17,6 +17,7 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     lazy var xButton = makeXButton()
     lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
     private let swipeableCardsController = CardController()
+    private var userGuideCard: UserGuideCard?
     var onFinish: (() -> ())?
     
     // MARK: - Initializers
@@ -40,7 +41,28 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         
         navigationHeaderLabel.text = "Juli"
         
+        addUserGuide()
         addSwipeableCards()
+    }
+    
+    private func addUserGuide() {
+        let model = UserGuideModel(badgeValue: 19)
+        userGuideCard = UserGuideCard(userGuideModel: model)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shakeUserGuide))
+        userGuideCard?.addGestureRecognizer(tapRecognizer)
+        
+        // FIXME: Find better solution
+        
+        if let card = userGuideCard {
+            view.addSubview(card)
+            card.snp.makeConstraints { (make) in
+                make.top.equalToSuperview().offset(120)
+                make.left.equalToSuperview().offset(24)
+                make.right.equalToSuperview().offset(-24)
+                make.height.equalTo(100)
+            }
+        }
     }
     
     private func addSwipeableCards() {
@@ -55,9 +77,13 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         view.addSubview(swipeableCardsController.view)
         swipeableCardsController.view.snp.makeConstraints{ make in
             make.height.equalTo(SwipeableCardCell.estimatedItemSize.height)
-            make.top.equalToSuperview().offset(160)
+            make.top.equalToSuperview().offset(240)
             make.left.right.equalToSuperview()
         }
+    }
+    
+    @objc private func shakeUserGuide() {
+        userGuideCard?.shakeByX()
     }
     
     @objc private func finish() {
