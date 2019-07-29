@@ -15,7 +15,7 @@ protocol isSheetViewController: class {
     var bottomSheetContainerView: BottomSheetContainerView { get set }
 }
 
-class DetailedTransactionViewController: UIViewController, isSheetViewController, DetailedTransactionView, hasXButton {
+class DetailedTransactionViewController: UIViewController, isSheetViewController, DetailedTransactionView, hasTopLeftNavigationButton {
     
     // MARK: - Properties
     
@@ -24,7 +24,7 @@ class DetailedTransactionViewController: UIViewController, isSheetViewController
     var mainViewController: SheetScrollResponder
     var sheetViewController: BottomSheetViewController
     var bottomSheetContainerView: BottomSheetContainerView
-    lazy var xButton = makeXButton()
+    lazy var topLeftNavigationButton = makeXButton()
     
     init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
         self.mainViewController = mainViewController
@@ -49,7 +49,7 @@ class DetailedTransactionViewController: UIViewController, isSheetViewController
         sheetViewController.didMove(toParent: self)
         
         applyXButtonConstraints()
-        xButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
+        topLeftNavigationButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
     }
     
     // MARK: - Methods
@@ -73,7 +73,7 @@ class DetailedTransactionViewController: UIViewController, isSheetViewController
         }
         
         applyXButtonConstraints()
-        xButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
+        topLeftNavigationButton.addTarget(self, action: #selector(performFinish), for: .touchUpInside)
     }
 }
 

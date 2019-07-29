@@ -50,7 +50,7 @@
 		1CA435A222E9A6BE000C6753 /* SettingsModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4359A22E9A6BE000C6753 /* SettingsModuleFactory.swift */; };
 		1CA435A622E9A6EE000C6753 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4354C22E9A039000C6753 /* SettingsView.swift */; };
 		1CA435A822E9A6EE000C6753 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4354E22E9A039000C6753 /* SettingsCoordinator.swift */; };
-		1CA435C222EAFE9D000C6753 /* hasXButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA435C122EAFE9D000C6753 /* hasXButton.swift */; };
+		1CA435C222EAFE9D000C6753 /* hasTopLeftNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA435C122EAFE9D000C6753 /* hasTopLeftNavigationButton.swift */; };
 		1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */; };
 		1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */; };
 		1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */; };
@@ -131,7 +131,7 @@
 		1CA4359822E9A6BD000C6753 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		1CA4359922E9A6BE000C6753 /* ModuleFactoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleFactoryImp.swift; sourceTree = "<group>"; };
 		1CA4359A22E9A6BE000C6753 /* SettingsModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModuleFactory.swift; sourceTree = "<group>"; };
-		1CA435C122EAFE9D000C6753 /* hasXButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hasXButton.swift; path = ../../hasXButton.swift; sourceTree = "<group>"; };
+		1CA435C122EAFE9D000C6753 /* hasTopLeftNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hasTopLeftNavigationButton.swift; path = ../../hasTopLeftNavigationButton.swift; sourceTree = "<group>"; };
 		1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetContainer.swift; sourceTree = "<group>"; };
 		1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSheet.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		1CA4351122E8C022000C6753 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1CA435C122EAFE9D000C6753 /* hasXButton.swift */,
+				1CA435C122EAFE9D000C6753 /* hasTopLeftNavigationButton.swift */,
 				DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */,
 				1CA4351922E8C0EA000C6753 /* Presentable.swift */,
 				1CA4356622E9A1F7000C6753 /* BaseView.swift */,
@@ -635,7 +635,7 @@
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
 				1CF6D70922E5D19600701DF3 /* ModuleCellView.swift in Sources */,
-				1CA435C222EAFE9D000C6753 /* hasXButton.swift in Sources */,
+				1CA435C222EAFE9D000C6753 /* hasTopLeftNavigationButton.swift in Sources */,
 				1C98E78A22EEE986004B2C07 /* CardTransactionsCoordinator.swift in Sources */,
 				1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */,
 				1CA4351A22E8C0EA000C6753 /* Presentable.swift in Sources */,

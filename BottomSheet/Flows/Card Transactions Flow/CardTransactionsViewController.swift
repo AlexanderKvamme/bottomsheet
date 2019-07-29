@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 
-final class CardTransactionsViewController: UIViewController, CardTransactionsView, hasXButton, hasNavigationHeader {
+final class CardTransactionsViewController: UIViewController, CardTransactionsView, hasTopLeftNavigationButton, hasNavigationHeader {
 
     // MARK: - Properties
 
-    lazy var xButton = makeXButton()
+    lazy var topLeftNavigationButton = makeBackButton()
     lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
     private let swipeableCardsController = CardController()
     private var userGuideCard: UserGuideCard?
@@ -41,7 +41,9 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     
     private func setup() {
         view.backgroundColor = .white
-        xButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
+        topLeftNavigationButton.setImage(UIImage(named: "left-bracket")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        topLeftNavigationButton.tintColor = UIColor.solarstein.sapphire
+        topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
         
         navigationHeaderLabel.text = "Juli"
         
