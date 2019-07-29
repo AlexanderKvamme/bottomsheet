@@ -41,8 +41,9 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Sofia Pro Bold.ttf</string>
 		<string>Sofia Pro Regular.ttf</string>
+		<string>Sofia Pro SemiBold.ttf</string>
+		<string>Sofia Pro Bold.ttf</string>
 		<string>RobotoMono-Bold.ttf</string>
 	</array>
 </dict>

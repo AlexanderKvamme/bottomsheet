@@ -103,6 +103,10 @@
 		1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionFactory.swift; sourceTree = "<group>"; };
 		1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionsViewController.swift; sourceTree = "<group>"; };
 		1C98E78F22EF05F1004B2C07 /* hasNavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasNavigationHeader.swift; sourceTree = "<group>"; };
+		1C98E79222EF0985004B2C07 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		1C98E79322EF099C004B2C07 /* CardStatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatusIndicator.swift; sourceTree = "<group>"; };
+		1C98E79422EF09A7004B2C07 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		1C98E79522EF09A7004B2C07 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CA434EB22E72B32000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -186,6 +190,17 @@
 				1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */,
 			);
 			path = "Detailed Transaction Flow";
+			sourceTree = "<group>";
+		};
+		1C98E79122EF0941004B2C07 /* SwipeableCards */ = {
+			isa = PBXGroup;
+			children = (
+				1C98E79222EF0985004B2C07 /* CardController.swift */,
+				1C98E79322EF099C004B2C07 /* CardStatusIndicator.swift */,
+				1C98E79422EF09A7004B2C07 /* CardCell.swift */,
+				1C98E79522EF09A7004B2C07 /* DateView.swift */,
+			);
+			path = SwipeableCards;
 			sourceTree = "<group>";
 		};
 		1CA059D922EDF052004C68DF /* Fonts */ = {
@@ -413,6 +428,7 @@
 		F4EAE145210FBCFE00487323 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				1C98E79122EF0941004B2C07 /* SwipeableCards */,
 				1CA4351B22E8C24D000C6753 /* Application */,
 				1CA4351122E8C022000C6753 /* Protocols */,
 				1CA4351422E8C0B0000C6753 /* Router */,

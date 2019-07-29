@@ -18,7 +18,6 @@ extension hasNavigationHeader where Self: UIViewController{
         let label = UILabel()
         label.font = UIFont.kolibrix.navigation
         label.alpha = 0.1
-        label.backgroundColor = .blue
         label.text = "Header"
         label.textColor = UIColor.solarstein.sapphire
         label.textAlignment = .center
