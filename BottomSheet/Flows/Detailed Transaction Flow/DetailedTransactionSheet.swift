@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndicator {
+final class DetailedTransactionSheet: UIViewController, hasHorizontalSheetIndicator {
 
     // MARK: - Properties
     

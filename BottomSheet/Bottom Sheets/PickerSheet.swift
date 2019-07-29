@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-final class PickerSheet: UIViewController, HasHorizontalSheetIndicator {
+final class PickerSheet: UIViewController, hasHorizontalSheetIndicator {
     
     // MARK: - Properties
     

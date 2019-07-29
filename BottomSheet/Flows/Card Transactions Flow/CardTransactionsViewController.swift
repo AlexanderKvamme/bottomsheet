@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 
-final class CardTransactionsViewController: UIViewController, CardTransactionsView, hasXButton {
+final class CardTransactionsViewController: UIViewController, CardTransactionsView, hasXButton, hasNavigationHeader {
 
     // MARK: - Properties
 
     lazy var xButton = makeXButton()
+    lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
     var onFinish: (() -> ())?
     
     // MARK: - Initializers
@@ -33,12 +34,15 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     // MARK: - Methods
     
     private func setup() {
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor.solarstein.seashell
         xButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
+        
+        navigationHeaderLabel.text = "Juli"
     }
     
     private func addSubviewsAndConstraints() {
         applyXButtonConstraints()
+        applyNavigationHeaderConstraints()
     }
     
     @objc private func finish() {

@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-protocol HasHorizontalSheetIndicator: UIViewController {}
+protocol hasHorizontalSheetIndicator: UIViewController {}
 
-extension HasHorizontalSheetIndicator {
+extension hasHorizontalSheetIndicator {
     func addHorizontalDragIndicator() {
         let height: CGFloat = 5
         let indicator = UIView()

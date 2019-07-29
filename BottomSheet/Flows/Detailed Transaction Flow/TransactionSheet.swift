@@ -12,7 +12,7 @@ import UIKit
 
 typealias RootSheetController = UIPageViewController & RootSheet
     
-final class TransactionSheet: UIViewController, HasHorizontalSheetIndicator {
+final class TransactionSheet: UIViewController, hasHorizontalSheetIndicator {
     
     // MARK: - Properties
     

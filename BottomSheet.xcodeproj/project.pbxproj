@@ -25,6 +25,7 @@
 		1C98E78A22EEE986004B2C07 /* CardTransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78922EEE986004B2C07 /* CardTransactionsCoordinator.swift */; };
 		1C98E78C22EEEC52004B2C07 /* CardTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */; };
 		1C98E78E22EEED04004B2C07 /* CardTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */; };
+		1C98E79022EF05F1004B2C07 /* hasNavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98E78F22EF05F1004B2C07 /* hasNavigationHeader.swift */; };
 		1CA434E622E6FC2F000C6753 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */; };
 		1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434EB22E72B32000C6753 /* SettingsCellView.swift */; };
 		1CA434F222E7320D000C6753 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA434F122E7320D000C6753 /* SettingsCell.swift */; };
@@ -101,6 +102,7 @@
 		1C98E78922EEE986004B2C07 /* CardTransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionsCoordinator.swift; sourceTree = "<group>"; };
 		1C98E78B22EEEC52004B2C07 /* CardTransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionFactory.swift; sourceTree = "<group>"; };
 		1C98E78D22EEED04004B2C07 /* CardTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionsViewController.swift; sourceTree = "<group>"; };
+		1C98E78F22EF05F1004B2C07 /* hasNavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasNavigationHeader.swift; sourceTree = "<group>"; };
 		1CA434E522E6FC2F000C6753 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CA434EB22E72B32000C6753 /* SettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellView.swift; sourceTree = "<group>"; };
 		1CA434F122E7320D000C6753 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				1CA4356622E9A1F7000C6753 /* BaseView.swift */,
 				1CA4356722E9A1F7000C6753 /* DeepLinkOption.swift */,
 				1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */,
+				1C98E78F22EF05F1004B2C07 /* hasNavigationHeader.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				1CA435A222E9A6BE000C6753 /* SettingsModuleFactory.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
 				1CA4356922E9A1F8000C6753 /* BaseView.swift in Sources */,
+				1C98E79022EF05F1004B2C07 /* hasNavigationHeader.swift in Sources */,
 				1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,

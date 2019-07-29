@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-final class TransactionMenuSheet: UIViewController, HasHorizontalSheetIndicator {
+final class TransactionMenuSheet: UIViewController, hasHorizontalSheetIndicator {
     
     // MARK: - Properties
     
