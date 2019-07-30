@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import ScrollingStackContainer
 
 
 struct UserGuideModel {
     var badgeValue: Int
 }
+
 
 final class UserGuideCard: UIView {
     
@@ -66,9 +68,9 @@ final class UserGuideCard: UIView {
         [valueLabel, headerLabel, subheaderLabel, iconRightArrow].forEach({ addSubview($0) })
         
         valueLabel.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(32)
-            make.width.equalTo(30)
+            make.top.bottom.equalToSuperview().priority(750)
+            make.left.equalToSuperview().offset(32).priority(750)
+            make.width.equalTo(30).priority(750)
         }
         
         headerLabel.snp.makeConstraints { (make) in
@@ -88,7 +90,7 @@ final class UserGuideCard: UIView {
             make.right.equalToSuperview().offset(-32)
             make.centerY.equalToSuperview()
             make.height.equalTo(14*bracketScale)
-            make.width.equalTo(8*bracketScale)
+            make.width.equalTo(8*bracketScale).priority(750)
         }
     }
 }

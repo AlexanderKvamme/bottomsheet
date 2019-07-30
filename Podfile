@@ -6,7 +6,7 @@ target 'BottomSheet' do
   use_frameworks!
 
   pod 'SnapKit', '~> 5.0.0'
-  pod 'CHIPageControl/Aleppo'
-  # Pods for BottomSheet
+  pod 'CHIPageControl/Aleppo' # page indicator under swipeable car
+  pod 'ScrollingStackContainer' # to contain tables and headers and viewcontrollers in a single scrollview (settings/card transactions)
 
 end

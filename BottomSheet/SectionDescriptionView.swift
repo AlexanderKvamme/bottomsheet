@@ -8,6 +8,38 @@
 
 import Foundation
 import UIKit
+import ScrollingStackContainer
+
+extension SectionDescriptionViewController: StackContainable {
+    func preferredAppearanceInStack() -> ScrollingStackController.ItemAppearance {
+        return ScrollingStackController.ItemAppearance.view(height: 120)
+    }
+}
+
+final class SectionDescriptionViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    let descriptionView: SectionDescriptionView
+    
+    // MARK: - Initializers
+    
+    init(descriptionView: SectionDescriptionView) {
+        self.descriptionView = descriptionView
+        
+        super.init(nibName: nil, bundle: nil)
+
+        view.addSubview(descriptionView)
+        descriptionView.snp.makeConstraints { (make) in
+            make.top.right.left.bottom.equalToSuperview()
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 
 final class SectionDescriptionView: UIView {
     
@@ -41,15 +73,16 @@ final class SectionDescriptionView: UIView {
     
     private func addSubviewsAndConstraints() {
         [headerLabel, subheaderLabel].forEach({ addSubview($0) })
-        
+
+        let horizontalInset: CGFloat = 48
         headerLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview().offset(40)
+            make.top.equalToSuperview().priority(750)
+            make.left.equalToSuperview().offset(horizontalInset).priority(750)
         }
         
         subheaderLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(headerLabel).offset(-4)
-            make.right.equalToSuperview()
+            make.left.equalTo(headerLabel).offset(-4).priority(750)
+            make.right.equalToSuperview().offset(-horizontalInset).priority(750)
             make.top.equalTo(headerLabel.snp.bottom)
             make.height.equalTo(60)
         }

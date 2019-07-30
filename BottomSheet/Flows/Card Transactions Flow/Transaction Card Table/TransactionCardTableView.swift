@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import ScrollingStackContainer
+
 
 final class TransactionCardTableView: UITableView {
     
@@ -34,3 +36,4 @@ final class TransactionCardTableView: UITableView {
         estimatedRowHeight = CardTransactionCell.estimatedItemSize.height
     }
 }
+

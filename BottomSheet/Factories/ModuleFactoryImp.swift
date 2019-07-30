@@ -22,6 +22,7 @@ final class ModuleFactoryImp:
 
     func makeCardTransactionsModule(router: Router) -> CardTransactionsView {
         return CardTransactionsViewController()
+//        return wrapController()
     }
 }
 

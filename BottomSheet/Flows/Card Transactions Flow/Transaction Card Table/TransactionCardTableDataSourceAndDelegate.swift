@@ -23,6 +23,8 @@ final class TransactionCardTableDataSourceAndDelegate: NSObject, UITableViewData
         models.append(TransactionCardModel(title: "First", value: "value", tax: "tax", account: "account"))
         models.append(TransactionCardModel(title: "Second", value: "value", tax: "tax", account: "account"))
         models.append(TransactionCardModel(title: "Third", value: "value", tax: "tax", account: "account"))
+        models.append(TransactionCardModel(title: "Fourth", value: "value", tax: "tax", account: "account"))
+        models.append(TransactionCardModel(title: "Fifth", value: "value", tax: "tax", account: "account"))
         return models
     }
     

@@ -62,7 +62,7 @@ final class CardTransactionCellView: UIView {
         addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in
             make.top.left.equalToSuperview().offset(16)
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().priority(750)
         }
         
         addSubview(mvaLabel)

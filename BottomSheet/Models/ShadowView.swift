@@ -13,13 +13,18 @@ import UIKit
 /// This shadow adds a shadow just below the view. This way the ShadowView can be positioned
 /// with the same layout as the view its providing shadow for
 final class ShadowView: UIView {
+
+    // MARK: - Properties
+    
+    private let opacity: Float
     
     // MARK: - Initializers
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(opacity: Float = 0.03) {
+        self.opacity = opacity
+        super.init(frame: .zero)
     }
-    
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,7 +44,7 @@ final class ShadowView: UIView {
         layer.shadowPath = UIBezierPath(rect: contactRect).cgPath
         layer.shadowColor = UIColor.solarstein.sapphire.cgColor
         layer.shadowRadius = 30
-        layer.shadowOpacity = 0.03
+        layer.shadowOpacity = opacity
     }
 }
 

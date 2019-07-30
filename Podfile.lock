@@ -1,20 +1,24 @@
 PODS:
   - CHIPageControl/Aleppo (0.1.7)
+  - ScrollingStackContainer (0.5.0)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
   - CHIPageControl/Aleppo
+  - ScrollingStackContainer
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CHIPageControl
+    - ScrollingStackContainer
     - SnapKit
 
 SPEC CHECKSUMS:
   CHIPageControl: bbe1ddd0c688c02ec65b7f7e7d34551a3d16f37c
+  ScrollingStackContainer: 89ff12217eaa8215c0d1bb2f29b807d0ebaa3918
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: d0cdbea317060bc04cee7616345f4ca939983652
+PODFILE CHECKSUM: 5cb9a57e26392c3e6caf68aa155a35e8a875e6ff
 
 COCOAPODS: 1.7.1

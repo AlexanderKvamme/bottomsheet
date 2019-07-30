@@ -28,8 +28,7 @@ extension hasNavigationHeader where Self: UIViewController{
         view.addSubview(navigationHeaderLabel)
         navigationHeaderLabel.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(16)
-            make.left.equalTo(view.safeAreaLayoutGuide.snp.leftMargin).offset(32+Device.additionalInsetsIfNotched + 64)
-            make.right.equalTo(view.safeAreaLayoutGuide.snp.rightMargin).offset(-32+Device.additionalInsetsIfNotched - 64)
+            make.left.right.equalToSuperview()
             make.height.equalTo(48)
         }
     }

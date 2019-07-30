@@ -15,13 +15,13 @@ class SwipeableCardCell: UICollectionViewCell {
     // MARK: - Properties
     
     static let identifier = "Card cell"
-    static let estimatedItemSize = CGSize(width: UIScreen.main.bounds.width-CardController.horizontalInsets*2, height: 160)
+    static let estimatedItemSize = CGSize(width: UIScreen.main.bounds.width-SwipeableCardsController.horizontalInsets*2, height: 160)
     
     private let headerLabel = UILabel()
     private let valueLabel = UILabel()
     private let mvaLabel = UILabel()
     private let accountLabel = UILabel()
-    private let dateView = DateView(day: 1, month: .September, style: .dark)
+    private let dateView = DateView(day: 1, month: .September, style: .light)
     private let statusIndicator = CardStatusIndicator()
     
     // MARK: - Initializers

@@ -9,27 +9,39 @@
 import Foundation
 import UIKit
 import CHIPageControl
+import ScrollingStackContainer
 
-final class CardController: UIViewController {
+fileprivate let verticalSpaceForPageControl: CGFloat = 30
+fileprivate let additionalBottomSpacingBeforeSectionBelow: CGFloat = 40
+
+extension SwipeableCardsController: StackContainable {
+    func preferredAppearanceInStack() -> ScrollingStackController.ItemAppearance {
+        return ScrollingStackController.ItemAppearance.view(height: SwipeableCardCell.estimatedItemSize.height + verticalSpaceForPageControl + additionalBottomSpacingBeforeSectionBelow)
+    }
+}
+
+
+final class SwipeableCardsController: UIViewController {
     
     // MARK: - Properties
     
     static var horizontalInsets: CGFloat = 32
     static var horizontalInterItemSpacing: CGFloat = 16
 
-    private var data = ["Barnehagesstylist Jan Thomas, Parkveien 0", "Barnehagesstylist Jan Thomas, Parkveien 1", "Barnehagesstylist Jan Thomas, Parkveien 2", "card 3", "card 4", "card 5", "card 6", "card 7", "card 8", "card 9"]
+    lazy private var data = makeDummyData()
     private var collectionView: UICollectionView!
     private let layout = UICollectionViewFlowLayout()
-    private let pageControl = CHIPageControlAleppo(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-    
+    private let pageControl = CHIPageControlAleppo(frame: CGRect(x: 0, y: 0, width: 100, height: 10))
     private var currentCardIndex = 0
+    private var shadow = ShadowView(opacity: 0.15)
+    private var bottomSpaceView = UIView()
     
     // MARK: - Initializers
     
     init() {
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = SwipeableCardCell.estimatedItemSize
-        layout.minimumLineSpacing = CardController.horizontalInterItemSpacing
+        layout.minimumLineSpacing = SwipeableCardsController.horizontalInterItemSpacing
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
@@ -51,9 +63,10 @@ final class CardController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clear
         collectionView.decelerationRate = .fast
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: CardController.horizontalInsets, bottom: 0, right: CardController.horizontalInsets)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: SwipeableCardsController.horizontalInsets, bottom: 0, right: SwipeableCardsController.horizontalInsets)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delaysContentTouches = false
+        collectionView.contentInsetAdjustmentBehavior = .scrollableAxes
         
         pageControl.numberOfPages = 4
         pageControl.radius = 4
@@ -63,35 +76,40 @@ final class CardController: UIViewController {
     }
     
     private func addSubviewsAndConstraints() {
-        view.addSubview(collectionView)
+        [shadow, collectionView, bottomSpaceView, pageControl].forEach{( view.addSubview($0) )}
+        
         collectionView.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview()
-            make.right.bottom.equalToSuperview()
+            make.top.left.right.equalToSuperview()
         }
         
-        view.addSubview(pageControl)
         pageControl.snp.makeConstraints { (make) in
-            make.top.equalTo(collectionView.snp.bottom)
+            make.top.equalTo(collectionView.snp.bottom).offset(verticalSpaceForPageControl/3)
             make.left.right.equalToSuperview()
-            make.height.equalTo(40)
+            make.height.equalTo(verticalSpaceForPageControl/3)
+            make.bottom.equalToSuperview().offset(-verticalSpaceForPageControl/3-additionalBottomSpacingBeforeSectionBelow)
+        }
+        
+        shadow.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(collectionView)
+            make.bottom.equalTo(collectionView).offset(-70)
         }
     }
 }
 
-extension CardController: UIScrollViewDelegate {
+extension SwipeableCardsController: UIScrollViewDelegate {
     
     // used to avoid choppy animation when weakly swiping a new card and finger is released with acceleration
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let newCardIndex = (scrollView.contentOffset.x / SwipeableCardCell.estimatedItemSize.width).rounded()
         let newCellIndex = IndexPath(item: Int(newCardIndex), section: 0)
-        let accumulatedInterItemSpacing = CGFloat(newCellIndex.row) * CardController.horizontalInterItemSpacing
+        let accumulatedInterItemSpacing = CGFloat(newCellIndex.row) * SwipeableCardsController.horizontalInterItemSpacing
         let accumulatedCardSize = CGFloat(newCellIndex.row)*SwipeableCardCell.estimatedItemSize.width
         let targetXPoint = -32 + accumulatedCardSize + accumulatedInterItemSpacing
         scrollView.setContentOffset(CGPoint(x: targetXPoint, y: 0), animated: true)
     }
 }
 
-extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SwipeableCardsController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return SwipeableCardCell.estimatedItemSize
@@ -131,7 +149,7 @@ extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFl
             newCellIndex = IndexPath(item: Int(newCardIndex), section: 0)
         }
         
-        let accumulatedSpacing = (newCardIndex-1)*CardController.horizontalInterItemSpacing - CardController.horizontalInsets/2
+        let accumulatedSpacing = (newCardIndex-1)*SwipeableCardsController.horizontalInterItemSpacing - SwipeableCardsController.horizontalInsets/2
         let endPosition = newCardIndex*cardSize.width + accumulatedSpacing
         let veloIsZero = velocity.x == 0
         
@@ -165,6 +183,10 @@ extension CardController: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     // MARK: Helpers
+    
+    private func makeDummyData() -> [String] {
+        return ["Barnehagesstylist Jan Thomas, Parkveien 0", "Barnehagesstylist Jan Thomas, Parkveien 1", "Barnehagesstylist Jan Thomas, Parkveien 2", "card 3", "card 4", "card 5", "card 6", "card 7", "card 8", "card 9"]
+    }
     
     func getPageNumber(for newCardNumberIndex: Int, currentCardNumber: Int) -> Int {
         let swipingForward = newCardNumberIndex > currentCardIndex

@@ -8,29 +8,29 @@
 
 import Foundation
 import UIKit
+import ScrollingStackContainer
 
 
-final class CardTransactionsViewController: UIViewController, CardTransactionsView, hasTopLeftNavigationButton, hasNavigationHeader {
+/// Needed for tableview to provide its own height automatically
+extension TableContainer: StackContainable {
+    func preferredAppearanceInStack() -> ScrollingStackController.ItemAppearance {
+        return ScrollingStackController.ItemAppearance.scroll(cardsTable, insets: UIEdgeInsets.zero)
+    }
+}
 
+final class TableContainer: UIViewController {
+    
     // MARK: - Properties
-
-    lazy var topLeftNavigationButton = makeBackButton()
-    lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
-    private let swipeableCardsController = CardController()
-    private var userGuideCard: UserGuideCard?
-    private let topSectionDescription: SectionDescriptionView!
-    private let bottomSectionDescription: SectionDescriptionView!
+    
     private let cardsTable = TransactionCardTableView()
     private let cardsDataSourceAndDelegate = TransactionCardTableDataSourceAndDelegate()
-    var onFinish: (() -> ())?
+    private let shadow = ShadowView()
     
     // MARK: - Initializers
     
     init() {
-        topSectionDescription = SectionDescriptionView(header: "Ventende", description: "Transaksjoner som mangler føring, match mot kvittering eller annet")
-        bottomSectionDescription = SectionDescriptionView(header: "Godkjente", description: "Transaksjoner som er kontert, og er ferdig matchet mot en kvittering")
         super.init(nibName: nil, bundle: nil)
-
+        
         setup()
         addSubviewsAndConstraints()
     }
@@ -39,31 +39,98 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Methods
+    // MARK: - Life Cycle
     
     private func setup() {
-        view.backgroundColor = .white
+        cardsTable.dataSource = cardsDataSourceAndDelegate
+        cardsTable.delegate = cardsDataSourceAndDelegate
+    }
+    
+    private func addSubviewsAndConstraints() {
+        [shadow, cardsTable].forEach({ view.addSubview($0) })
+        
+        cardsTable.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(100)
+        }
+        
+        shadow.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(-70)
+            make.left.right.bottom.equalToSuperview()
+        }
+    }
+}
+
+extension NavigationController: StackContainable {
+    
+}
+
+
+final class NavigationController: UIViewController, hasTopLeftNavigationButton, hasNavigationHeader {
+    
+    // MARK: - Properties
+    
+    lazy var topLeftNavigationButton = makeBackButton()
+    lazy var navigationHeaderLabel = makeNavigationHeaderLabel()
+    
+    // MARK: - Initializers
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
         
         setupNavigationBar()
-        setupTableView()
-
-        addUserGuide()
-        addSwipeableCards()
-        topSectionDescription.setBadgeNumber(9)
+        
+        applyXButtonConstraints()
+        applyNavigationHeaderConstraints()
+        
+        view.snp.makeConstraints { (make) in
+            make.height.equalTo(100)
+            make.width.equalTo(UIScreen.main.bounds.width)
+        }
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
     
     private func setupNavigationBar() {
         topLeftNavigationButton.setImage(UIImage(named: "left-bracket")?.withRenderingMode(.alwaysTemplate), for: .normal)
         topLeftNavigationButton.tintColor = UIColor.solarstein.sapphire
-        topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
+//        topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
         
         navigationHeaderLabel.text = "Juli"
     }
-    
-    private func setupTableView() {
-        cardsTable.dataSource = cardsDataSourceAndDelegate
-        cardsTable.delegate = cardsDataSourceAndDelegate
+}
+
+
+extension UserGuideController: StackContainable {
+    func preferredAppearanceInStack() -> ScrollingStackController.ItemAppearance {
+        return ScrollingStackController.ItemAppearance.view(height: 140)
     }
+}
+
+final class UserGuideController: UIViewController {
+    
+    // MARK: - Properties
+    
+    private var userGuideCard: UserGuideCard?
+    private var shadow = ShadowView(opacity: 0.15)
+    
+    // MARK: - Initializers
+    
+    init(model: UserGuideModel) {
+        super.init(nibName: nil, bundle: nil)
+        
+        addUserGuide()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
     
     private func addUserGuide() {
         let model = UserGuideModel(badgeValue: 19)
@@ -72,71 +139,97 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shakeUserGuide))
         userGuideCard?.addGestureRecognizer(tapRecognizer)
         
-        // FIXME: Find better solution
-        
         if let card = userGuideCard {
-            view.addSubview(card)
+            [shadow, card].forEach({ view.addSubview($0) })
+
             card.snp.makeConstraints { (make) in
-                make.top.equalToSuperview().offset(140)
-                make.left.equalToSuperview().offset(24)
-                make.right.equalToSuperview().offset(-24)
-                make.height.equalTo(100)
+                make.top.equalToSuperview()
+                make.left.equalToSuperview().offset(24).priority(750)
+                make.right.equalToSuperview().offset(-24).priority(750)
+                make.bottom.equalToSuperview().offset(-40)
+            }
+            
+            shadow.snp.makeConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+                make.bottom.equalToSuperview().offset(-70)
             }
         }
+    }
+
+    @objc private func shakeUserGuide() {
+        userGuideCard?.shakeByX()
+    }
+}
+
+
+final class CardTransactionsViewController: ScrollingStackController, CardTransactionsView {
+
+    // MARK: - Properties
+
+    private let customNav = NavigationController()
+    private var userGuideController: UserGuideController? = nil
+    private let swipeableCardsController = SwipeableCardsController()
+    private var topSectionController: SectionDescriptionViewController!
+    private var bottomSectionController: SectionDescriptionViewController!
+    private let cardsTable = TransactionCardTableView()
+    private let cardsTableViewController = TableContainer()
+    
+    var onFinish: (() -> ())?
+    
+    // MARK: - Initializers
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        setup()
+        
+        guard let scrollView = scrollView else { fatalError("fix") }
+        
+        // Layout
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        viewControllers = [customNav, UserGuideController(model: UserGuideModel(badgeValue: 8)), topSectionController, swipeableCardsController, bottomSectionController, cardsTableViewController] as [StackContainable]
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
+    
+    private func makeSectionHeaders() {
+        let topSectionView = SectionDescriptionView(header: "Ventende", description: "Transaksjoner som mangler føring, match mot kvittering eller annet")
+        topSectionController = SectionDescriptionViewController(descriptionView: topSectionView)
+        topSectionView.setBadgeNumber(9)
+        let bottomSectionDescription = SectionDescriptionView(header: "Godkjente", description: "Transaksjoner som er kontert, og er ferdig matchet mot en kvittering")
+        bottomSectionController = SectionDescriptionViewController(descriptionView: bottomSectionDescription)
+    }
+    
+    private func setup() {
+        view.backgroundColor = .white
+        
+        makeSectionHeaders()
+        makeUserGuide()
+        setupScrollView()
+        addSwipeableCards()
+    }
+    
+    private func makeUserGuide() {
+        userGuideController = UserGuideController(model: UserGuideModel(badgeValue: 8))
+    }
+    
+    private func setupScrollView() {
+        scrollView = UIScrollView(frame: .zero)
+        scrollView?.showsVerticalScrollIndicator = false
+        scrollView?.backgroundColor = .white
     }
     
     private func addSwipeableCards() {
-        let controller = CardController()
+        let controller = SwipeableCardsController()
         addChild(controller)
-    }
-    
-    private func addSubviewsAndConstraints() {
-        applyXButtonConstraints()
-        applyNavigationHeaderConstraints()
-
-        view.addSubview(topSectionDescription)
-        topSectionDescription.snp.makeConstraints { (make) in
-            // align to userGuid of one exists
-            if let userGuide = userGuideCard {
-                make.top.equalTo(userGuide.snp.bottom).offset(32)
-            } else {
-                make.top.equalTo(view.snp.top).offset(24)
-            }
-            
-            make.left.right.equalToSuperview()
-            make.height.equalTo(100)
-        }
-        
-        view.addSubview(swipeableCardsController.view)
-        swipeableCardsController.view.snp.makeConstraints{ make in
-            make.height.equalTo(SwipeableCardCell.estimatedItemSize.height)
-            make.top.equalTo(topSectionDescription.snp.bottom).offset(8)
-            make.left.right.equalToSuperview()
-        }
-        
-        view.addSubview(bottomSectionDescription)
-        bottomSectionDescription.snp.makeConstraints { (make) in
-            make.top.equalTo(swipeableCardsController.view.snp.bottom).offset(48)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(100)
-        }
-        let shadow = ShadowView()
-        view.addSubview(shadow)
-        view.addSubview(cardsTable)
-        shadow.snp.makeConstraints { (make) in
-            make.top.equalTo(bottomSectionDescription.snp.top)
-            make.left.right.bottom.equalToSuperview()
-        }
-        
-        cardsTable.snp.makeConstraints { (make) in
-            make.top.equalTo(bottomSectionDescription.snp.bottom)
-            make.left.right.equalTo(topSectionDescription)
-            make.height.equalTo(300)
-        }
-    }
-    
-    @objc private func shakeUserGuide() {
-        userGuideCard?.shakeByX()
     }
     
     @objc private func finish() {

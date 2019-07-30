@@ -15,7 +15,7 @@ final class CardTransactionCell: UITableViewCell {
     // MARK: - Properties
     
     static let identifier = "CardTransactionCell"
-    static let estimatedItemSize = CGSize(width: UIScreen.main.bounds.width-CardController.horizontalInsets*2, height: 160)
+    static let estimatedItemSize = CGSize(width: UIScreen.main.bounds.width-SwipeableCardsController.horizontalInsets*2, height: 160)
 
     private let cellView = CardTransactionCellView()
     
@@ -31,7 +31,7 @@ final class CardTransactionCell: UITableViewCell {
         cellView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(16)
-            make.right.equalToSuperview().offset(-16)
+            make.right.equalToSuperview().offset(-16).priority(750)
             make.bottom.equalToSuperview().offset(-8)
         }
     }
