@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-final class SwipeableCardCell: UICollectionViewCell {
+class SwipeableCardCell: UICollectionViewCell {
     
     // MARK: - Properties
     
@@ -21,7 +21,7 @@ final class SwipeableCardCell: UICollectionViewCell {
     private let valueLabel = UILabel()
     private let mvaLabel = UILabel()
     private let accountLabel = UILabel()
-    private let dateView = DateView(day: 1, month: .September)
+    private let dateView = DateView(day: 1, month: .September, style: .dark)
     private let statusIndicator = CardStatusIndicator()
     
     // MARK: - Initializers
@@ -29,7 +29,7 @@ final class SwipeableCardCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
-        headerLabel.text = "test"
+        headerLabel.text = "SwipeableCardCell"
         headerLabel.font = UIFont.kolibrix.bold
         headerLabel.textColor = UIColor.solarstein.seashell
         

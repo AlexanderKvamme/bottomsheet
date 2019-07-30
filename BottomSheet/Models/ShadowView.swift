@@ -34,7 +34,7 @@ final class ShadowView: UIView {
     
     // MARK: - Methods
     
-    func addShadowSameSizeAsView() {
+    private func addShadowSameSizeAsView() {
         let contactRect = CGRect(x: 0, y: 50, width: frame.width, height: frame.height)
         layer.shadowPath = UIBezierPath(rect: contactRect).cgPath
         layer.shadowColor = UIColor.solarstein.sapphire.cgColor

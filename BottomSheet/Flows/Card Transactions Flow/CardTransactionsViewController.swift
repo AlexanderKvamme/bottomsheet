@@ -19,7 +19,9 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     private let swipeableCardsController = CardController()
     private var userGuideCard: UserGuideCard?
     private let topSectionDescription: SectionDescriptionView!
-    private let bottomSectionDescription :SectionDescriptionView!
+    private let bottomSectionDescription: SectionDescriptionView!
+    private let cardsTable = TransactionCardTableView()
+    private let cardsDataSourceAndDelegate = TransactionCardTableDataSourceAndDelegate()
     var onFinish: (() -> ())?
     
     // MARK: - Initializers
@@ -41,16 +43,26 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
     
     private func setup() {
         view.backgroundColor = .white
+        
+        setupNavigationBar()
+        setupTableView()
+
+        addUserGuide()
+        addSwipeableCards()
+        topSectionDescription.setBadgeNumber(9)
+    }
+    
+    private func setupNavigationBar() {
         topLeftNavigationButton.setImage(UIImage(named: "left-bracket")?.withRenderingMode(.alwaysTemplate), for: .normal)
         topLeftNavigationButton.tintColor = UIColor.solarstein.sapphire
         topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
         
         navigationHeaderLabel.text = "Juli"
-        
-        addUserGuide()
-        addSwipeableCards()
-        
-        topSectionDescription.setBadgeNumber(9)
+    }
+    
+    private func setupTableView() {
+        cardsTable.dataSource = cardsDataSourceAndDelegate
+        cardsTable.delegate = cardsDataSourceAndDelegate
     }
     
     private func addUserGuide() {
@@ -108,6 +120,19 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
             make.left.right.equalToSuperview()
             make.height.equalTo(100)
         }
+        let shadow = ShadowView()
+        view.addSubview(shadow)
+        view.addSubview(cardsTable)
+        shadow.snp.makeConstraints { (make) in
+            make.top.equalTo(bottomSectionDescription.snp.top)
+            make.left.right.bottom.equalToSuperview()
+        }
+        
+        cardsTable.snp.makeConstraints { (make) in
+            make.top.equalTo(bottomSectionDescription.snp.bottom)
+            make.left.right.equalTo(topSectionDescription)
+            make.height.equalTo(300)
+        }
     }
     
     @objc private func shakeUserGuide() {
@@ -118,3 +143,4 @@ final class CardTransactionsViewController: UIViewController, CardTransactionsVi
         onFinish?()
     }
 }
+

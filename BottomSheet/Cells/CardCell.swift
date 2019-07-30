@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-final class TransactionCardView: UIView {
+class TransactionCardView: UIView {
     
     // MARK: - Properties
     
@@ -20,7 +20,7 @@ final class TransactionCardView: UIView {
     private let valueLabel = UILabel()
     private let mvaLabel = UILabel()
     private let accountLabel = UILabel()
-    private let dateView = DateView(day: 1, month: .September)
+    private let dateView = DateView(day: 1, month: .September, style: .light)
     private let statusIndicator = CardStatusIndicator()
     
     // MARK: - Initializers

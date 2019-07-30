@@ -46,7 +46,6 @@ final class ColoredBadge: UIView {
     }
     
     func setBadge(number: Int) {
-        print("would set badge nr ", number)
         numberLabel.text = "\(number)"
     }
 }
