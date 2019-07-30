@@ -91,7 +91,7 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
         // remove topsheet
         if let topSheet = navigationStack.last {
             removeSheetLayout(topSheet)
-            navigationStack.remove(at: navigationStack.index(of: topSheet)!)
+            navigationStack.remove(at: navigationStack.firstIndex(of: topSheet)!)
         }
 
         // TODO: clean up

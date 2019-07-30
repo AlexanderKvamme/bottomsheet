@@ -61,7 +61,6 @@
 		1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */; };
 		1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */; };
 		1CD66B0722EDE36200C43669 /* DetailedTransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0622EDE36200C43669 /* DetailedTransactionFactory.swift */; };
-		1CD66B0F22EDEA9B00C43669 /* SettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66B0E22EDEA9B00C43669 /* SettingsCellView.swift */; };
 		1CE47E5A22EF155900AC242C /* SectionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */; };
 		1CE47E5C22EF1A6600AC242C /* ColoredBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5B22EF1A6600AC242C /* ColoredBadge.swift */; };
 		1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */; };
@@ -499,11 +498,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Simon Kågedal Reimer";
 				TargetAttributes = {
 					F4EAE142210FBCFE00487323 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -654,7 +654,6 @@
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */,
 				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
-				1CD66B0F22EDEA9B00C43669 /* SettingsCellView.swift in Sources */,
 				1C6E63D022E06EF1002DC799 /* BottomSheetContainerView.swift in Sources */,
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
@@ -810,7 +809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.skagedal.BottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -829,7 +828,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.skagedal.BottomSheet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
