@@ -12,6 +12,9 @@
 		1C0560E322EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */; };
 		1C0560E522EF31FA0086F783 /* CardTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */; };
 		1C0560ED22F1D2FC0086F783 /* WhiteCardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */; };
+		1C0560EF22F1D5AC0086F783 /* CardsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */; };
+		1C0560F122F1D6090086F783 /* SKTopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */; };
+		1C0560F322F1D65B0086F783 /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F222F1D65B0086F783 /* UserGuideController.swift */; };
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
@@ -96,6 +99,9 @@
 		1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardTableDataSourceAndDelegate.swift; sourceTree = "<group>"; };
 		1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionCell.swift; sourceTree = "<group>"; };
 		1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteCardCellView.swift; sourceTree = "<group>"; };
+		1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableController.swift; sourceTree = "<group>"; };
+		1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTopNavigationController.swift; sourceTree = "<group>"; };
+		1C0560F222F1D65B0086F783 /* UserGuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 				1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */,
 				1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */,
 				1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */,
+				1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */,
 			);
 			path = "Transaction Card Table";
 			sourceTree = "<group>";
@@ -449,6 +456,8 @@
 		F4EAE145210FBCFE00487323 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				1C0560F222F1D65B0086F783 /* UserGuideController.swift */,
+				1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */,
 				1C98E79122EF0941004B2C07 /* SwipeableCards */,
 				1CA4351B22E8C24D000C6753 /* Application */,
 				1CA4351122E8C022000C6753 /* Protocols */,
@@ -616,6 +625,7 @@
 				1CA4351F22E8C282000C6753 /* BaseCoordinator.swift in Sources */,
 				1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */,
 				1CA435A122E9A6BE000C6753 /* ModuleFactoryImp.swift in Sources */,
+				1C0560F122F1D6090086F783 /* SKTopNavigationController.swift in Sources */,
 				1CE47E5C22EF1A6600AC242C /* ColoredBadge.swift in Sources */,
 				1CF6D6F722E1CE4600701DF3 /* Device.swift in Sources */,
 				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
@@ -629,6 +639,7 @@
 				1CA4356922E9A1F8000C6753 /* BaseView.swift in Sources */,
 				1C98E79022EF05F1004B2C07 /* hasNavigationHeader.swift in Sources */,
 				1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */,
+				1C0560EF22F1D5AC0086F783 /* CardsTableController.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
@@ -644,6 +655,7 @@
 				1C98E79622EF0C17004B2C07 /* SwipeableCardsController.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
+				1C0560F322F1D65B0086F783 /* UserGuideController.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
 				1CA434E622E6FC2F000C6753 /* SettingsViewController.swift in Sources */,
 				1CA4351D22E8C256000C6753 /* ApplicationCoordinator.swift in Sources */,
