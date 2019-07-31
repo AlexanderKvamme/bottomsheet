@@ -97,15 +97,25 @@ final class MainMenuViewController: UIViewController {
             make.bottom.equalToSuperview().offset(-100)
         }
         
-        // FIXME: Find better solution
+        // TODO: Find better solution
         
         if let card = userGuideCard {
-            view.addSubview(card)
+            let shadow = ShadowView(opacity: 0.1)
+            
+            [shadow, card].forEach({ view.addSubview($0) })
+
             card.snp.makeConstraints { (make) in
                 make.centerX.equalToSuperview()
                 make.width.equalTo(360)
                 make.height.equalTo(100)
                 make.top.equalToSuperview().offset(120)
+            }
+            
+            shadow.snp.makeConstraints { (make) in
+                make.top.equalTo(card)
+                make.left.equalTo(card).offset(50)
+                make.right.equalTo(card).offset(-50)
+                make.bottom.equalTo(card).offset(30)
             }
         }
     }
