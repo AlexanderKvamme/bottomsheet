@@ -25,6 +25,7 @@ final class CardsTableController: UIViewController {
     private let cardsTable = TransactionCardTableView()
     private let cardsDataSourceAndDelegate = TransactionCardTableDataSourceAndDelegate()
     private let shadow = ShadowView()
+    lazy private var footerView = makeFooterView()
     
     // MARK: - Initializers
     
@@ -39,11 +40,13 @@ final class CardsTableController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life Cycle
+    // MARK: - Methods
     
     private func setup() {
         cardsTable.dataSource = cardsDataSourceAndDelegate
         cardsTable.delegate = cardsDataSourceAndDelegate
+        
+        setupFooter()
     }
     
     private func addSubviewsAndConstraints() {
@@ -59,4 +62,19 @@ final class CardsTableController: UIViewController {
             make.left.right.bottom.equalToSuperview()
         }
     }
+    
+    private func setupFooter() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapFooter))
+        footerView.addGestureRecognizer(tapGesture)
+        cardsTable.tableFooterView = footerView
+    }
+    
+    private func makeFooterView() -> UIView {
+        return ShowMoreCellsFooterView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+    }
+    
+    @objc private func didTapFooter() {
+        footerView.shakeByX()
+    }
 }
+

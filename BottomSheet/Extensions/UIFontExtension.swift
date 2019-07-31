@@ -16,13 +16,14 @@ extension UIFont {
     // MARK: - Enums
     
     enum kolibrix {
-        static let header =     sofia(style: .bold, ofSize: 40)
-        static let subheader =  sofia(style: .bold, ofSize: 24)
-        static let navigation = sofia(style: .semibold, ofSize: 24)
+        static let small =      sofia(style: .regular, ofSize: 12)
+        static let smallBadge = sofia(style: .bold, ofSize: 12)
         static let bold =       sofia(style: .bold, ofSize: 16)
         static let body =       sofia(style: .regular, ofSize: 16)
-        static let small =      sofia(style: .regular, ofSize: 12)
         static let badge =      sofia(style: .bold, ofSize: 16)
+        static let subheader =  sofia(style: .bold, ofSize: 24)
+        static let navigation = sofia(style: .semibold, ofSize: 24)
+        static let header =     sofia(style: .bold, ofSize: 40)
     }
     
     enum FontWeight: String {

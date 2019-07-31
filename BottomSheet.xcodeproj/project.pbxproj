@@ -15,6 +15,8 @@
 		1C0560EF22F1D5AC0086F783 /* CardsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */; };
 		1C0560F122F1D6090086F783 /* SKTopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */; };
 		1C0560F322F1D65B0086F783 /* UserGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F222F1D65B0086F783 /* UserGuideController.swift */; };
+		1C0560F622F1E3EF0086F783 /* ShowMoreCellsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F522F1E3EF0086F783 /* ShowMoreCellsFooterView.swift */; };
+		1C0560F822F1E4090086F783 /* ShowMoreBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F722F1E4090086F783 /* ShowMoreBadge.swift */; };
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
@@ -102,6 +104,8 @@
 		1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableController.swift; sourceTree = "<group>"; };
 		1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTopNavigationController.swift; sourceTree = "<group>"; };
 		1C0560F222F1D65B0086F783 /* UserGuideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideController.swift; sourceTree = "<group>"; };
+		1C0560F522F1E3EF0086F783 /* ShowMoreCellsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreCellsFooterView.swift; sourceTree = "<group>"; };
+		1C0560F722F1E4090086F783 /* ShowMoreBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreBadge.swift; sourceTree = "<group>"; };
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -209,6 +213,15 @@
 			path = "Detailed Transaction Flow";
 			sourceTree = "<group>";
 		};
+		1C0560F422F1E3D60086F783 /* Table Footer */ = {
+			isa = PBXGroup;
+			children = (
+				1C0560F522F1E3EF0086F783 /* ShowMoreCellsFooterView.swift */,
+				1C0560F722F1E4090086F783 /* ShowMoreBadge.swift */,
+			);
+			path = "Table Footer";
+			sourceTree = "<group>";
+		};
 		1C38C7F322EF2EE600CA3D7F /* Transaction Card Table */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +230,7 @@
 				1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */,
 				1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */,
 				1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */,
+				1C0560F422F1E3D60086F783 /* Table Footer */,
 			);
 			path = "Transaction Card Table";
 			sourceTree = "<group>";
@@ -646,6 +660,8 @@
 				1C98E78E22EEED04004B2C07 /* CardTransactionsViewController.swift in Sources */,
 				1CF6D6F922E5ADD900701DF3 /* MainMenuViewController.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
+				1C0560F622F1E3EF0086F783 /* ShowMoreCellsFooterView.swift in Sources */,
+				1C0560F822F1E4090086F783 /* ShowMoreBadge.swift in Sources */,
 				1C0560E322EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift in Sources */,
 				1CA435A822E9A6EE000C6753 /* SettingsCoordinator.swift in Sources */,
 				1CA4356822E9A1F8000C6753 /* DeepLinkOption.swift in Sources */,
