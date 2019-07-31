@@ -26,6 +26,8 @@ final class WhiteCardCellView: UIView {
     init() {
         super.init(frame: .zero)
         
+        statusIndicator.setStatus(.green)
+        
         setup()
         addSubviewsAndConstraints()
     }

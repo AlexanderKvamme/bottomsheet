@@ -29,4 +29,15 @@ final class CardStatusIndicator: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setStatus(_ status: CardStatus) {
+        switch status {
+        case .green:
+            backgroundColor = UIColor.solarstein.mediumSeaGreen
+        case .yellow:
+            backgroundColor = UIColor.solarstein.warningColor
+        case .red:
+            backgroundColor = UIColor.solarstein.errorColor
+        }
+    }
 }
