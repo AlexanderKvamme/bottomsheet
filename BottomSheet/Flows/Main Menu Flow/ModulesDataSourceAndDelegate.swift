@@ -34,17 +34,17 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     
     func addTapTargets() {
         detailedTransactionModel.didTapCell = {
+            let cardTransactionsCoordinator = CoordinatorFactoryImp().makeCardTransactionsCoordinator(router: self.router)
+            self.baseCoordinator.addDependency(cardTransactionsCoordinator)
+            cardTransactionsCoordinator.start()
+        }
+        
+        settingsModel.didTapCell = {
             let coordinatorFactory = CoordinatorFactoryImp()
             let detailedModule = coordinatorFactory.makeDetailedTransactionCoordinator(router: self.router)
             // TODO: - Remove dependency on pop
             self.baseCoordinator.addDependency(detailedModule)
             detailedModule.start()
-        }
-        
-        module3.didTapCell = {
-            let cardTransactionsCoordinator = CoordinatorFactoryImp().makeCardTransactionsCoordinator(router: self.router)
-            self.baseCoordinator.addDependency(cardTransactionsCoordinator)
-            cardTransactionsCoordinator.start()
         }
     }
     
@@ -65,7 +65,11 @@ final class ModulesDataSourceAndDelegate: NSObject, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        moduleModels[indexPath.row].didTapCell?()
+        if let tapAction = moduleModels[indexPath.row].didTapCell {
+            tapAction()
+        } else {
+            tableView.cellForRow(at: indexPath)?.shakeByX()
+        }
     }
 }
 
