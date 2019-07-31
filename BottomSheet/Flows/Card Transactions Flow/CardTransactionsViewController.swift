@@ -142,10 +142,11 @@ final class UserGuideController: UIViewController {
         if let card = userGuideCard {
             [shadow, card].forEach({ view.addSubview($0) })
 
+            let horizontalInsets: CGFloat = 32
             card.snp.makeConstraints { (make) in
                 make.top.equalToSuperview()
-                make.left.equalToSuperview().offset(24).priority(750)
-                make.right.equalToSuperview().offset(-24).priority(750)
+                make.left.equalToSuperview().offset(horizontalInsets).priority(750)
+                make.right.equalToSuperview().offset(-horizontalInsets).priority(750)
                 make.bottom.equalToSuperview().offset(-40)
             }
             

@@ -17,7 +17,7 @@ final class CardTransactionCell: UITableViewCell {
     static let identifier = "CardTransactionCell"
     static let estimatedItemSize = CGSize(width: UIScreen.main.bounds.width-SwipeableCardsController.horizontalInsets*2, height: 160)
 
-    private let cellView = CardTransactionCellView()
+    private let cellView = WhiteCardCellView()
     
     // MARK: - Initializers
     

@@ -11,7 +11,7 @@
 		1C0560E122EF2FA80086F783 /* TransactionCardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E022EF2FA80086F783 /* TransactionCardTableView.swift */; };
 		1C0560E322EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */; };
 		1C0560E522EF31FA0086F783 /* CardTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */; };
-		1C0560E722EF32030086F783 /* CardTransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E622EF32030086F783 /* CardTransactionCellView.swift */; };
+		1C0560ED22F1D2FC0086F783 /* WhiteCardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */; };
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
@@ -95,7 +95,7 @@
 		1C0560E022EF2FA80086F783 /* TransactionCardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardTableView.swift; sourceTree = "<group>"; };
 		1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardTableDataSourceAndDelegate.swift; sourceTree = "<group>"; };
 		1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionCell.swift; sourceTree = "<group>"; };
-		1C0560E622EF32030086F783 /* CardTransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionCellView.swift; sourceTree = "<group>"; };
+		1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteCardCellView.swift; sourceTree = "<group>"; };
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				1C0560E022EF2FA80086F783 /* TransactionCardTableView.swift */,
 				1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */,
 				1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */,
-				1C0560E622EF32030086F783 /* CardTransactionCellView.swift */,
+				1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */,
 			);
 			path = "Transaction Card Table";
 			sourceTree = "<group>";
@@ -602,7 +602,7 @@
 				1CE47E5A22EF155900AC242C /* SectionDescriptionView.swift in Sources */,
 				1CF6D6FD22E5B22700701DF3 /* ModulesDataSourceAndDelegate.swift in Sources */,
 				1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */,
-				1C0560E722EF32030086F783 /* CardTransactionCellView.swift in Sources */,
+				1C0560ED22F1D2FC0086F783 /* WhiteCardCellView.swift in Sources */,
 				1CA434F422E7322A000C6753 /* SettingsTableHeaderView.swift in Sources */,
 				1CA4351622E8C0BD000C6753 /* Router.swift in Sources */,
 				1CF6D6FB22E5B1CF00701DF3 /* ModulesTableView.swift in Sources */,

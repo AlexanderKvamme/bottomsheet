@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 /// White version of the cards. Used to represent cards with no unfinished tasks
-final class CardTransactionCellView: UIView {
+final class WhiteCardCellView: UIView {
+    
+    // MARK: - Properties
+    
     private let headerLabel = UILabel()
     private let valueLabel = UILabel()
     private let mvaLabel = UILabel()
@@ -37,50 +40,53 @@ final class CardTransactionCellView: UIView {
         backgroundColor = .white
         layer.cornerRadius = 20
         
+        let alpha: CGFloat = 0.3
+        
         headerLabel.text = "Støvleprodusenten AS, Euforiesgate 19"
         headerLabel.font = UIFont.kolibrix.bold
         headerLabel.textColor = UIColor.solarstein.sapphire
-        headerLabel.alpha = 0.4
+        headerLabel.alpha = alpha
         
         valueLabel.font = UIFont(name: "RobotoMono-Bold", size: 16)
         valueLabel.textColor =  UIColor.solarstein.sapphire
         valueLabel.text = "399 kr"
-        valueLabel.alpha = 0.3
+        valueLabel.alpha = alpha
         
         mvaLabel.font = UIFont(name: "RobotoMono-Bold", size: 12)
         mvaLabel.textColor = UIColor.solarstein.sapphire
         mvaLabel.text = "Legg til MVA"
-        mvaLabel.alpha = 0.3
+        mvaLabel.alpha = alpha
         
         accountLabel.font = UIFont(name: "RobotoMono-Bold", size: 12)
         accountLabel.textColor = UIColor.solarstein.sapphire
         accountLabel.text = "Legg til konto"
-        accountLabel.alpha = 0.4
+        accountLabel.alpha = alpha
     }
     
     private func addSubviewsAndConstraints() {
         addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview().offset(16)
+            make.top.equalToSuperview().offset(24)
+            make.left.equalToSuperview().offset(32)
             make.right.equalToSuperview().priority(750)
         }
         
         addSubview(mvaLabel)
         mvaLabel.snp.makeConstraints { (make) in
             make.top.equalTo(headerLabel.snp.bottom).offset(17)
-            make.left.equalToSuperview().offset(16)
+            make.left.equalTo(headerLabel)
         }
         
         addSubview(accountLabel)
         accountLabel.snp.makeConstraints { (make) in
             make.top.equalTo(mvaLabel.snp.bottom)
-            make.left.equalToSuperview().offset(16)
+            make.left.equalTo(headerLabel)
         }
         
         addSubview(valueLabel)
         valueLabel.snp.makeConstraints { (make) in
             make.top.equalTo(accountLabel.snp.bottom).offset(16)
-            make.left.equalToSuperview().offset(16)
+            make.left.equalTo(headerLabel)
         }
         
         addSubview(dateView)
