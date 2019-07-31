@@ -31,14 +31,7 @@ final class CardTransactionsViewController: ScrollingStackController, CardTransa
         super.init(nibName: nil, bundle: nil)
 
         setup()
-        
-        guard let scrollView = scrollView else { fatalError("fix") }
-        
-        // Layout
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        addSubviewsAndConstraints()
         
         viewControllers = [customNav, UserGuideController(model: UserGuideModel(badgeValue: 8)), topSectionController, swipeableCardsController, bottomSectionController, cardsTableViewController] as [StackContainable]
     }
@@ -49,21 +42,32 @@ final class CardTransactionsViewController: ScrollingStackController, CardTransa
     
     // MARK: - Methods
     
+    private func addSubviewsAndConstraints() {
+        guard let scrollView = scrollView else { fatalError() }
+        
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    private func setup() {
+        view.backgroundColor = .white
+        
+        customNav.topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
+        
+        makeSectionHeaders()
+        makeUserGuide()
+        setupScrollView()
+        addSwipeableCards()
+    }
+    
     private func makeSectionHeaders() {
         let topSectionView = SectionDescriptionView(header: "Ventende", description: "Transaksjoner som mangler føring, match mot kvittering eller annet")
         topSectionController = SectionDescriptionViewController(descriptionView: topSectionView)
         topSectionView.setBadgeNumber(9)
         let bottomSectionDescription = SectionDescriptionView(header: "Godkjente", description: "Transaksjoner som er kontert, og er ferdig matchet mot en kvittering")
         bottomSectionController = SectionDescriptionViewController(descriptionView: bottomSectionDescription)
-    }
-    
-    private func setup() {
-        view.backgroundColor = .white
-        
-        makeSectionHeaders()
-        makeUserGuide()
-        setupScrollView()
-        addSwipeableCards()
     }
     
     private func makeUserGuide() {
