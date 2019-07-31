@@ -86,6 +86,9 @@ final class SectionDescriptionView: UIView {
             make.top.equalTo(headerLabel.snp.bottom)
             make.height.equalTo(60)
         }
+        
+        subheaderLabel.isUserInteractionEnabled = false
+        subheaderLabel.backgroundColor = .clear
     }
     
     private func setupLabels() {

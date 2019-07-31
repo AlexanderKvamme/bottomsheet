@@ -22,7 +22,7 @@ final class UserGuideController: UIViewController {
     // MARK: - Properties
     
     private var userGuideCard: UserGuideCard?
-    private var shadow = ShadowView(opacity: 0.15)
+    private var shadow = ShadowView(opacity: 0.14)
     
     // MARK: - Initializers
     
@@ -57,8 +57,10 @@ final class UserGuideController: UIViewController {
             }
             
             shadow.snp.makeConstraints { (make) in
-                make.top.left.right.equalToSuperview()
-                make.bottom.equalToSuperview().offset(-70)
+                make.top.equalTo(card)
+                make.left.equalTo(card).offset(50)
+                make.right.equalTo(card).offset(-50)
+                make.bottom.equalTo(card).offset(20)
             }
         }
     }

@@ -33,7 +33,7 @@ final class SwipeableCardsController: UIViewController {
     private let layout = UICollectionViewFlowLayout()
     private let pageControl = CHIPageControlAleppo(frame: CGRect(x: 0, y: 0, width: 100, height: 10))
     private var currentCardIndex = 0
-    private var shadow = ShadowView(opacity: 0.15)
+    private var shadow = ShadowView(opacity: 0.14)
     private var bottomSpaceView = UIView()
     
     // MARK: - Initializers
