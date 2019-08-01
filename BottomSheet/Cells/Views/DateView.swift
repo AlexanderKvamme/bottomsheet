@@ -47,7 +47,7 @@ class DateView: UIView {
     private func setup() {
         dayLabel.text = "29"
         
-        dayLabel.font = UIFont(name: "SofiaPro-Semibold", size: 40)!
+        dayLabel.font = UIFont(name: "SofiaPro-Semibold", size: 32)!
         dayLabel.adjustsFontSizeToFitWidth = true
         dayLabel.textAlignment = .center
         
@@ -59,17 +59,18 @@ class DateView: UIView {
     }
     
     private func addSubviewsAndConstraints() {
-        addSubview(monthLabel)
         addSubview(dayLabel)
+        addSubview(monthLabel)
         
         dayLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(-10)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(monthLabel.snp.top)
+            make.bottom.equalTo(monthLabel.snp.top).offset(16)
         }
         
         monthLabel.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -84,7 +85,7 @@ class DateView: UIView {
         case .light:
             dayLabel.textColor = .white
             monthLabel.textColor = .white
-            alpha = 0.3
+            alpha = 0.1
         }
         
         dayLabel.alpha = alpha

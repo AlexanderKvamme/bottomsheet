@@ -52,16 +52,18 @@ final class WhiteCardCellView: UIView {
         valueLabel.font = UIFont(name: "RobotoMono-Bold", size: 16)
         valueLabel.textColor =  UIColor.solarstein.sapphire
         valueLabel.text = "399 kr"
+        accountLabel.setCharacterSpacing(1.33)
         valueLabel.alpha = alpha
         
         mvaLabel.font = UIFont(name: "RobotoMono-Bold", size: 12)
         mvaLabel.textColor = UIColor.solarstein.sapphire
         mvaLabel.text = "Inngående mva ingen sats".uppercased()
-        mvaLabel.alpha = alpha
+        mvaLabel.setCharacterSpacing(1)
         
         accountLabel.font = UIFont(name: "RobotoMono-Bold", size: 12)
         accountLabel.textColor = UIColor.solarstein.sapphire
         accountLabel.text = "3251 - IK - Husholdning".uppercased()
+        accountLabel.setCharacterSpacing(1)
         accountLabel.alpha = alpha
     }
     
