@@ -56,12 +56,12 @@ final class WhiteCardCellView: UIView {
         
         mvaLabel.font = UIFont(name: "RobotoMono-Bold", size: 12)
         mvaLabel.textColor = UIColor.solarstein.sapphire
-        mvaLabel.text = "Legg til MVA"
+        mvaLabel.text = "Inngående mva ingen sats".uppercased()
         mvaLabel.alpha = alpha
         
         accountLabel.font = UIFont(name: "RobotoMono-Bold", size: 12)
         accountLabel.textColor = UIColor.solarstein.sapphire
-        accountLabel.text = "Legg til konto"
+        accountLabel.text = "3251 - IK - Husholdning".uppercased()
         accountLabel.alpha = alpha
     }
     
@@ -81,7 +81,7 @@ final class WhiteCardCellView: UIView {
         
         addSubview(accountLabel)
         accountLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(mvaLabel.snp.bottom)
+            make.top.equalTo(mvaLabel.snp.bottom).offset(4)
             make.left.equalTo(headerLabel)
         }
         
