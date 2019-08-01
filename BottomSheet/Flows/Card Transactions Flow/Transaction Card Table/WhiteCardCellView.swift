@@ -101,7 +101,7 @@ final class WhiteCardCellView: UIView {
         addSubview(statusIndicator)
         statusIndicator.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-24)
-            make.bottom.equalToSuperview().offset(-16)
+            make.bottom.equalTo(valueLabel).offset(-3)
             make.height.equalTo(8)
             make.width.equalTo(36)
         }

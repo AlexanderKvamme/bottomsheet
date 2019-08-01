@@ -47,12 +47,10 @@ class DateView: UIView {
     private func setup() {
         dayLabel.text = "29"
         
-        dayLabel.font = UIFont.kolibrix.header
+        dayLabel.font = UIFont(name: "SofiaPro-Semibold", size: 40)!
         dayLabel.adjustsFontSizeToFitWidth = true
         dayLabel.textAlignment = .center
-        dayLabel.alpha = 0.3
         
-        monthLabel.alpha = 0.3
         monthLabel.font = UIFont.kolibrix.bold
         monthLabel.textAlignment = .center
         monthLabel.adjustsFontSizeToFitWidth = true
@@ -76,14 +74,21 @@ class DateView: UIView {
     }
     
     private func adjustVisuals(for style: DateViewStyle) {
+        var alpha: CGFloat
+        
         switch style {
         case .dark:
             dayLabel.textColor = UIColor.solarstein.sapphire
             monthLabel.textColor = UIColor.solarstein.sapphire
+            alpha = 0.2
         case .light:
             dayLabel.textColor = .white
             monthLabel.textColor = .white
+            alpha = 0.3
         }
+        
+        dayLabel.alpha = alpha
+        monthLabel.alpha = alpha
     }
 }
 
