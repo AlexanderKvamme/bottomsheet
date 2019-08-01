@@ -21,6 +21,8 @@
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
 		1C54D48322F1FFBB00B8C16F /* BottomSheetContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */; };
+		1C54D48522F2D9C900B8C16F /* SKScreenHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48422F2D9C900B8C16F /* SKScreenHeaderController.swift */; };
+		1C54D48722F2D9E400B8C16F /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48622F2D9E400B8C16F /* SettingsTableController.swift */; };
 		1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */; };
 		1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */; };
 		1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */; };
@@ -109,6 +111,8 @@
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerView.swift; sourceTree = "<group>"; };
+		1C54D48422F2D9C900B8C16F /* SKScreenHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScreenHeaderController.swift; sourceTree = "<group>"; };
+		1C54D48622F2D9E400B8C16F /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasHorizontalSheetIndicator.swift; sourceTree = "<group>"; };
 		1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDelegate.swift; sourceTree = "<group>"; };
 		1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 		1C0560FB22F1F7240086F783 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C54D48422F2D9C900B8C16F /* SKScreenHeaderController.swift */,
+				1C54D48622F2D9E400B8C16F /* SettingsTableController.swift */,
 				1CD66B1522EDEE6900C43669 /* Bottom Sheets */,
 				1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */,
 			);
@@ -635,6 +641,7 @@
 			files = (
 				1CA434F622E73242000C6753 /* SettingsDataSourceAndDelegate.swift in Sources */,
 				1C98E79822EF0C1A004B2C07 /* SwipeableCardCell.swift in Sources */,
+				1C54D48522F2D9C900B8C16F /* SKScreenHeaderController.swift in Sources */,
 				1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */,
 				1CF6D6F122E0C74A00701DF3 /* ZoomableReceiptViewController.swift in Sources */,
 				1CA4351822E8C0D3000C6753 /* RounterImp.swift in Sources */,
@@ -678,6 +685,7 @@
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
 				1C98E78E22EEED04004B2C07 /* CardTransactionsViewController.swift in Sources */,
+				1C54D48722F2D9E400B8C16F /* SettingsTableController.swift in Sources */,
 				1CF6D6F922E5ADD900701DF3 /* MainMenuViewController.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
 				1C0560F622F1E3EF0086F783 /* ShowMoreCellsFooterView.swift in Sources */,
