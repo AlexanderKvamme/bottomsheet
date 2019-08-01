@@ -20,10 +20,10 @@
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
+		1C54D48322F1FFBB00B8C16F /* BottomSheetContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */; };
 		1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */; };
 		1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */; };
 		1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */; };
-		1C6E63D022E06EF1002DC799 /* BottomSheetContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CF22E06EF1002DC799 /* BottomSheetContainerView.swift */; };
 		1C6E63E022E0704F002DC799 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DB22E0704F002DC799 /* RobotoMono-Bold.ttf */; };
 		1C6E63E122E0704F002DC799 /* Sofia Pro SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DC22E0704F002DC799 /* Sofia Pro SemiBold.ttf */; };
 		1C6E63E222E0704F002DC799 /* Sofia Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DD22E0704F002DC799 /* Sofia Pro Regular.ttf */; };
@@ -108,10 +108,10 @@
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerView.swift; sourceTree = "<group>"; };
 		1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasHorizontalSheetIndicator.swift; sourceTree = "<group>"; };
 		1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDelegate.swift; sourceTree = "<group>"; };
 		1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
-		1C6E63CF22E06EF1002DC799 /* BottomSheetContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BottomSheetContainerView.swift; path = ../BottomSheetContainerView.swift; sourceTree = "<group>"; };
 		1C6E63DB22E0704F002DC799 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		1C6E63DC22E0704F002DC799 /* Sofia Pro SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro SemiBold.ttf"; sourceTree = "<group>"; };
 		1C6E63DD22E0704F002DC799 /* Sofia Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular.ttf"; sourceTree = "<group>"; };
@@ -424,11 +424,11 @@
 		1CD66B1522EDEE6900C43669 /* Bottom Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */,
 				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
 				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
 				1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */,
 				F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */,
-				1C6E63CF22E06EF1002DC799 /* BottomSheetContainerView.swift */,
 				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
 				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
 				1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */,
@@ -702,7 +702,6 @@
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */,
 				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
-				1C6E63D022E06EF1002DC799 /* BottomSheetContainerView.swift in Sources */,
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
 				1CF6D70922E5D19600701DF3 /* ModuleCellView.swift in Sources */,
@@ -710,6 +709,7 @@
 				1C98E78A22EEE986004B2C07 /* CardTransactionsCoordinator.swift in Sources */,
 				1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */,
 				1CA4351A22E8C0EA000C6753 /* Presentable.swift in Sources */,
+				1C54D48322F1FFBB00B8C16F /* BottomSheetContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

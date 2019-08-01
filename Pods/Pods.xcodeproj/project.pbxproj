@@ -105,7 +105,7 @@
 		3961EAF0C2254EF1A33F74809FD0C85A /* Pods-BottomSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BottomSheet.debug.xcconfig"; sourceTree = "<group>"; };
 		3D715B177B78139376B5B8A0CA1CA762 /* CHIPageControllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CHIPageControllable.swift; path = CHIPageControl/Core/CHIPageControllable.swift; sourceTree = "<group>"; };
 		47FE1EE1C58D1DD471C644152BA83E35 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
-		4A90E991BC0CB35AB6D91E18C9490643 /* CHIPageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CHIPageControl.framework; path = CHIPageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A90E991BC0CB35AB6D91E18C9490643 /* CHIPageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CHIPageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51463BCECF14276850B9A0809230F568 /* Pods-BottomSheet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BottomSheet-dummy.m"; sourceTree = "<group>"; };
 		56D216450A00E39684A17B061CB70AFC /* CHIPageControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CHIPageControl-Info.plist"; sourceTree = "<group>"; };
 		57CDC3926FF7D375DCFED1E2B6AB6758 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
@@ -124,14 +124,14 @@
 		8DA8FDBC297E44DFF037A046471FFE4D /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		91E12B6B797E0ABDFE39749530843E30 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		923A55045EEDCDDB35721CB8664A3CF7 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		9347D543AD55789BED11F029D3747967 /* ScrollingStackContainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScrollingStackContainer.framework; path = ScrollingStackContainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9347D543AD55789BED11F029D3747967 /* ScrollingStackContainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollingStackContainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9376D8BF782ABB4618F0CD1768BA8443 /* Pods-BottomSheet-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BottomSheet-frameworks.sh"; sourceTree = "<group>"; };
-		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C5B87D5BA4B9496C33F2B90A279C4F /* ScrollingStackContainer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackContainer-umbrella.h"; sourceTree = "<group>"; };
 		9AC6B3A83C767FA507A3C2748C0AD193 /* Pods-BottomSheet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BottomSheet-acknowledgements.plist"; sourceTree = "<group>"; };
 		9B9DFAC7E1C7B3B7B78F50E3A9A13B9B /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		9D37D5207B752A477ED890231129D1F6 /* ScrollingStackContainer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScrollingStackContainer-prefix.pch"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E93409AD4B025012DCD80199A434E1C /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		AE6960B4C88185D2C4FC488737086AEB /* CHIPageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CHIPageControl-umbrella.h"; sourceTree = "<group>"; };
 		B3E0D3B3D0042AF1B351FEF0672AC934 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		C238E66F9A0B62965D2FF0A3E5FC01A9 /* ScrollingStackController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollingStackController.swift; path = Sources/ScrollingStackContainer/ScrollingStackController.swift; sourceTree = "<group>"; };
 		C332681B0C6C81ACA7D0A582AFEFC611 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		C39AD601CE5DC3E1D686B47D27970161 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		C66E594D489E42F4892731FAFFC4CE56 /* Pods_BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BottomSheet.framework; path = "Pods-BottomSheet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66E594D489E42F4892731FAFFC4CE56 /* Pods_BottomSheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BottomSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9F3094206C4F82B0C8387ADDC73415 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		D04811CED20E2B0821098E4DF0E2EE84 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		D5AE08B5398832B5FDC3A9631CB457B1 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
@@ -234,7 +234,6 @@
 				CC9F3094206C4F82B0C8387ADDC73415 /* UILayoutSupport+Extensions.swift */,
 				A916F69C237907BE6444A66AC4EF9507 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -340,7 +339,6 @@
 				C238E66F9A0B62965D2FF0A3E5FC01A9 /* ScrollingStackController.swift */,
 				BE6CC94FB0D54A0BBA6ED5BA3D340231 /* Support Files */,
 			);
-			name = ScrollingStackContainer;
 			path = ScrollingStackContainer;
 			sourceTree = "<group>";
 		};
@@ -369,7 +367,6 @@
 				66BF95D038031F733D12B34CDDC67899 /* Aleppo */,
 				67FA547BCFA36F3A73B40E6A99EB7433 /* Support Files */,
 			);
-			name = CHIPageControl;
 			path = CHIPageControl;
 			sourceTree = "<group>";
 		};
