@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 
-protocol BottomSheet: AnyObject {
+protocol BottomSheet: UIViewController {
     var bottomSheetDelegate: BottomSheetDelegate? { get set }
 }
 
-typealias BottomSheetViewController = UIViewController & BottomSheet

@@ -17,8 +17,9 @@ enum SheetTopVisibility: CGFloat {
     case visibleHeader = 200
 }
 
+
 /// This class controls anything related to the scrolling of a bottomsheet
-final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelegate, BottomSheet {
+final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelegate, BottomSheet, hasBackgroundTapHandler {
 
     // MARK: - Properties
     
@@ -98,14 +99,13 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     // MARK: internal methods
     
     func scrollToBottom() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
             self.scrollView.layoutSubviews()
-            let targetOffsetToBottom = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.height)
-            self.scrollView.setContentOffset(targetOffsetToBottom, animated: true)
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: -self.getMaxVisibleContentHeight()), animated: true)
         })
     }
     
-    // MARK: - ScrollViewDelegate methods
+    // MARK: ScrollViewDelegate methods
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         bottomSheetDelegate?.bottomSheet(self, didScrollTo: scrollView.contentOffset)
@@ -125,5 +125,10 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
         }
     }
     
+    // MARK: Protocol: hasBackgroundTapHandler
+    
+    func backgroundSheetWasTapped() {
+        scrollToBottom()
+    }
 }
 

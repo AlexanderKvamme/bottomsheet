@@ -16,6 +16,8 @@ class ZoomableReceiptViewController: UIViewController {
     
     let imagePreview = SImagePreview(for: UIImage.init(named: "receiptExample")!, from: CGRect.zero)
     
+    weak var delegate: hasBackgroundTapHandler?
+    
     // MARK: - Initializers
     
     init() {
@@ -25,10 +27,19 @@ class ZoomableReceiptViewController: UIViewController {
         imagePreview.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapMainView))
+        imagePreview.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Methods
+    
+    @objc private func didTapMainView() {
+        delegate?.backgroundSheetWasTapped()
     }
 }
 

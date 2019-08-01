@@ -6,12 +6,14 @@ import UIKit
 import SnapKit
 
 protocol SheetScrollResponder: UIViewController {
+    var delegate: hasBackgroundTapHandler? { get set }
+    
     func bottomsheetDidScrollTo(_ value: CGPoint)
 }
 
 protocol isSheetViewController: class {
     var mainViewController: SheetScrollResponder { get set }
-    var sheetViewController: BottomSheetViewController { get set }
+    var sheetViewController: BottomSheet { get set }
     var bottomSheetContainerView: BottomSheetContainerView { get set }
 }
 
@@ -22,12 +24,13 @@ class DetailedTransactionViewController: UIViewController, isSheetViewController
     var onFinish: (() -> ())?
     
     var mainViewController: SheetScrollResponder
-    var sheetViewController: BottomSheetViewController
+    var sheetViewController: BottomSheet
     var bottomSheetContainerView: BottomSheetContainerView
     lazy var topLeftNavigationButton = makeXButton()
     
-    init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
+    init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheet & hasBackgroundTapHandler) {
         self.mainViewController = mainViewController
+        self.mainViewController.delegate = sheetViewController
         self.sheetViewController = sheetViewController
         self.bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view, sheetView: sheetViewController.view)
         

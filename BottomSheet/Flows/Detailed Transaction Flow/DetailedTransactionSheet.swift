@@ -14,11 +14,9 @@ final class DetailedTransactionSheet: UIViewController, hasHorizontalSheetIndica
 
     // MARK: - Properties
     
-    private let firstButton = KRoundButton()
-    private let secondButton = KRoundButton()
-    private let backButton = KRoundButton()
     private var transactionCardView: BlueCardCellView!
     private var transactionStatusView: TransactionStatusView!
+    private let backButton = KRoundButton()
     
     weak var rootSheetController: RootSheetController?
     

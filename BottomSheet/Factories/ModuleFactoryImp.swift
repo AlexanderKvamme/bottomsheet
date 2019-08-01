@@ -8,10 +8,10 @@ final class ModuleFactoryImp:
     CardTransactionsFactory
 {
     func makeDetailedTransactionModule(router: Router) -> DetailedTransactionView {
-        let zoomableReceiptViewController = ZoomableReceiptViewController()
+        let backgroundSheet = ZoomableReceiptViewController()
         let rootSheet = MatchfinderRootSheet(router: router)
         let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
-        let container = DetailedTransactionViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
+        let container = DetailedTransactionViewController(mainViewController: backgroundSheet, sheetViewController: bottomSheetContainer)
         return container
     }
     
