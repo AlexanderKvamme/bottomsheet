@@ -41,4 +41,8 @@ final class TransactionCardTableDataSourceAndDelegate: NSObject, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return WhiteCardTransactionCell.estimatedItemSize.height
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.shakeByX()
+    }
 }
