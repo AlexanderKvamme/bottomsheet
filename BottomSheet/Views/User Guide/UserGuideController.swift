@@ -22,7 +22,7 @@ final class UserGuideController: UIViewController {
     // MARK: - Properties
     
     private var userGuideCard: UserGuideCard?
-    private var shadow = ShadowView(opacity: 0.14)
+    private var shadow = ShadowView(opacity: 0.125)
     
     // MARK: - Initializers
     

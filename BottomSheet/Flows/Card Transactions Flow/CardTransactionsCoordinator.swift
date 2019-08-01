@@ -28,6 +28,6 @@ final class CardTransactionsCoordinator: BaseCoordinator {
             self?.router.popModule()
         }
         
-        router.push(module.toPresent())
+        router.push(module)
     }
 }

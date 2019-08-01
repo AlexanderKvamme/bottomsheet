@@ -1,11 +1,14 @@
-protocol SettingsView: BaseView {
+import UIKit
+
+
+protocol SettingsView: UIViewController {
     var onFinish: (() -> ())? { get set }
 }
 
-protocol DetailedTransactionView: BaseView {
+protocol DetailedTransactionView: UIViewController {
     var onFinish: (() -> ())? { get set }
 }
 
-protocol CardTransactionsView: BaseView {
+protocol CardTransactionsView: UIViewController {
     var onFinish: (() -> ())? { get set }
 }

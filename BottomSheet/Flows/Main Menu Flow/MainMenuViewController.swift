@@ -100,7 +100,7 @@ final class MainMenuViewController: UIViewController {
         // TODO: Find better solution
         
         if let card = userGuideCard {
-            let shadow = ShadowView(opacity: 0.14)
+            let shadow = ShadowView(opacity: 0.075)
             
             [shadow, card].forEach({ view.addSubview($0) })
 

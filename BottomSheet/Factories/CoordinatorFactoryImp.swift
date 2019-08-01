@@ -8,7 +8,7 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     }
     
     // FIXME: Tror ikke controlleren skal returneres her. Mener coordinatoren skal fikse det
-    func makeMainMenuCoordinator(router: Router) -> (coordinator: Coordinator, toPresent: Presentable) {
+    func makeMainMenuCoordinator(router: Router) -> (coordinator: Coordinator, toPresent: UIViewController) {
         let controller = MainMenuViewController(router: router)
         let coordinator = MainMenuCoordinator(controller: controller, coordinatorFactory: CoordinatorFactoryImp())
         return (coordinator, controller)

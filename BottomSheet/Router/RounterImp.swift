@@ -24,16 +24,12 @@ final class RouterImp: NSObject, Router {
     
     // MARK: Presentation
     
-    func toPresent() -> UIViewController? {
-        return rootController
-    }
-    
-    func present(_ module: Presentable?) {
+    func present(_ module: UIViewController?) {
         present(module, animated: true)
     }
     
-    func present(_ module: Presentable?, animated: Bool) {
-        guard let controller = module?.toPresent() else { return }
+    func present(_ module: UIViewController?, animated: Bool) {
+        guard let controller = module else { return }
         rootController?.present(controller, animated: animated, completion: nil)
     }
     
@@ -51,25 +47,25 @@ final class RouterImp: NSObject, Router {
     
     // FIXME: Kan forenkles
     
-    func push(_ module: Presentable?)  {
+    func push(_ module: UIViewController?)  {
         push(module, animated: true)
     }
     
-    func push(_ module: Presentable?, animated: Bool)  {
+    func push(_ module: UIViewController?, animated: Bool)  {
         push(module, animated: animated, completion: nil)
     }
     
-    func push(_ module: Presentable?, hideBottomBar: Bool)  {
+    func push(_ module: UIViewController?, hideBottomBar: Bool)  {
         push(module, animated: true, hideBottomBar: hideBottomBar, completion: nil)
     }
     
-    func push(_ module: Presentable?, animated: Bool, completion: (() -> Void)?) {
+    func push(_ module: UIViewController?, animated: Bool, completion: (() -> Void)?) {
         push(module, animated: animated, hideBottomBar: false, completion: completion)
     }
     
-    func push(_ module: Presentable?, animated: Bool, hideBottomBar: Bool, completion: (() -> Void)?) {
+    func push(_ module: UIViewController?, animated: Bool, hideBottomBar: Bool, completion: (() -> Void)?) {
         guard
-            let controller = module?.toPresent(),
+            let controller = module,
             (controller is UINavigationController == false)
             else { assertionFailure("Deprecated push UINavigationController."); return }
         
@@ -94,12 +90,12 @@ final class RouterImp: NSObject, Router {
     
     // MARK: Setters
     
-    func setRootModule(_ module: Presentable?) {
+    func setRootModule(_ module: UIViewController?) {
         setRootModule(module, hideBar: false)
     }
     
-    func setRootModule(_ module: Presentable?, hideBar: Bool) {
-        guard let controller = module?.toPresent() else { return }
+    func setRootModule(_ module: UIViewController?, hideBar: Bool) {
+        guard let controller = module else { return }
         rootController?.setViewControllers([controller], animated: false)
         rootController?.isNavigationBarHidden = hideBar
     }

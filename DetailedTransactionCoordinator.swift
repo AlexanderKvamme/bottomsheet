@@ -30,6 +30,6 @@ class DetailedTransactionCoordinator: BaseCoordinator {
             self?.router.popModule()
         }
         
-        router.push(detailedTransactionModule.toPresent())
+        router.push(detailedTransactionModule)
     }
 }
