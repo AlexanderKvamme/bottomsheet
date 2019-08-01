@@ -33,7 +33,7 @@ final class SettingsDataSourceAndDelegate: NSObject, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2,1,3][section]
+        return [2,1,5][section]
     }
     
     // MARK: Headers
