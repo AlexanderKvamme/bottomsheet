@@ -11,6 +11,11 @@ import UIKit
 import ScrollingStackContainer
 
 
+enum BackButtonStyle {
+    case bracket
+    case cross
+}
+
 extension SKTopNavigationController: StackContainable { }
 
 final class SKTopNavigationController: UIViewController, hasTopLeftNavigationButton, hasNavigationHeader {
@@ -22,10 +27,10 @@ final class SKTopNavigationController: UIViewController, hasTopLeftNavigationBut
     
     // MARK: - Initializers
     
-    init() {
+    init(backButtonStyle: BackButtonStyle, faded: Bool = false) {
         super.init(nibName: nil, bundle: nil)
         
-        setupNavigationBar()
+        setupNavigationBar(style: backButtonStyle, faded: faded)
         
         applyXButtonConstraints()
         applyNavigationHeaderConstraints()
@@ -42,11 +47,18 @@ final class SKTopNavigationController: UIViewController, hasTopLeftNavigationBut
     
     // MARK: - Methods
     
-    private func setupNavigationBar() {
-        topLeftNavigationButton.setImage(UIImage(named: "left-bracket")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        topLeftNavigationButton.tintColor = UIColor.solarstein.sapphire
-        //        topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
+    private func setupNavigationBar(style: BackButtonStyle, faded: Bool) {
+        if style == .bracket {
+            topLeftNavigationButton.setImage(UIImage(named: "left-bracket")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        } else {
+            topLeftNavigationButton.setImage(UIImage(named: "x-icon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        }
         
-        navigationHeaderLabel.text = "Juli"
+        if faded {
+            topLeftNavigationButton.alpha = 0.1
+        }
+        
+        topLeftNavigationButton.tintColor = UIColor.solarstein.sapphire
+        navigationHeaderLabel.text = ""
     }
 }

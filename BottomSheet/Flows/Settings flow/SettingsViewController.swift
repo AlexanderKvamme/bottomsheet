@@ -19,7 +19,7 @@ final class SettingsViewController: ScrollingStackController, SettingsView {
     
     var coordinator: Coordinator!
     
-    private let customNav = SKTopNavigationController()
+    private let customNav = SKTopNavigationController(backButtonStyle: .cross, faded: true)
     private let headerController = SKScreenHeaderController()
     private let tableController = SettingsTableController()
     

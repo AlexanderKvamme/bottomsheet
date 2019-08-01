@@ -15,7 +15,7 @@ final class CardTransactionsViewController: ScrollingStackController, CardTransa
 
     // MARK: - Properties
 
-    private let customNav = SKTopNavigationController()
+    private let customNav = SKTopNavigationController(backButtonStyle: .bracket, faded: false)
     private var userGuideController: UserGuideController? = nil
     private let swipeableCardsController = SwipeableCardsController()
     private var topSectionController: SectionDescriptionViewController!
@@ -55,6 +55,7 @@ final class CardTransactionsViewController: ScrollingStackController, CardTransa
         view.backgroundColor = .white
         
         customNav.topLeftNavigationButton.addTarget(self, action: #selector(finish), for: .touchUpInside)
+        customNav.navigationHeaderLabel.text = "August"
         
         makeSectionHeaders()
         makeUserGuide()
