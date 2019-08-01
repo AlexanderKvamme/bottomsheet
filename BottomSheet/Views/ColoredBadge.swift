@@ -19,7 +19,7 @@ final class ColoredBadge: UIView {
     // MARK: - Initializers
     
     init() {
-        super.init(frame: .init(x: 0, y: 0, width: 80, height: 40))
+        super.init(frame: .zero)
         
         setup()
         addSubviewsAndConstraints()
@@ -41,11 +41,21 @@ final class ColoredBadge: UIView {
     private func addSubviewsAndConstraints() {
         addSubview(numberLabel)
         numberLabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-1)
         }
     }
     
     func setBadge(number: Int) {
         numberLabel.text = "\(number)"
+    }
+    
+    // MARK: Overridden methods
+
+    // update round corners whenever autolayout is used to set badge size
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = frame.size.height/2
     }
 }

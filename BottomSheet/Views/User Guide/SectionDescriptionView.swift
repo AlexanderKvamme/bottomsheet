@@ -114,9 +114,8 @@ final class SectionDescriptionView: UIView {
 
         addSubview(coloredBadge!)
         coloredBadge!.snp.makeConstraints { (make) in
-            make.height.equalTo(20)
-            make.width.equalTo(50)
-            make.top.equalToSuperview().offset(10)
+            make.height.width.equalTo(24)
+            make.top.equalToSuperview().offset(8)
             make.left.equalTo(headerLabel.snp.right).offset(8)
         }
     }
