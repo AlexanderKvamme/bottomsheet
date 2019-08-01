@@ -35,10 +35,10 @@ final class TransactionCardTableDataSourceAndDelegate: NSObject, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return CardTransactionCell()
+        return WhiteCardTransactionCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CardTransactionCell.estimatedItemSize.height
+        return WhiteCardTransactionCell.estimatedItemSize.height
     }
 }

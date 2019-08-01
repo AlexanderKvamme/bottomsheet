@@ -32,8 +32,8 @@ final class TransactionCardTableView: UITableView {
         separatorStyle = .none
         separatorColor = .clear
         
-        register(CardTransactionCell.self, forCellReuseIdentifier: CardTransactionCell.identifier)
-        estimatedRowHeight = CardTransactionCell.estimatedItemSize.height
+        register(WhiteCardTransactionCell.self, forCellReuseIdentifier: WhiteCardTransactionCell.identifier)
+        estimatedRowHeight = WhiteCardTransactionCell.estimatedItemSize.height
     }
 }
 

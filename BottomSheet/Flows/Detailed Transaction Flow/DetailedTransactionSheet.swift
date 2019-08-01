@@ -17,7 +17,7 @@ final class DetailedTransactionSheet: UIViewController, hasHorizontalSheetIndica
     private let firstButton = KRoundButton()
     private let secondButton = KRoundButton()
     private let backButton = KRoundButton()
-    private var transactionCardView: TransactionCardView!
+    private var transactionCardView: BlueCardCellView!
     private var transactionStatusView: TransactionStatusView!
     
     weak var rootSheetController: RootSheetController?
@@ -81,7 +81,7 @@ final class DetailedTransactionSheet: UIViewController, hasHorizontalSheetIndica
         transactionCardView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(SheetTopVisibility.minimum.rawValue-40)
             make.centerX.equalToSuperview()
-            make.size.equalTo(TransactionCardView.estimatedItemSize)
+            make.size.equalTo(BlueCardCellView.estimatedItemSize)
         }
         
         transactionCardView.addShadow()
@@ -100,9 +100,9 @@ final class DetailedTransactionSheet: UIViewController, hasHorizontalSheetIndica
         transactionStatusView.addShadow()
     }
     
-    private func makeDummyCard() -> TransactionCardView {
+    private func makeDummyCard() -> BlueCardCellView {
         let model = TransactionCardModel(title: "Barnehagedørprodusenten AS", value: "399 kr", tax: "Legg til MVA", account: "Legg til konto")
-        let cardView = TransactionCardView()
+        let cardView = BlueCardCellView()
         cardView.update(with: model)
         return cardView
     }

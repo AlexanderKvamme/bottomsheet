@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
     
-final class CardTransactionCell: UITableViewCell {
+final class WhiteCardTransactionCell: UITableViewCell {
     
     // MARK: - Properties
     
@@ -22,7 +22,7 @@ final class CardTransactionCell: UITableViewCell {
     // MARK: - Initializers
     
     init() {
-        super.init(style: .default, reuseIdentifier: CardTransactionCell.identifier)
+        super.init(style: .default, reuseIdentifier: WhiteCardTransactionCell.identifier)
         
         selectionStyle = .none
         backgroundColor = .clear

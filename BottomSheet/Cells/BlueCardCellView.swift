@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 
-class TransactionCardView: UIView {
+/// This Transaction card view is used in Card Transactions' detailed view and has a light white border
+class BlueCardCellView: UIView {
     
     // MARK: - Properties
     
@@ -121,7 +122,7 @@ class TransactionCardView: UIView {
     }
     
     func addShadow() {
-        let size = TransactionCardView.estimatedItemSize
+        let size = BlueCardCellView.estimatedItemSize
         frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         let contactRect = CGRect(x: 0, y: 24, width: frame.width, height: frame.height)
         layer.shadowPath = UIBezierPath(rect: contactRect).cgPath

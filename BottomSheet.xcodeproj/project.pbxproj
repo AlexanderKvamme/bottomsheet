@@ -10,7 +10,7 @@
 		1C00DF8C22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00DF8B22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift */; };
 		1C0560E122EF2FA80086F783 /* TransactionCardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E022EF2FA80086F783 /* TransactionCardTableView.swift */; };
 		1C0560E322EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */; };
-		1C0560E522EF31FA0086F783 /* CardTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */; };
+		1C0560E522EF31FA0086F783 /* WhiteCardTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560E422EF31FA0086F783 /* WhiteCardTransactionCell.swift */; };
 		1C0560ED22F1D2FC0086F783 /* WhiteCardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */; };
 		1C0560EF22F1D5AC0086F783 /* CardsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */; };
 		1C0560F122F1D6090086F783 /* SKTopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */; };
@@ -71,7 +71,7 @@
 		1CE47E5A22EF155900AC242C /* SectionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */; };
 		1CE47E5C22EF1A6600AC242C /* ColoredBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE47E5B22EF1A6600AC242C /* ColoredBadge.swift */; };
 		1CF6D6DD22E075D600701DF3 /* DetailedTransactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */; };
-		1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* CardCell.swift */; };
+		1CF6D6E122E079E000701DF3 /* BlueCardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DE22E079DF00701DF3 /* BlueCardCellView.swift */; };
 		1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6DF22E079E000701DF3 /* DateView.swift */; };
 		1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6E022E079E000701DF3 /* CardStatusIndicator.swift */; };
 		1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D6E622E09A8800701DF3 /* TransactionStatusView.swift */; };
@@ -100,7 +100,7 @@
 		1C00DF8B22EDE11A00F7D54B /* DetailedTransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedTransactionCoordinator.swift; path = ../../../DetailedTransactionCoordinator.swift; sourceTree = "<group>"; };
 		1C0560E022EF2FA80086F783 /* TransactionCardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardTableView.swift; sourceTree = "<group>"; };
 		1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardTableDataSourceAndDelegate.swift; sourceTree = "<group>"; };
-		1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransactionCell.swift; sourceTree = "<group>"; };
+		1C0560E422EF31FA0086F783 /* WhiteCardTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCardTransactionCell.swift; sourceTree = "<group>"; };
 		1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteCardCellView.swift; sourceTree = "<group>"; };
 		1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableController.swift; sourceTree = "<group>"; };
 		1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTopNavigationController.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		1CE47E5922EF155900AC242C /* SectionDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionView.swift; sourceTree = "<group>"; };
 		1CE47E5B22EF1A6600AC242C /* ColoredBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBadge.swift; sourceTree = "<group>"; };
 		1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTransactionSheet.swift; sourceTree = "<group>"; };
-		1CF6D6DE22E079DF00701DF3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		1CF6D6DE22E079DF00701DF3 /* BlueCardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueCardCellView.swift; sourceTree = "<group>"; };
 		1CF6D6DF22E079E000701DF3 /* DateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		1CF6D6E022E079E000701DF3 /* CardStatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStatusIndicator.swift; sourceTree = "<group>"; };
 		1CF6D6E622E09A8800701DF3 /* TransactionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStatusView.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 			children = (
 				1C0560E022EF2FA80086F783 /* TransactionCardTableView.swift */,
 				1C0560E222EF30C90086F783 /* TransactionCardTableDataSourceAndDelegate.swift */,
-				1C0560E422EF31FA0086F783 /* CardTransactionCell.swift */,
+				1C0560E422EF31FA0086F783 /* WhiteCardTransactionCell.swift */,
 				1C0560EC22F1D2FB0086F783 /* WhiteCardCellView.swift */,
 				1C0560EE22F1D5AC0086F783 /* CardsTableController.swift */,
 				1C0560F422F1E3D60086F783 /* Table Footer */,
@@ -421,7 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				1C3DC8FC22B39ED800B0902A /* PickerCell.swift */,
-				1CF6D6DE22E079DF00701DF3 /* CardCell.swift */,
+				1CF6D6DE22E079DF00701DF3 /* BlueCardCellView.swift */,
 				1C0560FA22F1F6D10086F783 /* Views */,
 			);
 			path = Cells;
@@ -700,11 +700,11 @@
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1C0560F322F1D65B0086F783 /* UserGuideController.swift in Sources */,
-				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
+				1CF6D6E122E079E000701DF3 /* BlueCardCellView.swift in Sources */,
 				1CA434E622E6FC2F000C6753 /* SettingsViewController.swift in Sources */,
 				1CA4351D22E8C256000C6753 /* ApplicationCoordinator.swift in Sources */,
 				DDD7DF3A22E3ACBA00883D0D /* Coordinator.swift in Sources */,
-				1C0560E522EF31FA0086F783 /* CardTransactionCell.swift in Sources */,
+				1C0560E522EF31FA0086F783 /* WhiteCardTransactionCell.swift in Sources */,
 				1CF6D70522E5CA4000701DF3 /* ModuleModel.swift in Sources */,
 				1CA435A622E9A6EE000C6753 /* SettingsView.swift in Sources */,
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
