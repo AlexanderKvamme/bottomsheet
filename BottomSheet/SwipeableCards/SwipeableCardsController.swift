@@ -139,19 +139,21 @@ extension SwipeableCardsController: UICollectionViewDataSource, UICollectionView
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pointee = targetContentOffset.pointee
         let cardSize = SwipeableCardCell.estimatedItemSize
-        let newCardIndex = (pointee.x / cardSize.width).rounded()
-        let newPageIndex = getPageNumber(for: Int(newCardIndex), currentCardNumber: currentCardIndex)
+        var newCardIndex = (pointee.x / cardSize.width).rounded()
         
+        // dont scroll more than 1 card per swipe
+        if newCardIndex > CGFloat(currentCardIndex)+1 {
+            newCardIndex = CGFloat(currentCardIndex) + 1
+        } else if newCardIndex < CGFloat(currentCardIndex)-1 {
+            newCardIndex = CGFloat(currentCardIndex) - 1
+        }
+        
+        let newPageIndex = getPageNumber(for: Int(newCardIndex), currentCardNumber: currentCardIndex)
         var oldCellIndex: IndexPath!
         var newCellIndex: IndexPath!
         
-        if abs(newCardIndex - CGFloat(currentCardIndex)) < 2 {
-            oldCellIndex = IndexPath(item: Int(currentCardIndex), section: 0)
-            newCellIndex = IndexPath(item: Int(newCardIndex), section: 0)
-        } else {
-            oldCellIndex = IndexPath(item: Int(currentCardIndex), section: 0)
-            newCellIndex = IndexPath(item: Int(newCardIndex), section: 0)
-        }
+        oldCellIndex = IndexPath(item: Int(currentCardIndex), section: 0)
+        newCellIndex = IndexPath(item: Int(newCardIndex), section: 0)
         
         let accumulatedSpacing = (newCardIndex-1)*SwipeableCardsController.horizontalInterItemSpacing - SwipeableCardsController.horizontalInsets/2
         let endPosition = newCardIndex*cardSize.width + accumulatedSpacing
