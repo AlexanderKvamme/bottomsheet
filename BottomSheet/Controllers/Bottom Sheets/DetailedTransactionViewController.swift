@@ -1,21 +1,6 @@
-//
-//  Copyright © 2018 Simon Kågedal Reimer. All rights reserved.
-//
-
 import UIKit
 import SnapKit
 
-protocol SheetScrollResponder: UIViewController {
-    var delegate: hasBackgroundTapHandler? { get set }
-    
-    func bottomsheetDidScrollTo(_ value: CGPoint)
-}
-
-protocol isSheetViewController: class {
-    var mainViewController: SheetScrollResponder { get set }
-    var sheetViewController: BottomSheet { get set }
-    var bottomSheetContainerView: BottomSheetContainerView { get set }
-}
 
 class DetailedTransactionViewController: UIViewController, isSheetViewController, DetailedTransactionView, hasTopLeftNavigationButton {
     

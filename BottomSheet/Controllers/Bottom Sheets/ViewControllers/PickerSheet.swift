@@ -1,10 +1,3 @@
-//
-//  PickerSheet.swift
-//  Pods-BottomSheet
-//
-//  Created by Amia Macone on 13/06/2019.
-//
-
 import Foundation
 import UIKit
 

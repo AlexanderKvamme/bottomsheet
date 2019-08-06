@@ -1,34 +1,6 @@
-//
-//  MatchFinderRootSheet.swift
-//  BottomSheet
-//
-//  Created by Amia Macone on 11/06/2019.
-//  Copyright © 2019 Simon Kågedal Reimer. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
-
-protocol RootSheet {
-    func didTapNext()
-    func pop()
-    func push(_ sheet: UIViewController)
-    
-    var router: Router { get }
-    
-    var scrollableSheet: ScrollableBottomSheetContainer? { get set }
-}
-
-protocol hasRoundedTopCorners {
-    func roundTopCorners()
-}
-
-extension hasRoundedTopCorners where Self: UIViewController {
-    func roundTopCorners() {
-        view.roundCorners(corners: [.topLeft, .topRight])
-    }
-}
 
 /// This is the sheet main controller. It is a pagecontroller which contains any sheetpages and will be the controller
 /// of the the sheetpages. 

@@ -20,6 +20,10 @@
 		1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */; };
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
+		1C441E0222F96EE200B1D1BC /* RootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0122F96EE200B1D1BC /* RootSheet.swift */; };
+		1C441E0422F96F0B00B1D1BC /* hasRoundedTopCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0322F96F0B00B1D1BC /* hasRoundedTopCorners.swift */; };
+		1C441E0622F96FCE00B1D1BC /* isSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0522F96FCE00B1D1BC /* isSheetViewController.swift */; };
+		1C441E0822F96FF500B1D1BC /* SheetScrollResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0722F96FF500B1D1BC /* SheetScrollResponder.swift */; };
 		1C54D48322F1FFBB00B8C16F /* BottomSheetContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */; };
 		1C54D48522F2D9C900B8C16F /* SKScreenHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48422F2D9C900B8C16F /* SKScreenHeaderController.swift */; };
 		1C54D48722F2D9E400B8C16F /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54D48622F2D9E400B8C16F /* SettingsTableController.swift */; };
@@ -90,7 +94,7 @@
 		DDD7DF3A22E3ACBA00883D0D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7DF3922E3ACBA00883D0D /* Coordinator.swift */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
-		F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */; };
+		F4EAE15D210FBD5B00487323 /* DetailedTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15C210FBD5B00487323 /* DetailedTransactionViewController.swift */; };
 		F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +112,10 @@
 		1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranasctionMenuSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		1C441E0122F96EE200B1D1BC /* RootSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSheet.swift; sourceTree = "<group>"; };
+		1C441E0322F96F0B00B1D1BC /* hasRoundedTopCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasRoundedTopCorners.swift; sourceTree = "<group>"; };
+		1C441E0522F96FCE00B1D1BC /* isSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isSheetViewController.swift; sourceTree = "<group>"; };
+		1C441E0722F96FF500B1D1BC /* SheetScrollResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetScrollResponder.swift; sourceTree = "<group>"; };
 		1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerView.swift; sourceTree = "<group>"; };
 		1C54D48422F2D9C900B8C16F /* SKScreenHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScreenHeaderController.swift; sourceTree = "<group>"; };
 		1C54D48622F2D9E400B8C16F /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
@@ -183,7 +191,7 @@
 		F4EAE143210FBCFE00487323 /* BottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAE146210FBCFE00487323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAE150210FBD0100487323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerViewController.swift; sourceTree = "<group>"; };
+		F4EAE15C210FBD5B00487323 /* DetailedTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTransactionViewController.swift; sourceTree = "<group>"; };
 		F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetBackgroundView.swift; sourceTree = "<group>"; };
 		F4EAE160211508DE00487323 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,10 +250,10 @@
 		1C0560FB22F1F7240086F783 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */,
 				1C54D48422F2D9C900B8C16F /* SKScreenHeaderController.swift */,
 				1C54D48622F2D9E400B8C16F /* SettingsTableController.swift */,
 				1CD66B1522EDEE6900C43669 /* Bottom Sheets */,
-				1C0560F022F1D6090086F783 /* SKTopNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +270,39 @@
 			);
 			path = "Transaction Card Table";
 			sourceTree = "<group>";
+		};
+		1C441DFE22F96E9600B1D1BC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
+				1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */,
+				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1C441DFF22F96E9600B1D1BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
+				1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C441E0022F96E9D00B1D1BC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */,
+				1C441E0122F96EE200B1D1BC /* RootSheet.swift */,
+				1C441E0522F96FCE00B1D1BC /* isSheetViewController.swift */,
+				1C441E0322F96F0B00B1D1BC /* hasRoundedTopCorners.swift */,
+				1C441E0722F96FF500B1D1BC /* SheetScrollResponder.swift */,
+				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
+			);
+			name = Protocols;
+			path = "BottomSheet/Controllers/Bottom Sheets/Protocols";
+			sourceTree = SOURCE_ROOT;
 		};
 		1C98E79122EF0941004B2C07 /* SwipeableCards */ = {
 			isa = PBXGroup;
@@ -424,14 +465,10 @@
 		1CD66B1522EDEE6900C43669 /* Bottom Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				1C54D48222F1FFBB00B8C16F /* BottomSheetContainerView.swift */,
-				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
-				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
-				1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */,
-				F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */,
-				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
-				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
-				1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */,
+				1C441DFE22F96E9600B1D1BC /* ViewControllers */,
+				1C441E0022F96E9D00B1D1BC /* Protocols */,
+				1C441DFF22F96E9600B1D1BC /* Views */,
+				F4EAE15C210FBD5B00487323 /* DetailedTransactionViewController.swift */,
 			);
 			path = "Bottom Sheets";
 			sourceTree = "<group>";
@@ -650,6 +687,7 @@
 				1CA434F422E7322A000C6753 /* SettingsTableHeaderView.swift in Sources */,
 				1CA4351622E8C0BD000C6753 /* Router.swift in Sources */,
 				1CF6D6FB22E5B1CF00701DF3 /* ModulesTableView.swift in Sources */,
+				1C441E0222F96EE200B1D1BC /* RootSheet.swift in Sources */,
 				1CA4357922E9A3F3000C6753 /* Settings.swift in Sources */,
 				1C98E78C22EEEC52004B2C07 /* CardTransactionFactory.swift in Sources */,
 				1CA4357722E9A3E6000C6753 /* ItemList.swift in Sources */,
@@ -673,6 +711,7 @@
 				1C0560E122EF2FA80086F783 /* TransactionCardTableView.swift in Sources */,
 				1C98E79022EF05F1004B2C07 /* hasNavigationHeader.swift in Sources */,
 				1CA4351022E87FA7000C6753 /* ShadowView.swift in Sources */,
+				1C441E0422F96F0B00B1D1BC /* hasRoundedTopCorners.swift in Sources */,
 				1C0560EF22F1D5AC0086F783 /* CardsTableController.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				1CA434EC22E72B33000C6753 /* SettingsCellView.swift in Sources */,
@@ -701,10 +740,12 @@
 				1CF6D70522E5CA4000701DF3 /* ModuleModel.swift in Sources */,
 				1CA435A622E9A6EE000C6753 /* SettingsView.swift in Sources */,
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
+				1C441E0822F96FF500B1D1BC /* SheetScrollResponder.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */,
-				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
+				F4EAE15D210FBD5B00487323 /* DetailedTransactionViewController.swift in Sources */,
 				1CA4359E22E9A6BE000C6753 /* CoordinatorFactoryImp.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
+				1C441E0622F96FCE00B1D1BC /* isSheetViewController.swift in Sources */,
 				1CF6D70922E5D19600701DF3 /* ModuleCellView.swift in Sources */,
 				1CA435C222EAFE9D000C6753 /* hasTopLeftNavigationButton.swift in Sources */,
 				1C98E78A22EEE986004B2C07 /* CardTransactionsCoordinator.swift in Sources */,
