@@ -10,12 +10,37 @@ import Foundation
 import UIKit
 
 
-final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndicator {
+class BottomSheet: UIViewController {
 
     // MARK: - Properties
     
-    private let firstButton = KRoundButton()
-    private let secondButton = KRoundButton()
+    // MARK: - Initializers
+    
+    // MARK: - Life Cycle
+    
+    // MARK: - Methods
+    
+    func addHorizontalDragIndicator() {
+        let height: CGFloat = 5
+        let indicator = UIView()
+        indicator.backgroundColor = .white
+        indicator.alpha = 0.1
+        indicator.layer.cornerRadius = height/2
+        
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(24)
+            make.height.equalTo(height)
+            make.width.equalTo(100)
+        }
+    }
+}
+
+final class CTPickerConfirmationSheet: BottomSheet {
+
+    // MARK: - Properties
+    
     private let backButton = KRoundButton()
     private var transactionCardView: TransactionCardView!
     private var transactionStatusView: TransactionStatusView!

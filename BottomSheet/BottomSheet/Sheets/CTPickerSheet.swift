@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-final class PickerSheet: UIViewController, HasHorizontalSheetIndicator {
+final class CTPickerSheet: BottomSheet {
     
     // MARK: - Properties
     
@@ -93,7 +93,7 @@ final class PickerSheet: UIViewController, HasHorizontalSheetIndicator {
     }
 }
 
-extension PickerSheet: UITableViewDataSource, UITableViewDelegate {
+extension CTPickerSheet: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UITableViewDataSource
     
@@ -108,7 +108,7 @@ extension PickerSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newSheet = TransactionSheet(choices[indexPath.row], delegate: rootSheet)
+        let newSheet = PickerBottomSheet(choices[indexPath.row], delegate: rootSheet)
         rootSheet?.push(newSheet)
     }
 }

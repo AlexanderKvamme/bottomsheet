@@ -1,15 +1,8 @@
-//
-//  TransactionMenuSheet.swift
-//
-//
-//  Created by Amia Macone on 13/06/2019.
-//
-
 import Foundation
 import UIKit
 
 
-final class TransactionMenuSheet: UIViewController, HasHorizontalSheetIndicator {
+final class CTBottomSheetMenu: BottomSheet {
     
     // MARK: - Properties
     

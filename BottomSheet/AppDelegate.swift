@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TODO: Test med pickersheet
         let underlyingController = ZoomableReceiptViewController()
         let overlyingSheet = PickerExampleRootSheet()
-        let initialViewController = BottomSheetContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
+        let initialViewController = BSContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
         
         // Set window
         let window = UIWindow(frame: UIScreen.main.bounds)

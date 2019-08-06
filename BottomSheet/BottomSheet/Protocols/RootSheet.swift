@@ -14,11 +14,11 @@ protocol RootSheet {
     func pop()
     func push(_ sheet: UIViewController)
     
-    var scrollableSheet: ScrollableBottomSheetContainer? { get set }
+    var scrollableSheet: BSScrollableSheetContainer? { get set }
 }
 
 /// base functionality for RootSheets to handle pushing and popping
-extension RootSheet where Self: RootViewController {
+extension RootSheet where Self: BottomSheetViewController {
     
     func didTapNext() {
         print("implement me")

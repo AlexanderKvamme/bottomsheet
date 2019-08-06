@@ -2,8 +2,7 @@ import Foundation
 import UIKit
 
 
-/// This is an example of a simple rootViewController. It sets an initial sheet and uses didTapNext to push subsequent screens
-final class PickerExampleRootSheet: RootViewController {
+final class MatchfinderRootSheet: BottomSheetViewController {
     
     // MARK: - Initializers
     
@@ -18,22 +17,22 @@ final class PickerExampleRootSheet: RootViewController {
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.solarstein.sapphire
+        roundTopCorners()
         setInitialSheet()
     }
     
     // MARK: - Methods
     
     private func setInitialSheet() {
-        let sheet = PickerSheet("Please pick something!", choices: ["one", "two", "three"], delegate: self)
+        let sheet = CTPickerConfirmationSheet(delegate: self)
         navigationStack = [sheet]
         addSheetLayout(sheet)
     }
     
     override func didTapNext() {
         let choices = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT", "What it to", "Mic check", "One, two"]
-        let pickerSheet = PickerSheet("Pick something", choices: choices, delegate: self)
+        let pickerSheet = CTPickerSheet("Pick something", choices: choices, delegate: self)
         push(pickerSheet)
     }
     
@@ -41,4 +40,3 @@ final class PickerExampleRootSheet: RootViewController {
         popSheet()
     }
 }
-

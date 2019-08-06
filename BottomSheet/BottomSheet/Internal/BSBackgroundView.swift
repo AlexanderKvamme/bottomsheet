@@ -6,7 +6,7 @@ import UIKit
 
 
 /// Used to calculate hitbox in the bottomsheetcontainer
-class BottomSheetBackgroundView: UIView {
+class BSBackgroundView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +23,6 @@ class BottomSheetBackgroundView: UIView {
  
         roundCorners(corners: [.topLeft, .topRight])
         // Make sure border isn't visible
-        layer.bounds = CGRect(origin: bounds.origin,
-                              size: CGSize(width: bounds.size.width,
-                                           height: bounds.size.height))
+        layer.bounds = CGRect(origin: bounds.origin, size: CGSize(width: bounds.size.width, height: bounds.size.height))
     }
 }

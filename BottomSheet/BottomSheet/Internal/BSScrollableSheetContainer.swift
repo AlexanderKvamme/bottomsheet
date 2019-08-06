@@ -16,7 +16,7 @@ enum SheetTopVisibility: CGFloat {
 }
 
 /// This class controls anything related to the scrolling of a bottomsheet
-final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelegate, BottomSheet {
+final class BSScrollableSheetContainer: UIViewController, UIScrollViewDelegate, hasBottomSheetDelegate {
 
     // MARK: - Properties
     

@@ -5,12 +5,20 @@ import UIKit
 import SnapKit
 
 
-class BottomSheetContainerView: UIView {
+class BSContainerView: UIView {
+    
+    // MARK: - Properties
     
     private let mainView: UIView
     private let sheetView: UIView
-    private let sheetBackground = BottomSheetBackgroundView()
+    private let sheetBackground = BSBackgroundView()
     private var sheetBackgroundTopConstraint: Constraint? = nil
+    var topDistance: CGFloat = 0 {
+        didSet {
+            sheetBackgroundTopConstraint?.layoutConstraints[0].constant = topDistance
+        }
+    }
+    // MARK: - Initializers
     
     init(underlyingView: UIView, overlyingSheetView: UIView) {
         self.mainView = underlyingView
@@ -23,11 +31,7 @@ class BottomSheetContainerView: UIView {
     
     required init?(coder aDecoder: NSCoder) { fatalError() }
     
-    var topDistance: CGFloat = 0 {
-        didSet {
-            sheetBackgroundTopConstraint?.layoutConstraints[0].constant = topDistance
-        }
-    }
+    // MARK: - Methods
     
     private func setupViews() {
         // The main view fills the view completely

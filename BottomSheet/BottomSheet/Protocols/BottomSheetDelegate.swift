@@ -11,6 +11,6 @@ import UIKit
 
 
 protocol BottomSheetDelegate: AnyObject {
-    func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint)
+    func bottomSheet(_ bottomSheet: hasBottomSheetDelegate, didScrollTo contentOffset: CGPoint)
 }
 

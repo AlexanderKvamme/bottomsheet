@@ -1,18 +1,10 @@
-//
-//  ViewControllerA.swift
-//  BottomSheet
-//
-//  Created by Amia Macone on 11/06/2019.
-//  Copyright © 2019 Simon Kågedal Reimer. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 
 typealias RootSheetController = UIPageViewController & RootSheet
-    
-final class TransactionSheet: UIViewController, HasHorizontalSheetIndicator {
+
+final class PickerBottomSheet: BottomSheet {
     
     // MARK: - Properties
     
@@ -102,7 +94,7 @@ final class TransactionSheet: UIViewController, HasHorizontalSheetIndicator {
     }
     
     @objc func didTapMoreButton() {
-        let menuSheet = TransactionMenuSheet("Menu", delegate: sheetPageController!)
+        let menuSheet = CTBottomSheetMenu("Menu", delegate: sheetPageController!)
         sheetPageController!.push(menuSheet)
     }
 }

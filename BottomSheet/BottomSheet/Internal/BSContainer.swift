@@ -2,18 +2,18 @@ import UIKit
 import SnapKit
 
 
-final class BottomSheetContainer: UIViewController {
+final class BSContainer: UIViewController {
 
     // MARK: Properties
     
     private let underlyingController: BottomSheetDidScrollResponder
-    private let overlyingSheetController: ScrollableBottomSheetContainer
-    private lazy var bottomSheetContainerView = BottomSheetContainerView(underlyingView: underlyingController.view, overlyingSheetView: overlyingSheetController.view)
+    private let overlyingSheetController: BSScrollableSheetContainer
+    private lazy var bottomSheetContainerView = BSContainerView(underlyingView: underlyingController.view, overlyingSheetView: overlyingSheetController.view)
 
     // MARK: Initializers
     
     init(underlyingViewController: BottomSheetDidScrollResponder, overlyingSheetController: UIPageViewController & RootSheet & hasRoundedTopCorners) {
-        let bottomSheetContainer = ScrollableBottomSheetContainer(overlyingSheetController)
+        let bottomSheetContainer = BSScrollableSheetContainer(overlyingSheetController)
         self.underlyingController = underlyingViewController
         self.overlyingSheetController = bottomSheetContainer
         
@@ -43,8 +43,8 @@ final class BottomSheetContainer: UIViewController {
 
 // MARK: - Extensions
 
-extension BottomSheetContainer: BottomSheetDelegate {
-    func bottomSheet(_ bottomSheet: BottomSheet, didScrollTo contentOffset: CGPoint) {
+extension BSContainer: BottomSheetDelegate {
+    func bottomSheet(_ bottomSheet: hasBottomSheetDelegate, didScrollTo contentOffset: CGPoint) {
         bottomSheetContainerView.topDistance = max(0, -contentOffset.y)
         underlyingController.bottomsheetDidScrollTo(contentOffset)
     }
