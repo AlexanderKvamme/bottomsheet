@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-final class PickerBottomSheet: BottomSheet {
+final class CTPickerBottomSheet: BottomSheet {
     
     // MARK: - Properties
     

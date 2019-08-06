@@ -108,7 +108,7 @@ extension CTPickerSheet: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newSheet = PickerBottomSheet(choices[indexPath.row], delegate: rootSheet)
+        let newSheet = CTPickerBottomSheet(choices[indexPath.row], delegate: rootSheet)
         rootSheet?.push(newSheet)
     }
 }

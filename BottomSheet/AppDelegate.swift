@@ -8,15 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        // Initial view controller
-//        let underlyingController = ZoomableReceiptViewController()
-//        let overlyingSheet = MatchfinderRootSheet()
-//        let initialViewController = BottomSheetContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
-
         // TODO: Test med pickersheet
         let underlyingController = ZoomableReceiptViewController()
         let overlyingSheet = PickerExampleRootSheet()
-        let initialViewController = BSContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
+        let initialViewController = BottomSheetContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
         
         // Set window
         let window = UIWindow(frame: UIScreen.main.bounds)

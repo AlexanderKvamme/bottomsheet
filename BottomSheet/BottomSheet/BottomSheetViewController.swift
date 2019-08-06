@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 
+// MARK: - RootSheet
 
 protocol RootSheet {
     func didTapNext()
@@ -10,15 +11,18 @@ protocol RootSheet {
     var scrollableSheet: BSScrollableSheetContainer? { get set }
 }
 
+// MARK: - BottomSheetViewController
+
 /// Superclass for RootViews to provide a navigationstack
 class BottomSheetViewController: UIPageViewController, RootSheet {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var navigationStack = [UIViewController]()
     weak var scrollableSheet: BSScrollableSheetContainer?
     
-    // MARK: - Life Cycle
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
