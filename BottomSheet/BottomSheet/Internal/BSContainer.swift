@@ -12,7 +12,7 @@ final class BSContainer: UIViewController {
 
     // MARK: Initializers
     
-    init(underlyingViewController: BottomSheetDidScrollResponder, overlyingSheetController: UIPageViewController & RootSheet & hasRoundedTopCorners) {
+    init(underlyingViewController: BottomSheetDidScrollResponder, overlyingSheetController: BottomSheetViewController) {
         let bottomSheetContainer = BSScrollableSheetContainer(overlyingSheetController)
         self.underlyingController = underlyingViewController
         self.overlyingSheetController = bottomSheetContainer

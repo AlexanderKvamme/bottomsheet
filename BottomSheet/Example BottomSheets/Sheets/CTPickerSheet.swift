@@ -17,11 +17,11 @@ final class CTPickerSheet: BottomSheet {
     private let tableView = UITableView()
     private var choices: [String]
     
-    weak var rootSheet: RootSheetController!
+    weak var rootSheet: BottomSheetViewController!
     
     // MARK: - Initializers
     
-    init(_ string: String, choices: [String], delegate: RootSheetController) {
+    init(_ string: String, choices: [String], delegate: BottomSheetViewController) {
         headerLabel.text = string
         self.choices = choices
         rootSheet = delegate

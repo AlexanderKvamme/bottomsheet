@@ -36,9 +36,5 @@ final class PickerExampleRootSheet: BottomSheetViewController {
         let pickerSheet = CTPickerSheet("Pick something", choices: choices, delegate: self)
         push(pickerSheet)
     }
-    
-    override func pop() {
-        popSheet()
-    }
 }
 

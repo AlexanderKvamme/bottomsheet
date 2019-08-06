@@ -11,11 +11,11 @@ final class CTBottomSheetMenu: BottomSheet {
     private let secondButton = KRoundButton()
     private let backButton = KRoundButton()
     
-    weak var rootSheetController: RootSheetController?
+    weak var rootSheetController: BottomSheetViewController?
     
     // MARK: - Initializers
     
-    init(_ string: String, delegate: RootSheetController) {
+    init(_ string: String, delegate: BottomSheetViewController) {
         headerLabel.text = string
         rootSheetController = delegate
         

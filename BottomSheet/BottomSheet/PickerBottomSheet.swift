@@ -2,8 +2,6 @@ import Foundation
 import UIKit
 
 
-typealias RootSheetController = UIPageViewController & RootSheet
-
 final class PickerBottomSheet: BottomSheet {
     
     // MARK: - Properties
@@ -12,11 +10,11 @@ final class PickerBottomSheet: BottomSheet {
     private let bottomRightButton = KRoundButton()
     private let bottomLeftButton = KRoundButton()
     
-    weak var sheetPageController: RootSheetController?
+    weak var sheetPageController: BottomSheetViewController?
     
     // MARK: - Initializers
     
-    init(_ string: String, delegate: RootSheetController) {
+    init(_ string: String, delegate: BottomSheetViewController) {
         headerLabel.text = string
         sheetPageController = delegate
         

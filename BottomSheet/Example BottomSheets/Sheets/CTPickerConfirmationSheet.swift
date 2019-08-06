@@ -45,11 +45,11 @@ final class CTPickerConfirmationSheet: BottomSheet {
     private var transactionCardView: TransactionCardView!
     private var transactionStatusView: TransactionStatusView!
     
-    weak var rootSheetController: RootSheetController?
+    weak var rootSheetController: BottomSheetViewController?
     
     // MARK: - Initializers
     
-    init(delegate: RootSheetController) {
+    init(delegate: BottomSheetViewController) {
         rootSheetController = delegate
         
         super.init(nibName: nil, bundle: nil)

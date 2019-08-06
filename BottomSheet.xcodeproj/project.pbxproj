@@ -11,15 +11,11 @@
 		1C3DC8FB22B27F7500B0902A /* CTPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
 		1C441E0B22F9A82400B1D1BC /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0A22F9A82400B1D1BC /* UIColorExtensions.swift */; };
-		1C441E0D22F9B28D00B1D1BC /* ScrollSheetResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */; };
 		1C441E1222F9B4AE00B1D1BC /* RootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1122F9B4AE00B1D1BC /* RootSheet.swift */; };
-		1C441E1422F9B4C100B1D1BC /* hasRoundedTopCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1322F9B4C100B1D1BC /* hasRoundedTopCorners.swift */; };
 		1C441E1622F9B85E00B1D1BC /* PickerExampleRootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1522F9B85E00B1D1BC /* PickerExampleRootSheet.swift */; };
 		1C441E1A22F9C04700B1D1BC /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1922F9C04600B1D1BC /* BottomSheetViewController.swift */; };
 		1C441E1F22F9D13A00B1D1BC /* BSContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1E22F9D13A00B1D1BC /* BSContainerView.swift */; };
 		1C441E2222F9D24E00B1D1BC /* BSProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E2122F9D24E00B1D1BC /* BSProtocols.swift */; };
-		1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */; };
-		1C6E63CE22E06EAE002DC799 /* hasBottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CD22E06EAE002DC799 /* hasBottomSheetDelegate.swift */; };
 		1C6E63E022E0704F002DC799 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DB22E0704F002DC799 /* RobotoMono-Bold.ttf */; };
 		1C6E63E122E0704F002DC799 /* Sofia Pro SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DC22E0704F002DC799 /* Sofia Pro SemiBold.ttf */; };
 		1C6E63E222E0704F002DC799 /* Sofia Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6E63DD22E0704F002DC799 /* Sofia Pro Regular.ttf */; };
@@ -55,15 +51,11 @@
 		1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1C441E0A22F9A82400B1D1BC /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSheetResponder.swift; sourceTree = "<group>"; };
 		1C441E1122F9B4AE00B1D1BC /* RootSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSheet.swift; sourceTree = "<group>"; };
-		1C441E1322F9B4C100B1D1BC /* hasRoundedTopCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasRoundedTopCorners.swift; sourceTree = "<group>"; };
 		1C441E1522F9B85E00B1D1BC /* PickerExampleRootSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExampleRootSheet.swift; sourceTree = "<group>"; };
 		1C441E1922F9C04600B1D1BC /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		1C441E1E22F9D13A00B1D1BC /* BSContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSContainerView.swift; sourceTree = "<group>"; };
 		1C441E2122F9D24E00B1D1BC /* BSProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSProtocols.swift; sourceTree = "<group>"; };
-		1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDelegate.swift; sourceTree = "<group>"; };
-		1C6E63CD22E06EAE002DC799 /* hasBottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasBottomSheetDelegate.swift; sourceTree = "<group>"; };
 		1C6E63DB22E0704F002DC799 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		1C6E63DC22E0704F002DC799 /* Sofia Pro SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro SemiBold.ttf"; sourceTree = "<group>"; };
 		1C6E63DD22E0704F002DC799 /* Sofia Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular.ttf"; sourceTree = "<group>"; };
@@ -115,11 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1C441E1122F9B4AE00B1D1BC /* RootSheet.swift */,
-				1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */,
 				1C441E2122F9D24E00B1D1BC /* BSProtocols.swift */,
-				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
-				1C6E63CD22E06EAE002DC799 /* hasBottomSheetDelegate.swift */,
-				1C441E1322F9B4C100B1D1BC /* hasRoundedTopCorners.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -132,8 +120,6 @@
 				1C441E0E22F9B2AC00B1D1BC /* Protocols */,
 				1C441E1B22F9C0ED00B1D1BC /* RootSheets */,
 				1CA6CB9B22AFDDF900BCE420 /* PickerBottomSheet.swift */,
-				1C441E1D22F9C2AC00B1D1BC /* Sheets */,
-				1C441E1022F9B2F500B1D1BC /* ViewControllers */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -174,6 +160,15 @@
 				F4EAE15E2110884E00487323 /* BSBackgroundView.swift */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		1C441E2322F9D5CF00B1D1BC /* Example BottomSheets */ = {
+			isa = PBXGroup;
+			children = (
+				1C441E1D22F9C2AC00B1D1BC /* Sheets */,
+				1C441E1022F9B2F500B1D1BC /* ViewControllers */,
+			);
+			path = "Example BottomSheets";
 			sourceTree = "<group>";
 		};
 		61CA0EE13F7D8C6B9C1E1F44 /* Pods */ = {
@@ -217,6 +212,7 @@
 			children = (
 				F4EAE152210FBD0100487323 /* Info.plist */,
 				1C441E0F22F9B2EB00B1D1BC /* BottomSheet */,
+				1C441E2322F9D5CF00B1D1BC /* Example BottomSheets */,
 				F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */,
 				1C3DC8FC22B39ED800B0902A /* PickerCell.swift */,
 				F4EAE146210FBCFE00487323 /* AppDelegate.swift */,
@@ -365,7 +361,6 @@
 				1CF6D6E522E0909300701DF3 /* ContactShadowView.swift in Sources */,
 				1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */,
 				1CF6D6F122E0C74A00701DF3 /* ZoomableReceiptViewController.swift in Sources */,
-				1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */,
 				1CF6D6DD22E075D600701DF3 /* CTPickerConfirmationSheet.swift in Sources */,
 				1CA6CB9622AFB11400BCE420 /* UIViewExtensions.swift in Sources */,
 				F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */,
@@ -380,14 +375,11 @@
 				1C3DC8F922B27F5200B0902A /* CTBottomSheetMenu.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
-				1C6E63CE22E06EAE002DC799 /* hasBottomSheetDelegate.swift in Sources */,
 				1CF6D6ED22E0B42100701DF3 /* UILabelExtensions.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BSBackgroundView.swift in Sources */,
-				1C441E0D22F9B28D00B1D1BC /* ScrollSheetResponder.swift in Sources */,
 				1C441E0B22F9A82400B1D1BC /* UIColorExtensions.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
-				1C441E1422F9B4C100B1D1BC /* hasRoundedTopCorners.swift in Sources */,
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* PickerBottomSheet.swift in Sources */,
 				1C441E1A22F9C04700B1D1BC /* BottomSheetViewController.swift in Sources */,
