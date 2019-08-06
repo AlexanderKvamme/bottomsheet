@@ -3,6 +3,6 @@ import Foundation
 import UIKit
 
 
-protocol SheetScrollResponder: UIViewController {
+protocol BottomSheetDidScrollResponder: UIViewController {
     func bottomsheetDidScrollTo(_ value: CGPoint)
 }

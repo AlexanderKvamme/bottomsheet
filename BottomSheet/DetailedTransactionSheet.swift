@@ -24,7 +24,7 @@ final class DetailedTransactionSheet: UIViewController, HasHorizontalSheetIndica
     
     // MARK: - Initializers
     
-    init(_ string: String, delegate: RootSheetController) {
+    init(delegate: RootSheetController) {
         rootSheetController = delegate
         
         super.init(nibName: nil, bundle: nil)

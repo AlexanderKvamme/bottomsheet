@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class ZoomableReceiptViewController: UIViewController {
+class ZoomableReceiptViewController: UIViewController, BottomSheetDidScrollResponder {
     
     // MARK: - Properties
     
@@ -30,11 +30,9 @@ class ZoomableReceiptViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-// MARK: - SheetScrollResponder Conformance
-
-extension ZoomableReceiptViewController: SheetScrollResponder {
+    
+    // MARK: - SheetScrollResponder Conformance
+    
     func bottomsheetDidScrollTo(_ value: CGPoint) {
         let percentage = (value.y * -1)/768
         imagePreview.coloredOverlay.alpha = 1-percentage

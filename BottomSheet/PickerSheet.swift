@@ -53,7 +53,6 @@ final class PickerSheet: UIViewController, HasHorizontalSheetIndicator {
         headerLabel.textColor = .white
         headerLabel.font = UIFont.systemFont(ofSize: 32)
         headerLabel.textAlignment = .center
-        headerLabel.text = "Pick something"
         
         // setup tableview
         tableView.register(PickerCell.self, forCellReuseIdentifier: PickerCell.identifier)

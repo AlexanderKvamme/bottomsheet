@@ -12,6 +12,10 @@
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
 		1C441E0B22F9A82400B1D1BC /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0A22F9A82400B1D1BC /* UIColorExtensions.swift */; };
 		1C441E0D22F9B28D00B1D1BC /* ScrollSheetResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */; };
+		1C441E1222F9B4AE00B1D1BC /* RootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1122F9B4AE00B1D1BC /* RootSheet.swift */; };
+		1C441E1422F9B4C100B1D1BC /* hasRoundedTopCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1322F9B4C100B1D1BC /* hasRoundedTopCorners.swift */; };
+		1C441E1622F9B85E00B1D1BC /* PickerExampleRootSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1522F9B85E00B1D1BC /* PickerExampleRootSheet.swift */; };
+		1C441E1822F9BD0600B1D1BC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E1722F9BD0600B1D1BC /* RootViewController.swift */; };
 		1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */; };
 		1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */; };
 		1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */; };
@@ -42,7 +46,7 @@
 		5431D893033552C6A54C57A0 /* Pods_BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
-		F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */; };
+		F4EAE15D210FBD5B00487323 /* BottomSheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15C210FBD5B00487323 /* BottomSheetContainer.swift */; };
 		F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,10 @@
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1C441E0A22F9A82400B1D1BC /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSheetResponder.swift; sourceTree = "<group>"; };
+		1C441E1122F9B4AE00B1D1BC /* RootSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSheet.swift; sourceTree = "<group>"; };
+		1C441E1322F9B4C100B1D1BC /* hasRoundedTopCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasRoundedTopCorners.swift; sourceTree = "<group>"; };
+		1C441E1522F9B85E00B1D1BC /* PickerExampleRootSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExampleRootSheet.swift; sourceTree = "<group>"; };
+		1C441E1722F9BD0600B1D1BC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasHorizontalSheetIndicator.swift; sourceTree = "<group>"; };
 		1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDelegate.swift; sourceTree = "<group>"; };
 		1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
@@ -86,7 +94,7 @@
 		F4EAE146210FBCFE00487323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAE150210FBD0100487323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EAE152210FBD0100487323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerViewController.swift; sourceTree = "<group>"; };
+		F4EAE15C210FBD5B00487323 /* BottomSheetContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainer.swift; sourceTree = "<group>"; };
 		F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetBackgroundView.swift; sourceTree = "<group>"; };
 		F4EAE160211508DE00487323 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +118,8 @@
 				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
 				1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */,
 				1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */,
+				1C441E1122F9B4AE00B1D1BC /* RootSheet.swift */,
+				1C441E1322F9B4C100B1D1BC /* hasRoundedTopCorners.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -126,6 +136,9 @@
 		1C441E1022F9B2F500B1D1BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1CF6D6F022E0C74A00701DF3 /* ZoomableReceiptViewController.swift */,
+				1C441E1522F9B85E00B1D1BC /* PickerExampleRootSheet.swift */,
+				1C441E1722F9BD0600B1D1BC /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,7 +193,7 @@
 				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
 				1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */,
 				1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */,
-				F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */,
+				F4EAE15C210FBD5B00487323 /* BottomSheetContainer.swift */,
 				1C6E63CF22E06EF1002DC799 /* BottomSheetContainerView.swift */,
 				F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */,
 				1CF6D6E422E0909300701DF3 /* ContactShadowView.swift */,
@@ -193,7 +206,6 @@
 				1C6E63DD22E0704F002DC799 /* Sofia Pro Regular.ttf */,
 				1C6E63DC22E0704F002DC799 /* Sofia Pro SemiBold.ttf */,
 				1CF6D6EA22E0A0A100701DF3 /* Assets.xcassets */,
-				1CF6D6F022E0C74A00701DF3 /* ZoomableReceiptViewController.swift */,
 				1CF6D6F222E1CDEE00701DF3 /* SImagePreview.swift */,
 				1CF6D6F622E1CE4600701DF3 /* Device.swift */,
 				1CF6D6F422E1CE0800701DF3 /* SShadowButton.swift */,
@@ -337,8 +349,10 @@
 				1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */,
 				1CF6D6F722E1CE4600701DF3 /* Device.swift in Sources */,
 				1CA6CB9422AF965600BCE420 /* ScrollableBottomSheetContainer.swift in Sources */,
+				1C441E1222F9B4AE00B1D1BC /* RootSheet.swift in Sources */,
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
+				1C441E1822F9BD0600B1D1BC /* RootViewController.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
@@ -349,11 +363,13 @@
 				1C441E0B22F9A82400B1D1BC /* UIColorExtensions.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
+				1C441E1422F9B4C100B1D1BC /* hasRoundedTopCorners.swift in Sources */,
 				1CF6D6F322E1CDEE00701DF3 /* SImagePreview.swift in Sources */,
 				1CA6CB9C22AFDDF900BCE420 /* TransactionSheet.swift in Sources */,
-				F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */,
+				F4EAE15D210FBD5B00487323 /* BottomSheetContainer.swift in Sources */,
 				1C6E63D022E06EF1002DC799 /* BottomSheetContainerView.swift in Sources */,
 				1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */,
+				1C441E1622F9B85E00B1D1BC /* PickerExampleRootSheet.swift in Sources */,
 				1CF6D6F522E1CE0900701DF3 /* SShadowButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

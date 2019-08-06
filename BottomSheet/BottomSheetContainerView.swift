@@ -1,10 +1,4 @@
-//
-//  BottomSheetContainerView.swift
-//  BottomSheet
-//
-//  Created by Amia Macone on 18/07/2019.
-//  Copyright © 2019 Simon Kågedal Reimer. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
@@ -18,9 +12,9 @@ class BottomSheetContainerView: UIView {
     private let sheetBackground = BottomSheetBackgroundView()
     private var sheetBackgroundTopConstraint: Constraint? = nil
     
-    init(mainView: UIView, sheetView: UIView) {
-        self.mainView = mainView
-        self.sheetView = sheetView
+    init(underlyingView: UIView, overlyingSheetView: UIView) {
+        self.mainView = underlyingView
+        self.sheetView = overlyingSheetView
         
         super.init(frame: .zero)
         

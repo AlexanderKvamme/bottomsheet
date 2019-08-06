@@ -10,24 +10,6 @@ import Foundation
 import UIKit
 
 
-protocol RootSheet {
-    func didTapNext()
-    func pop()
-    func push(_ sheet: UIViewController)
-    
-    var scrollableSheet: ScrollableBottomSheetContainer? { get set }
-}
-
-protocol hasRoundedTopCorners {
-    func roundTopCorners()
-}
-
-extension hasRoundedTopCorners where Self: UIViewController {
-    func roundTopCorners() {
-        view.roundCorners(corners: [.topLeft, .topRight])
-    }
-}
-
 /// This is the sheet main controller. It is a pagecontroller which contains any sheetpages and will be the controller
 /// of the the sheetpages. 
 final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTopCorners {
@@ -59,7 +41,7 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     // MARK: - Methods
     
     private func setInitialSheet() {
-        let sheet = DetailedTransactionSheet("Mic Check", delegate: self)
+        let sheet = DetailedTransactionSheet(delegate: self)
         navigationStack = [sheet]
         addSheetLayout(sheet)
     }

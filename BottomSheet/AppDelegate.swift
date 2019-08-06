@@ -1,8 +1,5 @@
-//
-//  Copyright © 2018 Simon Kågedal Reimer. All rights reserved.
-//
-
 import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -12,10 +9,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Initial view controller
-        let underlyingController = ZoomableReceiptViewController()
-        let overlyingSheet = MatchfinderRootSheet()
-        let initialViewController = BottomSheetContainerViewController(mainViewController: underlyingController, sheetViewController: overlyingSheet)
+//        let underlyingController = ZoomableReceiptViewController()
+//        let overlyingSheet = MatchfinderRootSheet()
+//        let initialViewController = BottomSheetContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
 
+        // TODO: Test med pickersheet
+        let underlyingController = ZoomableReceiptViewController()
+        let overlyingSheet = PickerExampleRootSheet()
+        let initialViewController = BottomSheetContainer(underlyingViewController: underlyingController, overlyingSheetController: overlyingSheet)
+        
         // Set window
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = initialViewController
