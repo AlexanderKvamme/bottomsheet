@@ -1,34 +1,21 @@
-//
-//  Copyright © 2018 Simon Kågedal Reimer. All rights reserved.
-//
 
 import UIKit
 import SnapKit
 
-protocol SheetScrollResponder: UIViewController {
-    func bottomsheetDidScrollTo(_ value: CGPoint)
-}
 
 class BottomSheetContainerViewController: UIViewController {
 
-//    private let mainViewController: UIViewController
+    // MARK: Properties
+    
     private let mainViewController: SheetScrollResponder
     private let sheetViewController: ScrollableBottomSheetContainer
     private lazy var bottomSheetContainerView = BottomSheetContainerView(mainView: mainViewController.view,
                                                                          sheetView: sheetViewController.view)
+
+    // MARK: Initializers
     
-    //    init(mainViewController: SheetScrollResponder, sheetViewController: BottomSheetViewController) {
     init(mainViewController: SheetScrollResponder, sheetViewController: UIPageViewController & RootSheet & hasRoundedTopCorners) {
-        
         let bottomSheetContainer = ScrollableBottomSheetContainer(sheetViewController)
-        
-        // OLD
-//        self.mainViewController = mainViewController
-//        self.sheetViewController = sheetViewController
-        
-        // NEW
-        // FIXME: Make this happend inside this init:
-        // ScrollableBottomSheetContainer(rootSheet)
         self.mainViewController = mainViewController
         self.sheetViewController = bottomSheetContainer
         
@@ -37,17 +24,16 @@ class BottomSheetContainerViewController: UIViewController {
         addChild(mainViewController)
         addChild(sheetViewController)
         
-//        sheetViewController.bottomSheetDelegate = self
         bottomSheetContainer.bottomSheetDelegate = self
+        
+        view = bottomSheetContainerView
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
     
-    override func loadView() {
-        view = bottomSheetContainerView
-    }
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

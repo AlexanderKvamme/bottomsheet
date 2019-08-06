@@ -11,6 +11,7 @@
 		1C3DC8FB22B27F7500B0902A /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
 		1C441E0B22F9A82400B1D1BC /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0A22F9A82400B1D1BC /* UIColorExtensions.swift */; };
+		1C441E0D22F9B28D00B1D1BC /* ScrollSheetResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */; };
 		1C6E63CA22E06C22002DC799 /* HasHorizontalSheetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */; };
 		1C6E63CC22E06E8D002DC799 /* BottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */; };
 		1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */; };
@@ -41,7 +42,6 @@
 		5431D893033552C6A54C57A0 /* Pods_BottomSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD7D5115D284088083C9FDB /* Pods_BottomSheet.framework */; };
 		F4EAE147210FBCFE00487323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE146210FBCFE00487323 /* AppDelegate.swift */; };
 		F4EAE151210FBD0100487323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */; };
-		F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE158210FBD4100487323 /* MapViewController.swift */; };
 		F4EAE15D210FBD5B00487323 /* BottomSheetContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */; };
 		F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +51,7 @@
 		1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		1C441E0A22F9A82400B1D1BC /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSheetResponder.swift; sourceTree = "<group>"; };
 		1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasHorizontalSheetIndicator.swift; sourceTree = "<group>"; };
 		1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDelegate.swift; sourceTree = "<group>"; };
 		1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		F4EAE146210FBCFE00487323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAE150210FBD0100487323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EAE152210FBD0100487323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4EAE158210FBD4100487323 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerViewController.swift; sourceTree = "<group>"; };
 		F4EAE15E2110884E00487323 /* BottomSheetBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetBackgroundView.swift; sourceTree = "<group>"; };
 		F4EAE160211508DE00487323 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -103,6 +103,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C441E0E22F9B2AC00B1D1BC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1C441E0C22F9B28D00B1D1BC /* ScrollSheetResponder.swift */,
+				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
+				1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */,
+				1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1C441E0F22F9B2EB00B1D1BC /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				1C441E1022F9B2F500B1D1BC /* ViewControllers */,
+				1C441E0E22F9B2AC00B1D1BC /* Protocols */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		1C441E1022F9B2F500B1D1BC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		61CA0EE13F7D8C6B9C1E1F44 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +171,7 @@
 			children = (
 				F4EAE152210FBD0100487323 /* Info.plist */,
 				1CA6CB9F22B0EF1400BCE420 /* MatchFinderRootSheet.swift */,
+				1C441E0F22F9B2EB00B1D1BC /* BottomSheet */,
 				F4EAE14F210FBD0100487323 /* LaunchScreen.storyboard */,
 				1C3DC8F822B27F5200B0902A /* TranasctionMenuSheet.swift */,
 				1CF6D6DC22E075D600701DF3 /* DetailedTransactionSheet.swift */,
@@ -151,9 +179,6 @@
 				F4EAE146210FBCFE00487323 /* AppDelegate.swift */,
 				1C3DC8FA22B27F7500B0902A /* PickerSheet.swift */,
 				1CA6CB9D22B0EB7B00BCE420 /* KRoundButton.swift */,
-				1C6E63C922E06C22002DC799 /* HasHorizontalSheetIndicator.swift */,
-				1C6E63CB22E06E8D002DC799 /* BottomSheetDelegate.swift */,
-				1C6E63CD22E06EAE002DC799 /* BottomSheet.swift */,
 				1CA6CB9322AF965600BCE420 /* ScrollableBottomSheetContainer.swift */,
 				F4EAE15C210FBD5B00487323 /* BottomSheetContainerViewController.swift */,
 				1C6E63CF22E06EF1002DC799 /* BottomSheetContainerView.swift */,
@@ -162,7 +187,6 @@
 				1CA6CB9522AFB11400BCE420 /* UIViewExtensions.swift */,
 				1CF6D6EC22E0B42100701DF3 /* UILabelExtensions.swift */,
 				1CA6CB9B22AFDDF900BCE420 /* TransactionSheet.swift */,
-				F4EAE158210FBD4100487323 /* MapViewController.swift */,
 				1C6E63E522E07067002DC799 /* UIFontExtension.swift */,
 				1C6E63DE22E0704F002DC799 /* Sofia Pro Bold.ttf */,
 				1C6E63DF22E0704F002DC799 /* Sofia Pro Light.ttf */,
@@ -316,12 +340,12 @@
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* TranasctionMenuSheet.swift in Sources */,
-				F4EAE159210FBD4100487323 /* MapViewController.swift in Sources */,
 				1C6E63E622E07067002DC799 /* UIFontExtension.swift in Sources */,
 				1CF6D6E322E079E000701DF3 /* CardStatusIndicator.swift in Sources */,
 				1C6E63CE22E06EAE002DC799 /* BottomSheet.swift in Sources */,
 				1CF6D6ED22E0B42100701DF3 /* UILabelExtensions.swift in Sources */,
 				F4EAE15F2110884E00487323 /* BottomSheetBackgroundView.swift in Sources */,
+				1C441E0D22F9B28D00B1D1BC /* ScrollSheetResponder.swift in Sources */,
 				1C441E0B22F9A82400B1D1BC /* UIColorExtensions.swift in Sources */,
 				1CA6CBA022B0EF1500BCE420 /* MatchFinderRootSheet.swift in Sources */,
 				1CF6D6E122E079E000701DF3 /* CardCell.swift in Sources */,
