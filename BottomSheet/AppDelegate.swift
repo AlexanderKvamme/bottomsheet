@@ -14,10 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         let zoomableReceiptViewController = ZoomableReceiptViewController()
-        let rootSheet = MatchfinderRootSheet(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
-        window.rootViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController,
-                                                                       sheetViewController: bottomSheetContainer)
+        let rootSheet = MatchfinderRootSheet()
+
+        // OLD
+//        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
+//        let initialViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
+
+        // NEW: Try to make the Initial viewcontroller take a bottomsheetcontainer as a container and then rather wrap it while in its initializer
+//        let bottomSheetContainer = ScrollableBottomSheetContainer(rootSheet)
+//        let initialViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: bottomSheetContainer)
+        
+        let initialViewController = BottomSheetContainerViewController(mainViewController: zoomableReceiptViewController, sheetViewController: rootSheet)
+        
+        window.rootViewController = initialViewController
         window.makeKeyAndVisible()
         self.window = window
         

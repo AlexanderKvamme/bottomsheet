@@ -38,6 +38,16 @@ final class MatchfinderRootSheet: UIPageViewController, RootSheet, hasRoundedTop
     
     weak var scrollableSheet: ScrollableBottomSheetContainer?
     
+    // MARK: - Initializers
+    
+    init() {
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {

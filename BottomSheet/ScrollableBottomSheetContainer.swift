@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 
-typealias mainSheetType = UIPageViewController & RootSheet
-
 enum SheetTopVisibility: CGFloat {
     case minimum = 120
     case visibleHeader = 200
@@ -25,11 +23,11 @@ final class ScrollableBottomSheetContainer: UIViewController, UIScrollViewDelega
     var sheetTopVisibility = SheetTopVisibility.minimum
     var bottomSheetDelegate: BottomSheetDelegate?
     private var scrollView = UIScrollView()
-    private var mainSheet: mainSheetType
+    private var mainSheet: UIPageViewController & RootSheet
     
     // MARK: - Initializers
     
-    init(_ mainSheet: mainSheetType) {
+    init(_ mainSheet: UIPageViewController & RootSheet) {
         self.mainSheet = mainSheet
         
         super.init(nibName: nil, bundle: nil)
