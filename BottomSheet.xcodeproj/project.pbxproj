@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3867102302A25600CB75B4 /* BSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C38670F2302A25600CB75B4 /* BSBottomSheet.swift */; };
 		1C3DC8F922B27F5200B0902A /* CTBottomSheetMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* CTBottomSheetMenu.swift */; };
 		1C3DC8FB22B27F7500B0902A /* CTPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C38670F2302A25600CB75B4 /* BSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSBottomSheet.swift; sourceTree = "<group>"; };
 		1C3DC8F822B27F5200B0902A /* CTBottomSheetMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTBottomSheetMenu.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				1C441E1922F9C04600B1D1BC /* BottomSheetViewController.swift */,
 				F4EAE15C210FBD5B00487323 /* BottomSheetContainer.swift */,
+				1C38670F2302A25600CB75B4 /* BSBottomSheet.swift */,
 				1C441E2022F9D18000B1D1BC /* Internal */,
 				1C441E1B22F9C0ED00B1D1BC /* RootSheets */,
 			);
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3867102302A25600CB75B4 /* BSBottomSheet.swift in Sources */,
 				1CF6D6E522E0909300701DF3 /* ContactShadowView.swift in Sources */,
 				1CA6CB9E22B0EB7B00BCE420 /* KRoundButton.swift in Sources */,
 				1CF6D6F122E0C74A00701DF3 /* ZoomableReceiptViewController.swift in Sources */,

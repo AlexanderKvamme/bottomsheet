@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-final class CTBottomSheetMenu: BottomSheet {
+final class CTBottomSheetMenu: BSBottomSheet {
     
     // MARK: - Properties
     
