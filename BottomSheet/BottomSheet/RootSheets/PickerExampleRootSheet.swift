@@ -20,16 +20,10 @@ final class PickerExampleRootSheet: BottomSheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setInitialSheet()
+        setInitial(sheet: CTPickerSheet("Please pick something!", choices: ["one", "two", "three"], delegate: self))
     }
     
     // MARK: - Methods
-    
-    private func setInitialSheet() {
-        let sheet = CTPickerSheet("Please pick something!", choices: ["one", "two", "three"], delegate: self)
-        navigationStack = [sheet]
-        addSheetLayout(sheet)
-    }
     
     override func didTapNext() {
         let choices = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT", "What it to", "Mic check", "One, two"]

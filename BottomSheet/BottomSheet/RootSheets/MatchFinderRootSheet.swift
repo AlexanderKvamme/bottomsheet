@@ -19,16 +19,11 @@ final class MatchfinderRootSheet: BottomSheetViewController {
     override func viewDidLoad() {
         view.backgroundColor = UIColor.solarstein.sapphire
         roundTopCorners()
-        setInitialSheet()
+        
+        setInitial(sheet: CTPickerConfirmationSheet(delegate: self))
     }
     
     // MARK: - Methods
-    
-    private func setInitialSheet() {
-        let sheet = CTPickerConfirmationSheet(delegate: self)
-        navigationStack = [sheet]
-        addSheetLayout(sheet)
-    }
     
     override func didTapNext() {
         let choices = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT", "What it to", "Mic check", "One, two"]

@@ -30,7 +30,7 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         roundTopCorners()
     }
     
-    func roundTopCorners() {
+    final func roundTopCorners() {
         view.roundCorners(corners: [.topLeft, .topRight])
     }
 
@@ -40,7 +40,12 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         print("implement me")
     }
     
-    func push(_ sheet: UIViewController) {
+    final func setInitial(sheet: UIViewController) {
+        navigationStack = [sheet]
+        addSheetLayout(sheet)
+    }
+    
+    final func push(_ sheet: UIViewController) {
         // remove topsheet
         if let topSheet = navigationStack.last {
             removeSheetLayout(topSheet)
@@ -52,8 +57,7 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         scrollableSheet!.scrollToBottom()
     }
     
-    func pop() {
-        // remove topsheet
+    final func pop() {
         guard let topSheet = navigationStack.last, navigationStack.count > 1 else { return }
 
         removeSheetLayout(topSheet)
@@ -65,7 +69,7 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         }
     }
     
-    func addSheetLayout(_ sheet: UIViewController) {
+    private func addSheetLayout(_ sheet: UIViewController) {
         addChild(sheet)
         view.addSubview(sheet.view)
         sheet.view.snp.makeConstraints { (make) in
@@ -73,7 +77,7 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         }
     }
     
-    func removeSheetLayout(_ sheet: UIViewController) {
+    private func removeSheetLayout(_ sheet: UIViewController) {
         sheet.view.removeFromSuperview()
         sheet.removeFromParent()
     }
