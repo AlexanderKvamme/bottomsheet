@@ -53,20 +53,16 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
     }
     
     func pop() {
-        // add new sheet
-        guard let sheet = navigationStack.last else {
-            print("no sheet to display after pop")
-            return
-        }
-        
         // remove topsheet
-        if let topSheet = navigationStack.last {
-            removeSheetLayout(topSheet)
-            navigationStack.remove(at: navigationStack.index(of: topSheet)!)
-        }
+        guard let topSheet = navigationStack.last, navigationStack.count > 1 else { return }
+
+        removeSheetLayout(topSheet)
+        navigationStack.remove(at: navigationStack.index(of: topSheet)!)
         
-        addSheetLayout(sheet)
-        scrollableSheet!.scrollToBottom()
+        if let previousSheet = navigationStack.last {
+            addSheetLayout(previousSheet)
+            scrollableSheet!.scrollToBottom()
+        }
     }
     
     func addSheetLayout(_ sheet: UIViewController) {
