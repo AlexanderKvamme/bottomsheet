@@ -51,12 +51,6 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         print("implement me")
     }
     
-    final func setInitial(sheet: UIViewController) {
-        navigationStack = [sheet]
-        addSheetLayout(sheet)
-        (sheet as? BSBottomSheet)?.addHorizontalDragIndicator()
-    }
-    
     final func push(_ sheet: UIViewController) {
         // remove topsheet
         if let topSheet = navigationStack.last {

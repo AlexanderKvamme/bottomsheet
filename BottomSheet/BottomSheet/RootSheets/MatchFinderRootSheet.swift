@@ -20,7 +20,7 @@ final class MatchfinderRootSheet: BottomSheetViewController {
         view.backgroundColor = UIColor.solarstein.sapphire
         roundTopCorners()
         
-        setInitial(sheet: CTPickerConfirmationSheet(delegate: self))
+        push(CTPickerConfirmationSheet(delegate: self))
     }
     
     // MARK: - Methods
