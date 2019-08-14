@@ -47,8 +47,6 @@ final class CTPickerBottomSheet: BSBottomSheet {
     }
     
     private func addSubviewsAndConstraints() {
-        addHorizontalDragIndicator()
-        
         // Layout header
         view.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in

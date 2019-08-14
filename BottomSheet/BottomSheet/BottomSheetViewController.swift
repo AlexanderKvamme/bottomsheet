@@ -54,6 +54,7 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
     final func setInitial(sheet: UIViewController) {
         navigationStack = [sheet]
         addSheetLayout(sheet)
+        (sheet as? BSBottomSheet)?.addHorizontalDragIndicator()
     }
     
     final func push(_ sheet: UIViewController) {
@@ -65,6 +66,7 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         // add new sheet
         self.navigationStack.append(sheet)
         addSheetLayout(sheet)
+        (sheet as? BSBottomSheet)?.addHorizontalDragIndicator()
         scrollableSheet!.scrollToBottom()
     }
     

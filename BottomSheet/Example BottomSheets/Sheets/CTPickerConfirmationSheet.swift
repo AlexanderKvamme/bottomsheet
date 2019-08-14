@@ -29,7 +29,6 @@ final class CTPickerConfirmationSheet: BSBottomSheet {
         
         setup()
         
-        addHorizontalDragIndicator()
         addTransactionCard()
         addTransactionStatusView()
     }

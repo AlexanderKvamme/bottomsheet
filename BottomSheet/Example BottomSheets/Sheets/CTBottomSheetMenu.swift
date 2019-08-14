@@ -22,8 +22,6 @@ final class CTBottomSheetMenu: BSBottomSheet {
         super.init(nibName: nil, bundle: nil)
         
         setup()
-        
-        addHorizontalDragIndicator()
     }
     
     private func setup() {

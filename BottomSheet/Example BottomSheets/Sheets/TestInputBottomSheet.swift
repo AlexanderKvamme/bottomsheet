@@ -56,7 +56,7 @@ final class TestInputBottomSheet: BSBottomSheet {
     private func addSubviewsAndConstraints() {
         [headerLabel, inputField, nextButton].forEach({ view.addSubview($0) })
 
-        addHorizontalDragIndicator()
+//        addHorizontalDragIndicator()
         
         // Layout header
         headerLabel.snp.makeConstraints { (make) in
