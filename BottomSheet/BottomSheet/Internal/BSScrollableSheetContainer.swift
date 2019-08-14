@@ -22,7 +22,7 @@ final class BSScrollableSheetContainer: UIViewController, UIScrollViewDelegate, 
     
     var sheetTopVisibility = SheetTopVisibility.minimum
     var bottomSheetDelegate: BottomSheetDelegate?
-    private var scrollView = UIScrollView()
+    var scrollView = UIScrollView()
     private var mainSheet: UIPageViewController & RootSheet
     
     // MARK: - Initializers
@@ -48,7 +48,7 @@ final class BSScrollableSheetContainer: UIViewController, UIScrollViewDelegate, 
     }
     
     // MARK: - private Methods
-    
+
     private func setup() {
         mainSheet.scrollableSheet = self
         

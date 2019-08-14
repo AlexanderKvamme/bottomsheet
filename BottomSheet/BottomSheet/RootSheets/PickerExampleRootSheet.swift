@@ -26,9 +26,8 @@ final class PickerExampleRootSheet: BottomSheetViewController {
     // MARK: - Methods
     
     override func didTapNext() {
-        let choices = ["Its like", "this", "and a", "that", "and a dis and a", "its like this", "and like this", "and like", "THAT", "What it to", "Mic check", "One, two"]
-        let pickerSheet = CTPickerSheet("Pick something", choices: choices, delegate: self)
-        push(pickerSheet)
+        let inputSheet = TestInputBottomSheet(rootSheet: self)
+        push(inputSheet)
     }
 }
 

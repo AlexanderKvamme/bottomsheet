@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C3867102302A25600CB75B4 /* BSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C38670F2302A25600CB75B4 /* BSBottomSheet.swift */; };
+		1C3867122302D2E600CB75B4 /* TestInputBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3867112302D2E600CB75B4 /* TestInputBottomSheet.swift */; };
 		1C3DC8F922B27F5200B0902A /* CTBottomSheetMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8F822B27F5200B0902A /* CTBottomSheetMenu.swift */; };
 		1C3DC8FB22B27F7500B0902A /* CTPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */; };
 		1C3DC8FD22B39ED800B0902A /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC8FC22B39ED800B0902A /* PickerCell.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1C38670F2302A25600CB75B4 /* BSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSBottomSheet.swift; sourceTree = "<group>"; };
+		1C3867112302D2E600CB75B4 /* TestInputBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInputBottomSheet.swift; sourceTree = "<group>"; };
 		1C3DC8F822B27F5200B0902A /* CTBottomSheetMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTBottomSheetMenu.swift; sourceTree = "<group>"; };
 		1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPickerSheet.swift; sourceTree = "<group>"; };
 		1C3DC8FC22B39ED800B0902A /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				1CA6CB9B22AFDDF900BCE420 /* CTPickerBottomSheet.swift */,
+				1C3867112302D2E600CB75B4 /* TestInputBottomSheet.swift */,
 				1C3DC8FA22B27F7500B0902A /* CTPickerSheet.swift */,
 				1C3DC8F822B27F5200B0902A /* CTBottomSheetMenu.swift */,
 				1CF6D6DC22E075D600701DF3 /* CTPickerConfirmationSheet.swift */,
@@ -355,6 +358,7 @@
 				1CF6D6F722E1CE4600701DF3 /* Device.swift in Sources */,
 				1CA6CB9422AF965600BCE420 /* BSScrollableSheetContainer.swift in Sources */,
 				1CF6D6E222E079E000701DF3 /* DateView.swift in Sources */,
+				1C3867122302D2E600CB75B4 /* TestInputBottomSheet.swift in Sources */,
 				1C441E2222F9D24E00B1D1BC /* BSProtocols.swift in Sources */,
 				1CF6D6E722E09A8800701DF3 /* TransactionStatusView.swift in Sources */,
 				1C3DC8F922B27F5200B0902A /* CTBottomSheetMenu.swift in Sources */,

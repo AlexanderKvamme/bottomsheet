@@ -28,6 +28,17 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         
         view.backgroundColor = UIColor.solarstein.sapphire
         roundTopCorners()
+        
+        addTextFieldFirstResponderObserver()
+    }
+
+    @objc private func receiveNotification(notification: Notification) {
+        guard let textField = notification.object as? UITextField else { return }
+
+        if let scrollView = scrollableSheet?.scrollView {
+            let testPos = textField.convert(textField.frame, to: scrollView)
+            scrollView.contentInset = UIEdgeInsets(top: testPos.maxX, left: 0, bottom: 0, right: 0)
+        }
     }
     
     final func roundTopCorners() {
@@ -81,4 +92,14 @@ class BottomSheetViewController: UIPageViewController, RootSheet {
         sheet.view.removeFromSuperview()
         sheet.removeFromParent()
     }
+
+    private func addTextFieldFirstResponderObserver() {
+        let notificationName = Notification.Name.sheetContainedTextFieldDidBecomeFirstResponder
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNotification), name: notificationName, object: nil)
+    }
 }
+
+extension Notification.Name {
+    static let sheetContainedTextFieldDidBecomeFirstResponder = Notification.Name("sheetContainedTextFieldDidBecomeFirstResponder")
+}
+
